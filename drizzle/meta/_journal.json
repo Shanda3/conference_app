@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1791747394853,
+      "tag": "0000_windy_lockheed",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791748769541,
+      "tag": "0001_lowly_phantom_reporter",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791751082041,
+      "tag": "0002_sharp_nomad",
+      "breakpoints": true
+    }
+  ]
+}

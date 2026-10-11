@@ -1,0 +1,3287 @@
+{
+  "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+  "status": "Complete published October 21 ThunderPlains and InnoTech schedule snapshot verified from official feeds; subject to change.",
+  "conferences": [
+    {
+      "id": "thunderplains-2026",
+      "name": "ThunderPlains 2026",
+      "startDate": "2026-10-21",
+      "endDate": "2026-10-21",
+      "timeZone": "America/Chicago",
+      "location": "OKC Convention Center, Oklahoma City, Oklahoma",
+      "url": "https://2026.thunderplainsconf.com/",
+      "description": "One-day, two-track developer conference alongside InnoTech Oklahoma.",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00",
+      "agendaStatus": "Official session-level schedule verified; subject to change."
+    },
+    {
+      "id": "innotech-oklahoma-2026",
+      "name": "InnoTech Oklahoma 2026",
+      "startDate": "2026-10-21",
+      "endDate": "2026-10-21",
+      "timeZone": "America/Chicago",
+      "location": "OKC Convention Center, Oklahoma City, Oklahoma",
+      "url": "https://www.innotechok.com/",
+      "description": "Oklahoma technology conference and exposition.",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "address": "100 Mick Cornett Drive, Oklahoma City, OK 73109",
+      "agendaStatus": "Complete public Whova agenda verified for October 21, 2026; subject to change."
+    }
+  ],
+  "sessions": [
+    {
+      "id": "innotech-oklahoma-2026-whova-5479353",
+      "sourceId": "5479353",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Morning Keynote - Tackling the AI Enterprise Architecture Puzzle",
+      "date": "2026-10-21",
+      "startTime": "08:00",
+      "endTime": "08:50",
+      "start": "2026-10-21T08:00:00-05:00",
+      "end": "2026-10-21T08:50:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Scott Klososky",
+      "speakers": [
+        "Scott Klososky"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Scott Klososky",
+          "role": "Speaker",
+          "organization": "Founder, Future Point of View",
+          "title": "Technology Speaker, Author, Consultant",
+          "sourceId": "53745539",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53745539/"
+        }
+      ],
+      "room": "Room 301A-D, Third Floor",
+      "track": "Keynote",
+      "tracks": [
+        "Keynote"
+      ],
+      "kind": "keynote",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479353/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479353/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479353/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479353/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479353/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479353/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479353/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "thunderplains-2026-f43b720c-9f70-4d57-8178-d28872237a09",
+      "sourceId": "f43b720c-9f70-4d57-8178-d28872237a09",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Registration",
+      "date": "2026-10-21",
+      "startTime": "08:00",
+      "endTime": "09:00",
+      "start": "2026-10-21T08:00:00-05:00",
+      "end": "2026-10-21T09:00:00-05:00",
+      "speaker": "",
+      "speakers": [],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "service",
+      "description": "",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-f43b720c-9f70-4d57-8178-d28872237a09",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "conflictDetection": true
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5480584",
+      "sourceId": "5480584",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Own vs. Rent: How AI Changed the Software Buying Decision",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "09:40",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T09:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Shane Kempton, Misty Isaacs, Scott Davenport, Jeff Story",
+      "speakers": [
+        "Shane Kempton",
+        "Misty Isaacs",
+        "Scott Davenport",
+        "Jeff Story"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Shane Kempton",
+          "role": "Speakers",
+          "organization": "Phase2",
+          "title": "CTO & President",
+          "sourceId": "53753948",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53753948/"
+        },
+        {
+          "name": "Misty Isaacs",
+          "role": "Speakers",
+          "organization": "Ascent Resources",
+          "title": "Sr. Director of Data & Analytics",
+          "sourceId": "54143184",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54143184/"
+        },
+        {
+          "name": "Scott Davenport",
+          "role": "Speakers",
+          "organization": "DIGITZ",
+          "title": "President & CTO",
+          "sourceId": "54455938",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54455938/"
+        },
+        {
+          "name": "Jeff Story",
+          "role": "Speakers",
+          "organization": "The Bankers Bank",
+          "title": "Chief Innovation and Technology Officer",
+          "sourceId": "54602960",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54602960/"
+        }
+      ],
+      "room": "Room 201, Second Floor",
+      "track": "IT Leadership Track",
+      "tracks": [
+        "IT Leadership Track"
+      ],
+      "kind": "talk",
+      "description": "Technology leaders discuss how AI-native tools are changing software procurement economics. The panel considers vendor lock-in and the trade-offs among buying software, building it internally, and owning the resulting systems.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480584/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480584/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480584/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480584/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480584/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480584/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480584/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5485409",
+      "sourceId": "5485409",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "One Source of Truth: Why Unified Data Matters (Now More Than Ever)",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "09:40",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T09:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Amy Finley",
+      "speakers": [
+        "Amy Finley"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Amy Finley",
+          "role": "Speaker",
+          "organization": "Interworks",
+          "title": "KeepWatch Lead",
+          "sourceId": "54243253",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54243253/"
+        }
+      ],
+      "room": "Room 202, Second Floor",
+      "track": "AI & Data",
+      "tracks": [
+        "AI & Data"
+      ],
+      "kind": "talk",
+      "description": "Examines the costs of fragmented data and the benefits of consistent definitions and ownership. Outlines a layered data architecture with governance and a semantic layer that can support reporting, analytics, and AI initiatives.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485409/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485409/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485409/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485409/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485409/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485409/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485409/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5551126",
+      "sourceId": "5551126",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "How to Reduce Your Attack Surface Before Attackers Find It",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "09:40",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T09:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Mike Pinto",
+      "speakers": [
+        "Mike Pinto"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Mike Pinto",
+          "role": "Speaker",
+          "organization": "Arctic Wolf Networks",
+          "title": "Senior Systems Engineer",
+          "sourceId": "54196411",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54196411/"
+        }
+      ],
+      "room": "Room 203, Second Floor",
+      "track": "Security",
+      "tracks": [
+        "Security"
+      ],
+      "kind": "talk",
+      "description": "Covers continuous discovery of externally exposed assets, prioritization of important vulnerabilities, and practical risk reduction. Includes an introduction to Arctic Wolf's Aurora Attack Surface Management and a framework for assessing an organization's expanding digital footprint.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551126/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551126/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551126/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551126/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551126/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551126/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551126/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5566374",
+      "sourceId": "5566374",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Controlled Autonomy: How AI is Rewriting Both Sides of Cyber Defense — and What that Means for MDR",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "09:40",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T09:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Brent Feller",
+      "speakers": [
+        "Brent Feller"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Brent Feller",
+          "role": "Speaker",
+          "organization": "eSentire",
+          "title": "Senior Director of Solutions Architecture",
+          "sourceId": "54196426",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54196426/"
+        }
+      ],
+      "room": "Room 204, Second Floor",
+      "track": "Security",
+      "tracks": [
+        "Security"
+      ],
+      "kind": "talk",
+      "description": "Explores how offensive security, defensive response, and governance can work together as AI gains autonomy. A demonstration illustrates automated account-hijack detection and response, with controls intended to keep autonomous actions explainable, reversible, and bounded by policy.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5566374/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5566374/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5566374/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5566374/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5566374/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5566374/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5566374/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5584649",
+      "sourceId": "5584649",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Securing What’s Next: Technology and Modernization in Oklahoma",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "09:40",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T09:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Amber Mangham",
+      "speakers": [
+        "Amber Mangham"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Amber Mangham",
+          "role": "Speaker",
+          "organization": "Oklahoma Office of Management and Enterprise Services (OMES) Cyber Command",
+          "title": "Cyber Risk and Audit Specialist",
+          "sourceId": "54521586",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54521586/"
+        }
+      ],
+      "room": "Room 206AB, Second Floor",
+      "track": "OK-ISAC Symposium hosted by OMES",
+      "tracks": [
+        "OK-ISAC Symposium hosted by OMES"
+      ],
+      "kind": "talk",
+      "description": "Opens the OK-ISAC Symposium with state cybersecurity priorities and remarks from Oklahoma's CISO. The session introduces public-sector technology modernization, AI readiness, workforce needs, and collaboration to strengthen security and resilience across Oklahoma.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584649/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584649/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584649/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584649/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584649/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584649/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584649/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5345070",
+      "sourceId": "5345070",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "The AI Policy Gap: What IT Leaders Must Fix Before It’s Too Late",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "09:40",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T09:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Kelli Beck, Anh Selissen, Jalen Byford",
+      "speakers": [
+        "Kelli Beck",
+        "Anh Selissen",
+        "Jalen Byford"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Kelli Beck",
+          "role": "Speakers",
+          "organization": "Darwin AI",
+          "title": "Regional Vice President, Central",
+          "sourceId": "54060044",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54060044/"
+        },
+        {
+          "name": "Anh Selissen",
+          "role": "Speakers",
+          "organization": "Texas Department of Transportation",
+          "title": "Chief Information Officer",
+          "sourceId": "54098712",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54098712/"
+        },
+        {
+          "name": "Jalen Byford",
+          "role": "Speakers",
+          "organization": "Oklahoma Health Care Authority",
+          "title": "Deputy Chief Technology Officer",
+          "sourceId": "54136812",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54136812/"
+        }
+      ],
+      "room": "Room 207AB, Second Floor",
+      "track": "IT Leadership Track / AI & Data",
+      "tracks": [
+        "IT Leadership Track",
+        "AI & Data"
+      ],
+      "kind": "talk",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345070/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345070/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345070/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345070/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345070/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345070/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345070/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5565004",
+      "sourceId": "5565004",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "The Leadership Firewall",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "09:40",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T09:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Melissa Aarskaug",
+      "speakers": [
+        "Melissa Aarskaug"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Melissa Aarskaug",
+          "role": "Speaker",
+          "organization": "Executive Connect",
+          "title": "Founder",
+          "sourceId": "54313346",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54313346/"
+        }
+      ],
+      "room": "Room 208AB, Second Floor",
+      "track": "Women in Tech Summit",
+      "tracks": [
+        "Women in Tech Summit"
+      ],
+      "kind": "talk",
+      "description": "Applies five cybersecurity principles to leadership, helping managers uncover vulnerabilities, assess trust, strengthen team resilience, and prepare for disruption. The framework also encourages leaders to revisit assumptions and develop people as an effective organizational defense.\n\nSeparate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5565004/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5565004/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Separate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": true,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5565004/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5565004/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5565004/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5565004/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5565004/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "thunderplains-2026-1353991",
+      "sourceId": "1353991",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "The Pace of Change (ThunderPlains 2026 Opening)",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "09:30",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T09:30:00-05:00",
+      "speaker": "Vance Lucas",
+      "speakers": [
+        "Vance Lucas"
+      ],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "talk",
+      "description": "Opening remarks on adapting to rapid AI-driven change in the technology industry.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1353991",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1353991",
+      "conflictDetection": true
+    },
+    {
+      "id": "thunderplains-2026-1252756",
+      "sourceId": "1252756",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Let's build our own Claude Code",
+      "date": "2026-10-21",
+      "startTime": "09:30",
+      "endTime": "10:30",
+      "start": "2026-10-21T09:30:00-05:00",
+      "end": "2026-10-21T10:30:00-05:00",
+      "speaker": "Max Gfeller",
+      "speakers": [
+        "Max Gfeller"
+      ],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "talk",
+      "description": "Live coding of a small coding agent, exploring tool use, context, model interaction, and the agent harness.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1252756",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1252756",
+      "conflictDetection": true
+    },
+    {
+      "id": "thunderplains-2026-1242850",
+      "sourceId": "1242850",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "RAG for Data Engineers: What It Is, Where It Fits, and Why Your Metadata Is the Missing Piece",
+      "date": "2026-10-21",
+      "startTime": "09:30",
+      "endTime": "10:30",
+      "start": "2026-10-21T09:30:00-05:00",
+      "end": "2026-10-21T10:30:00-05:00",
+      "speaker": "Varun Joshi",
+      "speakers": [
+        "Varun Joshi"
+      ],
+      "room": "Track CD",
+      "track": "Track CD",
+      "kind": "talk",
+      "description": "An introduction to retrieval-augmented generation for data engineering, including how schemas, lineage, query history, and metadata provide useful model context.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1242850",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1242850",
+      "conflictDetection": true
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5479403",
+      "sourceId": "5479403",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Expo Break - Coffee, Exhibits and Networking",
+      "date": "2026-10-21",
+      "startTime": "09:40",
+      "endTime": "10:10",
+      "start": "2026-10-21T09:40:00-05:00",
+      "end": "2026-10-21T10:10:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "",
+      "speakers": [],
+      "speakerDetails": [],
+      "room": "Exhibit Hall A, First Floor",
+      "track": "Networking and Open to All",
+      "tracks": [
+        "Networking and Open to All"
+      ],
+      "kind": "break",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479403/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479403/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479403/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479403/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479403/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479403/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479403/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5626168",
+      "sourceId": "5626168",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Regaining Meeting Equity – Neat Demo",
+      "date": "2026-10-21",
+      "startTime": "09:45",
+      "endTime": "10:15",
+      "start": "2026-10-21T09:45:00-05:00",
+      "end": "2026-10-21T10:15:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Vince Johnson",
+      "speakers": [
+        "Vince Johnson"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Vince Johnson",
+          "role": "Speaker",
+          "organization": "Neat Frame",
+          "title": "Solutions Engineer",
+          "sourceId": "54679908",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54679908/"
+        }
+      ],
+      "room": "Interworks Partner Theater, Exhibit Hall A, First Floor",
+      "track": "InnoTech",
+      "tracks": [],
+      "kind": "demo",
+      "description": "A Neat video-technology demonstration focused on making meetings feel more natural and engaging, with greater equity in how people experience and participate in them.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626168/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626168/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626168/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626168/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626168/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626168/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626168/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5480671",
+      "sourceId": "5480671",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Becoming the “Buffalo” Running into Challenges and Uncertainty Instead of Away",
+      "date": "2026-10-21",
+      "startTime": "10:10",
+      "endTime": "10:50",
+      "start": "2026-10-21T10:10:00-05:00",
+      "end": "2026-10-21T10:50:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Travis Ferrell, Mike Wood, Kenneth Miles, Victor Carneiro",
+      "speakers": [
+        "Travis Ferrell",
+        "Mike Wood",
+        "Kenneth Miles",
+        "Victor Carneiro"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Travis Ferrell",
+          "role": "Speakers",
+          "organization": "Vast Bank",
+          "title": "CIO",
+          "sourceId": "53216252",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53216252/"
+        },
+        {
+          "name": "Mike Wood",
+          "role": "Speakers",
+          "organization": "Avem Health Partners",
+          "title": "CIO",
+          "sourceId": "54135889",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54135889/"
+        },
+        {
+          "name": "Kenneth Miles",
+          "role": "Speakers",
+          "organization": "Tinker Federal Credit Union",
+          "title": "SVP, Technology Services",
+          "sourceId": "54099086",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54099086/"
+        },
+        {
+          "name": "Victor Carneiro",
+          "role": "Speakers",
+          "organization": "HealthChoice (OHCA-EGID)",
+          "title": "CTO",
+          "sourceId": "54502850",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54502850/"
+        }
+      ],
+      "room": "Room 201, Second Floor",
+      "track": "IT Leadership Track",
+      "tracks": [
+        "IT Leadership Track"
+      ],
+      "kind": "talk",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480671/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480671/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480671/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480671/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480671/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480671/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480671/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5570137",
+      "sourceId": "5570137",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Stuck or Moving? Leading Through Change Fatigue",
+      "date": "2026-10-21",
+      "startTime": "10:10",
+      "endTime": "10:50",
+      "start": "2026-10-21T10:10:00-05:00",
+      "end": "2026-10-21T10:50:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Blake Holman",
+      "speakers": [
+        "Blake Holman"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Blake Holman",
+          "role": "Speaker",
+          "organization": "JJH Enterprises, LLC",
+          "title": "Managing Partner",
+          "sourceId": "53216387",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53216387/"
+        }
+      ],
+      "room": "Room 202, Second Floor",
+      "track": "IT Leadership Track",
+      "tracks": [
+        "IT Leadership Track"
+      ],
+      "kind": "talk",
+      "description": "Helps technology leaders recognize change fatigue and understand its effects on performance, trust, and execution. Offers a framework for assessing where teams are struggling and helping them move from exhaustion toward renewed progress.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5570137/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5570137/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5570137/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5570137/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5570137/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5570137/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5570137/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5482573",
+      "sourceId": "5482573",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Hacked by Your Own AI: Harden Microsoft 365 Before AI Finds the Gaps",
+      "date": "2026-10-21",
+      "startTime": "10:10",
+      "endTime": "10:50",
+      "start": "2026-10-21T10:10:00-05:00",
+      "end": "2026-10-21T10:50:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Geoff Wilson",
+      "speakers": [
+        "Geoff Wilson"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Geoff Wilson",
+          "role": "Speaker",
+          "organization": "Go Security Pro",
+          "title": "CEO & Founder",
+          "sourceId": "53095821",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53095821/"
+        }
+      ],
+      "room": "Room 203, Second Floor",
+      "track": "Security",
+      "tracks": [
+        "Security"
+      ],
+      "kind": "talk",
+      "description": "Examines how AI tools can expose existing Microsoft 365 weaknesses in permissions, data sharing, labeling, and governance. Explains potential abuse of AI-enabled workflows and offers a hardening checklist and deployment roadmap for protecting organizational information.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5482573/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5482573/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5482573/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5482573/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5482573/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5482573/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5482573/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5345072",
+      "sourceId": "5345072",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Detecting and Controlling Shadow IT in an AI-First Enterprise",
+      "date": "2026-10-21",
+      "startTime": "10:10",
+      "endTime": "10:50",
+      "start": "2026-10-21T10:10:00-05:00",
+      "end": "2026-10-21T10:50:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Russell Parker, Mike Anderson, Nathan Sweaney, Scott Banks",
+      "speakers": [
+        "Russell Parker",
+        "Mike Anderson",
+        "Nathan Sweaney",
+        "Scott Banks"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Russell Parker",
+          "role": "Speakers",
+          "organization": "InterWorks, Inc",
+          "title": "Account Executive",
+          "sourceId": "54132562",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54132562/"
+        },
+        {
+          "name": "Mike Anderson",
+          "role": "Speakers",
+          "organization": "InfraGard Oklahoma Members Alliance",
+          "title": "President",
+          "sourceId": "54190986",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54190986/"
+        },
+        {
+          "name": "Nathan Sweaney",
+          "role": "Speakers",
+          "organization": "Oklahoma Cyber Innovation Institute",
+          "title": "Cyber Innovation Advisor",
+          "sourceId": "53849659",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53849659/"
+        },
+        {
+          "name": "Scott Banks",
+          "role": "Speakers",
+          "organization": "The Baker Group LP",
+          "title": "Chief Technology Officer",
+          "sourceId": "54891669",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54891669/"
+        }
+      ],
+      "room": "Room 204, Second Floor",
+      "track": "Security / AI & Data",
+      "tracks": [
+        "Security",
+        "AI & Data"
+      ],
+      "kind": "talk",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345072/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345072/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345072/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345072/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345072/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345072/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345072/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5584655",
+      "sourceId": "5584655",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Ransomware in the Real World: Lessons from the Front Lines",
+      "date": "2026-10-21",
+      "startTime": "10:10",
+      "endTime": "10:50",
+      "start": "2026-10-21T10:10:00-05:00",
+      "end": "2026-10-21T10:50:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Camron Borders, Will El Assili, Amber Mangham, Daisha Darnaby",
+      "speakers": [
+        "Camron Borders",
+        "Will El Assili",
+        "Amber Mangham",
+        "Daisha Darnaby"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Camron Borders",
+          "role": "Speakers",
+          "organization": "FBI Oklahoma City",
+          "title": "Special Agent",
+          "sourceId": "54349015",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54349015/"
+        },
+        {
+          "name": "Will El Assili",
+          "role": "Speakers",
+          "organization": "OMES Oklahoma Cyber Command",
+          "title": "Cybersecurity Defense Engineer",
+          "sourceId": "54521600",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54521600/"
+        },
+        {
+          "name": "Amber Mangham",
+          "role": "Speakers",
+          "organization": "Oklahoma Office of Management and Enterprise Services (OMES) Cyber Command",
+          "title": "Cyber Risk and Audit Specialist",
+          "sourceId": "54521586",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54521586/"
+        },
+        {
+          "name": "Daisha Darnaby",
+          "role": "Speakers",
+          "organization": "GO Security Pro",
+          "title": "Managing Consultant - Risk Advisory",
+          "sourceId": "54193241",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54193241/"
+        }
+      ],
+      "room": "Room 206AB, Second Floor",
+      "track": "OK-ISAC Symposium hosted by OMES",
+      "tracks": [
+        "OK-ISAC Symposium hosted by OMES"
+      ],
+      "kind": "talk",
+      "description": "Federal, state, and local responders share practical lessons from actual ransomware incidents. Topics include discovery, difficult response decisions, coordination, communications, recovery, and rebuilding, with takeaways to improve preparedness before an attack.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584655/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584655/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584655/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584655/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584655/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584655/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584655/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5483768",
+      "sourceId": "5483768",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Your AI Model Isn’t the System: Governing Agents, Data, Processes and Outcomes",
+      "date": "2026-10-21",
+      "startTime": "10:10",
+      "endTime": "10:50",
+      "start": "2026-10-21T10:10:00-05:00",
+      "end": "2026-10-21T10:50:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "George Trujillo",
+      "speakers": [
+        "George Trujillo"
+      ],
+      "speakerDetails": [
+        {
+          "name": "George Trujillo",
+          "role": "Speaker",
+          "organization": "Collibra",
+          "title": "Senior Business Value Consultant",
+          "sourceId": "53216388",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53216388/"
+        }
+      ],
+      "room": "Room 207AB, Second Floor",
+      "track": "AI & Data",
+      "tracks": [
+        "AI & Data"
+      ],
+      "kind": "talk",
+      "description": "Presents an operating model for governing complete AI systems, including agents, data, tools, and human decisions. Connects measurable business value and risk to ownership, evaluation gates, access controls, monitoring, audit evidence, and ongoing lifecycle oversight.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5483768/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5483768/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5483768/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5483768/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5483768/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5483768/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5483768/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5539037",
+      "sourceId": "5539037",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "The Happiness Formula: The Blueprint for Strong Women Who Are Tired",
+      "date": "2026-10-21",
+      "startTime": "10:10",
+      "endTime": "10:50",
+      "start": "2026-10-21T10:10:00-05:00",
+      "end": "2026-10-21T10:50:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Nikki Parker",
+      "speakers": [
+        "Nikki Parker"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Nikki Parker",
+          "role": "Speaker",
+          "organization": "Tulsa Community College",
+          "title": "Assistant Chief Human Resources Officer",
+          "sourceId": "54119582",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54119582/"
+        }
+      ],
+      "room": "Room 208AB, Second Floor",
+      "track": "Women in Tech Summit",
+      "tracks": [
+        "Women in Tech Summit"
+      ],
+      "kind": "talk",
+      "description": "An interactive session introducing the GLOW framework to help high-achieving women strengthen happiness and energy. Explores gratitude, rest, mindset, and intentional action as ways to support well-being while retaining ambition.\n\nSeparate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539037/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539037/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Separate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": true,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539037/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539037/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539037/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539037/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539037/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "thunderplains-2026-1241331",
+      "sourceId": "1241331",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Stop Building AI Demos: How to Ship AI Features People Actually Trust",
+      "date": "2026-10-21",
+      "startTime": "10:30",
+      "endTime": "11:30",
+      "start": "2026-10-21T10:30:00-05:00",
+      "end": "2026-10-21T11:30:00-05:00",
+      "speaker": "Vin Mitty, PhD",
+      "speakers": [
+        "Vin Mitty, PhD"
+      ],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "talk",
+      "description": "Practical lessons for building testable, trustworthy production AI features and deciding when AI fits a workflow.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1241331",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1241331",
+      "conflictDetection": true
+    },
+    {
+      "id": "thunderplains-2026-1219923",
+      "sourceId": "1219923",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Building Rapid Web Applications with Laravel + Filament",
+      "date": "2026-10-21",
+      "startTime": "10:30",
+      "endTime": "11:30",
+      "start": "2026-10-21T10:30:00-05:00",
+      "end": "2026-10-21T11:30:00-05:00",
+      "speaker": "Aaron Krauss",
+      "speakers": [
+        "Aaron Krauss"
+      ],
+      "room": "Track CD",
+      "track": "Track CD",
+      "kind": "talk",
+      "description": "Building data-heavy applications with Laravel and Filament, including forms, tables, admin patterns, and a live demonstration.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1219923",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1219923",
+      "conflictDetection": true
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5627033",
+      "sourceId": "5627033",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Island: Agentic Control Plane",
+      "date": "2026-10-21",
+      "startTime": "11:00",
+      "endTime": "11:30",
+      "start": "2026-10-21T11:00:00-05:00",
+      "end": "2026-10-21T11:30:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Garrett Pillasch",
+      "speakers": [
+        "Garrett Pillasch"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Garrett Pillasch",
+          "role": "Speaker",
+          "organization": "Island.io",
+          "title": "Solutions Engineer",
+          "sourceId": "54910322",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54910322/"
+        }
+      ],
+      "room": "Interworks Partner Demo Theater, Exhibit Hall A, First Floor",
+      "track": "InnoTech",
+      "tracks": [],
+      "kind": "demo",
+      "description": "An Island session focused on visibility into AI activity and applying governance controls when needed, presented under its Agentic Control Plane theme.\n\nThe official feed also lists another Island demo at the same 11:00–11:30 interval in the InterWorks partner theater. These may be duplicate/alternate titles; both source records are preserved pending organizer clarification.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5627033/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5627033/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5627033/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5627033/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5627033/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5627033/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5627033/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      },
+      "dataQualityNote": "The official feed also lists another Island demo at the same 11:00–11:30 interval in the InterWorks partner theater. These may be duplicate/alternate titles; both source records are preserved pending organizer clarification.",
+      "possibleDuplicateSourceIds": [
+        "5626171"
+      ]
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5626171",
+      "sourceId": "5626171",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Island.io Enterprise Workspace Demo",
+      "date": "2026-10-21",
+      "startTime": "11:00",
+      "endTime": "11:30",
+      "start": "2026-10-21T11:00:00-05:00",
+      "end": "2026-10-21T11:30:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "",
+      "speakers": [],
+      "speakerDetails": [],
+      "room": "Interworks Partner Theater, Exhibit Hall A, First Floor",
+      "track": "InnoTech",
+      "tracks": [],
+      "kind": "demo",
+      "description": "Demonstrates enterprise-browser capabilities for safer, more productive workplace browsing. Introduces the features, benefits, and potential use cases of Island.io's enterprise workspace approach.\n\nThe official feed also lists another Island demo at the same 11:00–11:30 interval in the InterWorks partner theater. These may be duplicate/alternate titles; both source records are preserved pending organizer clarification.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626171/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626171/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626171/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626171/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626171/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626171/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626171/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      },
+      "dataQualityNote": "The official feed also lists another Island demo at the same 11:00–11:30 interval in the InterWorks partner theater. These may be duplicate/alternate titles; both source records are preserved pending organizer clarification.",
+      "possibleDuplicateSourceIds": [
+        "5627033"
+      ]
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5345066",
+      "sourceId": "5345066",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Trailblazing IT Leadership for This Era of Innovation",
+      "date": "2026-10-21",
+      "startTime": "11:00",
+      "endTime": "11:40",
+      "start": "2026-10-21T11:00:00-05:00",
+      "end": "2026-10-21T11:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Hursh Juneja, Lauren Fassio, Cory Carson, Michael Mathews",
+      "speakers": [
+        "Hursh Juneja",
+        "Lauren Fassio",
+        "Cory Carson",
+        "Michael Mathews"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Hursh Juneja",
+          "role": "Speakers",
+          "organization": "Chickasaw Nation",
+          "title": "Head of Enterprise Architecture & Innovation, IT",
+          "sourceId": "53216395",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53216395/"
+        },
+        {
+          "name": "Lauren Fassio",
+          "role": "Speakers",
+          "organization": "American Public Life",
+          "title": "Director of IT, Business Applications & Enterprise PMO",
+          "sourceId": "54135864",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54135864/"
+        },
+        {
+          "name": "Cory Carson",
+          "role": "Speakers",
+          "organization": "iTology",
+          "title": "Founder & CEO",
+          "sourceId": "54191012",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54191012/"
+        },
+        {
+          "name": "Michael Mathews",
+          "role": "Speakers",
+          "organization": "Oral Roberts University",
+          "title": "VP of Innovation and Technology",
+          "sourceId": "54285654",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54285654/"
+        }
+      ],
+      "room": "Room 201, Second Floor",
+      "track": "IT Leadership Track",
+      "tracks": [
+        "IT Leadership Track"
+      ],
+      "kind": "talk",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345066/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345066/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345066/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345066/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345066/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345066/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345066/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5551125",
+      "sourceId": "5551125",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Data Readiness for AI-Enabled Value Creation",
+      "date": "2026-10-21",
+      "startTime": "11:00",
+      "endTime": "11:40",
+      "start": "2026-10-21T11:00:00-05:00",
+      "end": "2026-10-21T11:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Robert Nettles",
+      "speakers": [
+        "Robert Nettles"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Robert Nettles",
+          "role": "Speaker",
+          "organization": "Centre Technologies",
+          "title": "CISO",
+          "sourceId": "54196400",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54196400/"
+        }
+      ],
+      "room": "Room 202, Second Floor",
+      "track": "AI & Data",
+      "tracks": [
+        "AI & Data"
+      ],
+      "kind": "talk",
+      "description": "Offers a framework and maturity model for assessing whether data is ready to support valuable AI use cases. Covers quality, ownership, accessibility, governance, business alignment, and prioritization, with examples and a practical adoption roadmap.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551125/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551125/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551125/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551125/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551125/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551125/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551125/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5542957",
+      "sourceId": "5542957",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Security Tool Sprawl",
+      "date": "2026-10-21",
+      "startTime": "11:00",
+      "endTime": "11:40",
+      "start": "2026-10-21T11:00:00-05:00",
+      "end": "2026-10-21T11:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Andy Adams",
+      "speakers": [
+        "Andy Adams"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Andy Adams",
+          "role": "Speaker",
+          "organization": "CyberOne Security",
+          "title": "Senior Security Consultant",
+          "sourceId": "54098514",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54098514/"
+        }
+      ],
+      "room": "Room 203, Second Floor",
+      "track": "Security",
+      "tracks": [
+        "Security"
+      ],
+      "kind": "talk",
+      "description": "Examines how organizations can reduce security-product overlap while addressing missing protections. Focuses on identifying redundant tools and bringing controls together into a more coherent security architecture.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5542957/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5542957/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5542957/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5542957/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5542957/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5542957/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5542957/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5556948",
+      "sourceId": "5556948",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Deep Fakin’ in 2026",
+      "date": "2026-10-21",
+      "startTime": "11:00",
+      "endTime": "11:40",
+      "start": "2026-10-21T11:00:00-05:00",
+      "end": "2026-10-21T11:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Donovan Farrow",
+      "speakers": [
+        "Donovan Farrow"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Donovan Farrow",
+          "role": "Speaker",
+          "organization": "Alias Cybersecurity",
+          "title": "Founder & CEO",
+          "sourceId": "54132472",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54132472/"
+        }
+      ],
+      "room": "Room 204, Second Floor",
+      "track": "Security",
+      "tracks": [
+        "Security"
+      ],
+      "kind": "talk",
+      "description": "Explores AI-enabled impersonation through phishing, voice attacks, cloning, and video deepfakes. Uses examples to explain how attackers exploit trust and evade existing controls, then outlines practical ways to recognize and defend against these threats.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5556948/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5556948/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5556948/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5556948/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5556948/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5556948/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5556948/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5584660",
+      "sourceId": "5584660",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Beyond the Hype: Measuring the Real ROI of AI",
+      "date": "2026-10-21",
+      "startTime": "11:00",
+      "endTime": "11:40",
+      "start": "2026-10-21T11:00:00-05:00",
+      "end": "2026-10-21T11:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Tab Pierce, Nick Travis, Kabutey Ebeheakey",
+      "speakers": [
+        "Tab Pierce",
+        "Nick Travis",
+        "Kabutey Ebeheakey"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Tab Pierce",
+          "role": "Speakers",
+          "organization": "State of Oklahoma Transportation Cabinet",
+          "title": "Chief Technology Officer",
+          "sourceId": "54521753",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54521753/"
+        },
+        {
+          "name": "Nick Travis",
+          "role": "Speakers",
+          "organization": "Palo Alto Networks",
+          "title": "Director Solutions Consulting",
+          "sourceId": "54077166",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54077166/"
+        },
+        {
+          "name": "Kabutey Ebeheakey",
+          "role": "Speakers",
+          "organization": "UpGuard",
+          "title": "Principal Customer Success Manager",
+          "sourceId": "54828351",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54828351/"
+        }
+      ],
+      "room": "Room 206AB, Second Floor",
+      "track": "OK-ISAC Symposium hosted by OMES",
+      "tracks": [
+        "OK-ISAC Symposium hosted by OMES"
+      ],
+      "kind": "talk",
+      "description": "A panel on measuring sustainable returns from AI investments while considering governance, transparency, privacy, security, and people. Also examines the infrastructure trade-offs among cloud services, physical data centers, and hybrid approaches.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584660/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584660/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584660/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584660/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584660/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584660/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584660/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5578525",
+      "sourceId": "5578525",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Building Agent Memory with Open Knowledge Format",
+      "date": "2026-10-21",
+      "startTime": "11:00",
+      "endTime": "11:40",
+      "start": "2026-10-21T11:00:00-05:00",
+      "end": "2026-10-21T11:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Matthew Harrison, Zachary Miller",
+      "speakers": [
+        "Matthew Harrison",
+        "Zachary Miller"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Matthew Harrison",
+          "role": "Speakers",
+          "organization": "BIS",
+          "title": "Enterprise Solution Architect",
+          "sourceId": "54455530",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54455530/"
+        },
+        {
+          "name": "Zachary Miller",
+          "role": "Speakers",
+          "organization": "BIS",
+          "title": "Solutions Architect",
+          "sourceId": "54455544",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54455544/"
+        }
+      ],
+      "room": "Room 207AB, Second Floor",
+      "track": "AI & Data",
+      "tracks": [
+        "AI & Data"
+      ],
+      "kind": "talk",
+      "description": "Shares lessons from building agent-memory knowledge graphs with Open Knowledge Format, Markdown, and Git. Covers initial agent instructions, folder structure, efficient ingestion, separating generated material from verified knowledge, and judging whether the graph delivers enough value.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5578525/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5578525/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5578525/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5578525/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5578525/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5578525/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5578525/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5345076",
+      "sourceId": "5345076",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Your Career 3.0 & Upskilling, Reskilling, and Workforce Readiness",
+      "date": "2026-10-21",
+      "startTime": "11:00",
+      "endTime": "11:40",
+      "start": "2026-10-21T11:00:00-05:00",
+      "end": "2026-10-21T11:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Jenae Thompson, Samantha Werner, Dajah Brooks, Melissa Aarskaug",
+      "speakers": [
+        "Jenae Thompson",
+        "Samantha Werner",
+        "Dajah Brooks",
+        "Melissa Aarskaug"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Jenae Thompson",
+          "role": "Speakers",
+          "organization": "Oncology Clinical Trials",
+          "title": "Senior Project Manager",
+          "sourceId": "54235835",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54235835/"
+        },
+        {
+          "name": "Samantha Werner",
+          "role": "Speakers",
+          "organization": "Tenstreet, LLC",
+          "title": "People Ops",
+          "sourceId": "54240439",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54240439/"
+        },
+        {
+          "name": "Dajah Brooks",
+          "role": "Speakers",
+          "organization": "Tenstreet, LLC",
+          "title": "Data Scientist",
+          "sourceId": "54232514",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54232514/"
+        },
+        {
+          "name": "Melissa Aarskaug",
+          "role": "Speakers",
+          "organization": "Executive Connect",
+          "title": "Founder",
+          "sourceId": "54313346",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54313346/"
+        }
+      ],
+      "room": "Room 208AB, Second Floor",
+      "track": "Women in Tech Summit",
+      "tracks": [
+        "Women in Tech Summit"
+      ],
+      "kind": "talk",
+      "description": "Separate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345076/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345076/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Separate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": true,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345076/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345076/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345076/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345076/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345076/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "thunderplains-2026-1274507",
+      "sourceId": "1274507",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Everything Old Is New Again: Agentic Spec-Driven Development Makes Rigor Cheap, Fast, and Easy",
+      "date": "2026-10-21",
+      "startTime": "11:30",
+      "endTime": "12:30",
+      "start": "2026-10-21T11:30:00-05:00",
+      "end": "2026-10-21T12:30:00-05:00",
+      "speaker": "Frank Evans",
+      "speakers": [
+        "Frank Evans"
+      ],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "talk",
+      "description": "A live demonstration of agents applying requirements, testing, task decomposition, and code review to a rigorous software development workflow.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1274507",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1274507",
+      "conflictDetection": true
+    },
+    {
+      "id": "thunderplains-2026-1274450",
+      "sourceId": "1274450",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "When Every Device Speaks a Different Language: Building Resilient Event-Driven Systems",
+      "date": "2026-10-21",
+      "startTime": "11:30",
+      "endTime": "12:30",
+      "start": "2026-10-21T11:30:00-05:00",
+      "end": "2026-10-21T12:30:00-05:00",
+      "speaker": "Fatemeh Azam",
+      "speakers": [
+        "Fatemeh Azam"
+      ],
+      "room": "Track CD",
+      "track": "Track CD",
+      "kind": "talk",
+      "description": "Lessons from a smart-city testbed on integrating heterogeneous device telemetry, Python and Node.js services, and failure-tolerant event-driven architecture.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1274450",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1274450",
+      "conflictDetection": true
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5479384",
+      "sourceId": "5479384",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Women in Tech Summit Luncheon",
+      "date": "2026-10-21",
+      "startTime": "11:50",
+      "endTime": "13:20",
+      "start": "2026-10-21T11:50:00-05:00",
+      "end": "2026-10-21T13:20:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "",
+      "speakers": [],
+      "speakerDetails": [],
+      "room": "Room 208AB, Second Floor",
+      "track": "Women in Tech Summit / Paid Luncheon & Special Event",
+      "tracks": [
+        "Women in Tech Summit",
+        "Paid Luncheon & Special Event"
+      ],
+      "kind": "luncheon",
+      "description": "Timing note: the detailed agenda lists 11:50 a.m.–1:20 p.m., while the standalone event page says 11:30 a.m. Confirm arrival and check-in time.\n\nSeparate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479384/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479384/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Separate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": true,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479384/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479384/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479384/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479384/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479384/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5479389",
+      "sourceId": "5479389",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "IT Executive Luncheon - AI Isn't Just Changing IT. It's Rewriting the Leadership Playbook",
+      "date": "2026-10-21",
+      "startTime": "11:50",
+      "endTime": "13:20",
+      "start": "2026-10-21T11:50:00-05:00",
+      "end": "2026-10-21T13:20:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Blake Holman, Anh Selissen, Kevin Johnson",
+      "speakers": [
+        "Blake Holman",
+        "Anh Selissen",
+        "Kevin Johnson"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Blake Holman",
+          "role": "Speakers",
+          "organization": "JJH Enterprises, LLC",
+          "title": "Managing Partner",
+          "sourceId": "53216387",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53216387/"
+        },
+        {
+          "name": "Anh Selissen",
+          "role": "Speakers",
+          "organization": "Texas Department of Transportation",
+          "title": "Chief Information Officer",
+          "sourceId": "54098712",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54098712/"
+        },
+        {
+          "name": "Kevin Johnson",
+          "role": "Speakers",
+          "organization": "Rockcliff Energy",
+          "title": "Chief Technology Officer",
+          "sourceId": "54162752",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54162752/"
+        }
+      ],
+      "room": "Room 209AB, Second Floor",
+      "track": "IT Leadership Track / AI & Data / Paid Luncheon & Special Event",
+      "tracks": [
+        "IT Leadership Track",
+        "AI & Data",
+        "Paid Luncheon & Special Event"
+      ],
+      "kind": "luncheon",
+      "description": "An executive discussion of how generative AI changes talent strategy, decision-making speed, and technology leadership responsibilities. Explores how CIOs, CTOs, and CISOs can rebalance authority so risk management supports faster innovation.\n\nTiming note: the detailed agenda lists 11:50 a.m.–1:20 p.m., while the standalone event page says 11:30 a.m. Confirm arrival and check-in time.\n\nSeparately ticketed premium program according to official event information; confirm your pass entitlement.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479389/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479389/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Separately ticketed premium program according to official event information; confirm your pass entitlement.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": true,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479389/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479389/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479389/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479389/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479389/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "thunderplains-2026-02499046-49d3-460e-8e42-81a71065f258",
+      "sourceId": "02499046-49d3-460e-8e42-81a71065f258",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Lunch Break",
+      "date": "2026-10-21",
+      "startTime": "12:30",
+      "endTime": "13:30",
+      "start": "2026-10-21T12:30:00-05:00",
+      "end": "2026-10-21T13:30:00-05:00",
+      "speaker": "",
+      "speakers": [],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "service",
+      "description": "",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-02499046-49d3-460e-8e42-81a71065f258",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "conflictDetection": true
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5599918",
+      "sourceId": "5599918",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "A New Way to SIEM: Designing a Distributed Security Data Platform",
+      "date": "2026-10-21",
+      "startTime": "13:00",
+      "endTime": "13:40",
+      "start": "2026-10-21T13:00:00-05:00",
+      "end": "2026-10-21T13:40:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Perry Correll",
+      "speakers": [
+        "Perry Correll"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Perry Correll",
+          "role": "Speaker",
+          "organization": "Cribl",
+          "title": "Principal Technical Content Manager",
+          "sourceId": "54536143",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54536143/"
+        }
+      ],
+      "room": "Room 204, Second Floor",
+      "track": "AI & Data / Security",
+      "tracks": [
+        "AI & Data",
+        "Security"
+      ],
+      "kind": "talk",
+      "description": "Explains a distributed SIEM architecture combining telemetry pipelines, a security data lake, and selective real-time detection. Covers retention economics, investigation access, preparing data for AI tools, and phased adoption alongside an existing SIEM.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5599918/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5599918/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5599918/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5599918/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5599918/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5599918/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5599918/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5628112",
+      "sourceId": "5628112",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "We Broke Some Things: Lessons from the IT Trenches",
+      "date": "2026-10-21",
+      "startTime": "13:30",
+      "endTime": "14:10",
+      "start": "2026-10-21T13:30:00-05:00",
+      "end": "2026-10-21T14:10:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Jordan Capps, Lauren Fassio",
+      "speakers": [
+        "Jordan Capps",
+        "Lauren Fassio"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Jordan Capps",
+          "role": "Speakers",
+          "organization": "American Public Life",
+          "title": "IT Director, Applications & Infrastructure",
+          "sourceId": "54161716",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54161716/"
+        },
+        {
+          "name": "Lauren Fassio",
+          "role": "Speakers",
+          "organization": "American Public Life",
+          "title": "Director of IT, Business Applications & Enterprise PMO",
+          "sourceId": "54135864",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54135864/"
+        }
+      ],
+      "room": "Room 201, Second Floor",
+      "track": "IT Leadership Track / Cloud & Infrastructure",
+      "tracks": [
+        "IT Leadership Track",
+        "Cloud & Infrastructure"
+      ],
+      "kind": "talk",
+      "description": "Two IT leaders reflect on mistakes, difficult decisions, unexpected vendor issues, and trade-offs involved in moving quickly while maintaining control over their technology operations.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5628112/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5628112/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5628112/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5628112/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5628112/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5628112/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5628112/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5585660",
+      "sourceId": "5585660",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Spec-Driven Development: Building Smarter with AI",
+      "date": "2026-10-21",
+      "startTime": "13:30",
+      "endTime": "14:10",
+      "start": "2026-10-21T13:30:00-05:00",
+      "end": "2026-10-21T14:10:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Aaron Krauss",
+      "speakers": [
+        "Aaron Krauss"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Aaron Krauss",
+          "role": "Speaker",
+          "organization": "Clevyr",
+          "title": "Technical Lead of New Development",
+          "sourceId": "54522020",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54522020/"
+        }
+      ],
+      "room": "Room 202, Second Floor",
+      "track": "Software and Development",
+      "tracks": [
+        "Software and Development"
+      ],
+      "kind": "talk",
+      "description": "Introduces spec-driven development as a way to guide AI coding tools with clear, structured requirements. Covers version-controlled specifications, standardized frameworks and conventions, and incremental adoption to improve consistency while reducing misunderstandings and rework.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5585660/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5585660/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5585660/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5585660/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5585660/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5585660/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5585660/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5505953",
+      "sourceId": "5505953",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Closing the AI Exposure Window",
+      "date": "2026-10-21",
+      "startTime": "13:30",
+      "endTime": "14:10",
+      "start": "2026-10-21T13:30:00-05:00",
+      "end": "2026-10-21T14:10:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Andrew Garrett",
+      "speakers": [
+        "Andrew Garrett"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Andrew Garrett",
+          "role": "Speaker",
+          "organization": "Red Hat",
+          "title": "AAP Sales Leader, US Corp West",
+          "sourceId": "53915280",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53915280/"
+        }
+      ],
+      "room": "Room 203, Second Floor",
+      "track": "AI & Data / Security",
+      "tracks": [
+        "AI & Data",
+        "Security"
+      ],
+      "kind": "talk",
+      "description": "Examines how AI accelerates vulnerability discovery and exploit development, increasing pressure on software remediation. Focuses on designing automation to assess exposure, apply mitigations, obtain fixes, and verify updates at a faster pace.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505953/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505953/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505953/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505953/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505953/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505953/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505953/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5505347",
+      "sourceId": "5505347",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Hacker Hardware Tools Show and Tell 3.0",
+      "date": "2026-10-21",
+      "startTime": "13:30",
+      "endTime": "14:10",
+      "start": "2026-10-21T13:30:00-05:00",
+      "end": "2026-10-21T14:10:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Jonathan Kimmitt",
+      "speakers": [
+        "Jonathan Kimmitt"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Jonathan Kimmitt",
+          "role": "Speaker",
+          "organization": "Alias Cybersecurity",
+          "title": "CISO",
+          "sourceId": "54132507",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54132507/"
+        }
+      ],
+      "room": "Room 206AB, Second Floor",
+      "track": "Security / OK-ISAC Symposium hosted by OMES",
+      "tracks": [
+        "Security",
+        "OK-ISAC Symposium hosted by OMES"
+      ],
+      "kind": "talk",
+      "description": "A returning show-and-tell session demonstrating hardware tools used by hackers, with discussion of how to avoid the threats those tools can pose.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505347/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505347/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505347/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505347/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505347/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505347/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505347/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5485410",
+      "sourceId": "5485410",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Leading the AI Transformation: Practical Lessons for Organizations",
+      "date": "2026-10-21",
+      "startTime": "13:30",
+      "endTime": "14:10",
+      "start": "2026-10-21T13:30:00-05:00",
+      "end": "2026-10-21T14:10:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Trevor Wiseman, Chris Scully, Ben Bausili, Joe Bowersox",
+      "speakers": [
+        "Trevor Wiseman",
+        "Chris Scully",
+        "Ben Bausili",
+        "Joe Bowersox"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Trevor Wiseman",
+          "role": "Speakers",
+          "organization": "Director of IT, DRTC",
+          "title": "Author of The Wiseman Brief",
+          "sourceId": "53745490",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53745490/"
+        },
+        {
+          "name": "Chris Scully",
+          "role": "Speakers",
+          "organization": "Interworks",
+          "title": "Account Executive",
+          "sourceId": "54132558",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54132558/"
+        },
+        {
+          "name": "Ben Bausili",
+          "role": "Speakers",
+          "organization": "Global Director of AI Solutions",
+          "title": "Interworks",
+          "sourceId": "54243223",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54243223/"
+        },
+        {
+          "name": "Joe Bowersox",
+          "role": "Speakers",
+          "organization": "Jasco Products",
+          "title": "Vice President Of Technology Solutions",
+          "sourceId": "54382534",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54382534/"
+        }
+      ],
+      "room": "Room 207AB, Second Floor",
+      "track": "AI & Data",
+      "tracks": [
+        "AI & Data"
+      ],
+      "kind": "talk",
+      "description": "Discusses practical approaches to leading organizational AI adoption, from an inspiring vision and business-aligned strategy to governance and responsible practices. Shares lessons from implementation and the operating models needed to support change.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485410/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485410/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485410/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485410/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485410/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485410/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485410/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5519569",
+      "sourceId": "5519569",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Beyond the Résumé – The Power of Networking & Community",
+      "date": "2026-10-21",
+      "startTime": "13:30",
+      "endTime": "14:10",
+      "start": "2026-10-21T13:30:00-05:00",
+      "end": "2026-10-21T14:10:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Kate Curran, Hursh Juneja, Jordan Capps, Cindy Wilson, John Marcellus",
+      "speakers": [
+        "Kate Curran",
+        "Hursh Juneja",
+        "Jordan Capps",
+        "Cindy Wilson",
+        "John Marcellus"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Kate Curran",
+          "role": "Speakers",
+          "organization": "American Fidelity",
+          "title": "VP, Digital Business Systems",
+          "sourceId": "54120192",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54120192/"
+        },
+        {
+          "name": "Hursh Juneja",
+          "role": "Speakers",
+          "organization": "Chickasaw Nation",
+          "title": "Head of Enterprise Architecture & Innovation, IT",
+          "sourceId": "53216395",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53216395/"
+        },
+        {
+          "name": "Jordan Capps",
+          "role": "Speakers",
+          "organization": "American Public Life",
+          "title": "IT Director, Applications & Infrastructure",
+          "sourceId": "54161716",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54161716/"
+        },
+        {
+          "name": "Cindy Wilson",
+          "role": "Speakers",
+          "organization": "EY & OK Women in Tech",
+          "title": "Manager, Tech Consulting",
+          "sourceId": "54165602",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54165602/"
+        },
+        {
+          "name": "John Marcellus",
+          "role": "Speakers",
+          "organization": "World Wide Technology",
+          "title": "OKTL Council Member/CSE for WWT",
+          "sourceId": "54950979",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54950979/"
+        }
+      ],
+      "room": "Room 208AB, Second Floor",
+      "track": "Women in Tech Summit",
+      "tracks": [
+        "Women in Tech Summit"
+      ],
+      "kind": "talk",
+      "description": "Separate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5519569/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5519569/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Separate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": true,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5519569/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5519569/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5519569/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5519569/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5519569/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "thunderplains-2026-1238448",
+      "sourceId": "1238448",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Confessions of an AI Vampire: Building Software When the Agents Never Sleep",
+      "date": "2026-10-21",
+      "startTime": "13:30",
+      "endTime": "14:30",
+      "start": "2026-10-21T13:30:00-05:00",
+      "end": "2026-10-21T14:30:00-05:00",
+      "speaker": "Dale Spoonemore",
+      "speakers": [
+        "Dale Spoonemore"
+      ],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "talk",
+      "description": "Experiences with AI-first development and agent orchestration, including a small development team supporting ten companies and the challenge of staying always on.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1238448",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1238448",
+      "conflictDetection": true
+    },
+    {
+      "id": "thunderplains-2026-1276693",
+      "sourceId": "1276693",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Next generation web development with TanStack Start",
+      "date": "2026-10-21",
+      "startTime": "13:30",
+      "endTime": "14:30",
+      "start": "2026-10-21T13:30:00-05:00",
+      "end": "2026-10-21T14:30:00-05:00",
+      "speaker": "Adam Rackis",
+      "speakers": [
+        "Adam Rackis"
+      ],
+      "room": "Track CD",
+      "track": "Track CD",
+      "kind": "talk",
+      "description": "An overview of TanStack Start features, server-side rendering, loaders, and pre-rendering, with comparisons to Next and Remix.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1276693",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1276693",
+      "conflictDetection": true
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5479405",
+      "sourceId": "5479405",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Expo Break - Coffee, Exhibits and Networking",
+      "date": "2026-10-21",
+      "startTime": "14:10",
+      "endTime": "14:35",
+      "start": "2026-10-21T14:10:00-05:00",
+      "end": "2026-10-21T14:35:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "",
+      "speakers": [],
+      "speakerDetails": [],
+      "room": "Exhibit Hall A, First Floor",
+      "track": "Networking and Open to All",
+      "tracks": [
+        "Networking and Open to All"
+      ],
+      "kind": "break",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479405/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479405/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479405/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479405/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479405/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479405/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479405/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5626172",
+      "sourceId": "5626172",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Better Together: Closing Security Gaps with InterWorks and ArmorPoint",
+      "date": "2026-10-21",
+      "startTime": "14:15",
+      "endTime": "14:45",
+      "start": "2026-10-21T14:15:00-05:00",
+      "end": "2026-10-21T14:45:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "John Crowley",
+      "speakers": [
+        "John Crowley"
+      ],
+      "speakerDetails": [
+        {
+          "name": "John Crowley",
+          "role": "Speaker",
+          "organization": "ArmorPoint",
+          "title": "",
+          "sourceId": "54903114",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54903114/"
+        }
+      ],
+      "room": "Interworks Partner Theater, Exhibit Hall A, First Floor",
+      "track": "InnoTech",
+      "tracks": [],
+      "kind": "demo",
+      "description": "Demonstrates how ArmorPoint and InterWorks combine security visibility, risk prioritization, threat investigation, and response. Shows how a more connected view of an organization's environment can support quicker, better-informed security decisions.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626172/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626172/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626172/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626172/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626172/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626172/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626172/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "thunderplains-2026-1268807",
+      "sourceId": "1268807",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Leading the Machine: The Software Engineering Managers Playbook for AI-First Teams",
+      "date": "2026-10-21",
+      "startTime": "14:30",
+      "endTime": "15:30",
+      "start": "2026-10-21T14:30:00-05:00",
+      "end": "2026-10-21T15:30:00-05:00",
+      "speaker": "Ken Versaw",
+      "speakers": [
+        "Ken Versaw"
+      ],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "talk",
+      "description": "Engineering management in AI-first teams, with attention to productivity measures, leadership, and the human effects of changing development practices.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1268807",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1268807",
+      "conflictDetection": true
+    },
+    {
+      "id": "thunderplains-2026-3d368c7d-7e93-4bd6-8298-bc981a268d0a",
+      "sourceId": "3d368c7d-7e93-4bd6-8298-bc981a268d0a",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Lightning Talks (Round 1)",
+      "date": "2026-10-21",
+      "startTime": "14:30",
+      "endTime": "15:30",
+      "start": "2026-10-21T14:30:00-05:00",
+      "end": "2026-10-21T15:30:00-05:00",
+      "speaker": "",
+      "speakers": [],
+      "room": "Track CD",
+      "track": "Track CD",
+      "kind": "service",
+      "description": "",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-3d368c7d-7e93-4bd6-8298-bc981a268d0a",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "conflictDetection": true
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5567109",
+      "sourceId": "5567109",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Modernizing Infrastructure for Tomorrow’s Enterprise Network",
+      "date": "2026-10-21",
+      "startTime": "14:35",
+      "endTime": "15:15",
+      "start": "2026-10-21T14:35:00-05:00",
+      "end": "2026-10-21T15:15:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "",
+      "speakers": [],
+      "speakerDetails": [],
+      "room": "Room 201, Second Floor",
+      "track": "IT Leadership Track / AI & Data / Cloud & Infrastructure",
+      "tracks": [
+        "IT Leadership Track",
+        "AI & Data",
+        "Cloud & Infrastructure"
+      ],
+      "kind": "talk",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5567109/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5567109/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5567109/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5567109/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5567109/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5567109/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5567109/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5559248",
+      "sourceId": "5559248",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Six People and an IIS Server: When a Small Infrastructure Team Should Just Build it.",
+      "date": "2026-10-21",
+      "startTime": "14:35",
+      "endTime": "15:15",
+      "start": "2026-10-21T14:35:00-05:00",
+      "end": "2026-10-21T15:15:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Phillip Vargyas",
+      "speakers": [
+        "Phillip Vargyas"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Phillip Vargyas",
+          "role": "Speaker",
+          "organization": "LSB Industries",
+          "title": "Director, Infrastructure and Cybersecurity",
+          "sourceId": "54365781",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54365781/"
+        }
+      ],
+      "room": "Room 202, Second Floor",
+      "track": "Cloud & Infrastructure",
+      "tracks": [
+        "Cloud & Infrastructure"
+      ],
+      "kind": "talk",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5559248/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5559248/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5559248/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5559248/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5559248/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5559248/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5559248/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5560230",
+      "sourceId": "5560230",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Identity: The Master Key to Your Data",
+      "date": "2026-10-21",
+      "startTime": "14:35",
+      "endTime": "15:15",
+      "start": "2026-10-21T14:35:00-05:00",
+      "end": "2026-10-21T15:15:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Zach Draper",
+      "speakers": [
+        "Zach Draper"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Zach Draper",
+          "role": "Speaker",
+          "organization": "Rubrik",
+          "title": "Systems Engineer",
+          "sourceId": "54273644",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54273644/"
+        }
+      ],
+      "room": "Room 203, Second Floor",
+      "track": "Security",
+      "tracks": [
+        "Security"
+      ],
+      "kind": "talk",
+      "description": "Explores the connection between identity compromise, ransomware, and backup resilience. Argues for integrated data protection and identity recovery, with Rubrik examples spanning Active Directory, Entra ID, and Okta rather than relying on manual recovery alone.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560230/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560230/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560230/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560230/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560230/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560230/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560230/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5568869",
+      "sourceId": "5568869",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Critical AI Security Components Leaders Must Consider",
+      "date": "2026-10-21",
+      "startTime": "14:35",
+      "endTime": "15:15",
+      "start": "2026-10-21T14:35:00-05:00",
+      "end": "2026-10-21T15:15:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Walter Hirsekorn",
+      "speakers": [
+        "Walter Hirsekorn"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Walter Hirsekorn",
+          "role": "Speaker",
+          "organization": "ISG",
+          "title": "Serial Cyber and AI Technologist",
+          "sourceId": "54119932",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54119932/"
+        }
+      ],
+      "room": "Room 204, Second Floor",
+      "track": "Security",
+      "tracks": [
+        "Security"
+      ],
+      "kind": "talk",
+      "description": "Highlights governance, ethics, bias, and security issues leaders should address before AI deployment. Applies concepts from NIST's AI risk guidance and generative AI profile to identify important questions and concrete security-leadership actions.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5568869/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5568869/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5568869/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5568869/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5568869/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5568869/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5568869/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5584661",
+      "sourceId": "5584661",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "From Root to Ring 3: Surviving a Full-Spectrum PAM Rollout Without Starting a Riot",
+      "date": "2026-10-21",
+      "startTime": "14:35",
+      "endTime": "15:15",
+      "start": "2026-10-21T14:35:00-05:00",
+      "end": "2026-10-21T15:15:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Gavin McMahan, Randall Munsinger, Elbert Myles",
+      "speakers": [
+        "Gavin McMahan",
+        "Randall Munsinger",
+        "Elbert Myles"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Gavin McMahan",
+          "role": "Speakers",
+          "organization": "Oklahoma OMES",
+          "title": "Security Engineer",
+          "sourceId": "54521626",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54521626/"
+        },
+        {
+          "name": "Randall Munsinger",
+          "role": "Speakers",
+          "organization": "OMES",
+          "title": "Cyber Defense Engineer",
+          "sourceId": "53916028",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53916028/"
+        },
+        {
+          "name": "Elbert Myles",
+          "role": "Speakers",
+          "organization": "OMES",
+          "title": "Cyber Security Engineer",
+          "sourceId": "53899612",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53899612/"
+        }
+      ],
+      "room": "Room 206AB, Second Floor",
+      "track": "OK-ISAC Symposium hosted by OMES",
+      "tracks": [
+        "OK-ISAC Symposium hosted by OMES"
+      ],
+      "kind": "talk",
+      "description": "Outlines technical architectures and practical strategies for rolling out privileged access management across infrastructure and user endpoints together, while preserving service availability, developer productivity, and cooperation across the organization.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584661/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584661/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584661/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584661/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584661/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584661/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584661/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5505997",
+      "sourceId": "5505997",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "The Executive Playbook for Enterprise AI Guardrails",
+      "date": "2026-10-21",
+      "startTime": "14:35",
+      "endTime": "15:15",
+      "start": "2026-10-21T14:35:00-05:00",
+      "end": "2026-10-21T15:15:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Ian Anderson, Charlie Ray, Mary Sumner, Taylor Rhoades",
+      "speakers": [
+        "Ian Anderson",
+        "Charlie Ray",
+        "Mary Sumner",
+        "Taylor Rhoades"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Ian Anderson",
+          "role": "Speakers",
+          "organization": "Oklahoma Gas and Electric",
+          "title": "Director, Enterprise Security, Network and Monitoring",
+          "sourceId": "53915550",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53915550/"
+        },
+        {
+          "name": "Charlie Ray",
+          "role": "Speakers",
+          "organization": "Diamondback Energy",
+          "title": "IT Director",
+          "sourceId": "53915614",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53915614/"
+        },
+        {
+          "name": "Mary Sumner",
+          "role": "Speakers",
+          "organization": "Price College of Business, University of Oklahoma",
+          "title": "Professor, Division of Management Information Systems",
+          "sourceId": "53960984",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/53960984/"
+        },
+        {
+          "name": "Taylor Rhoades",
+          "role": "Speakers",
+          "organization": "Mercy Healthcare",
+          "title": "Director of Responsible AI",
+          "sourceId": "54170574",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54170574/"
+        }
+      ],
+      "room": "Room 207AB, Second Floor",
+      "track": "AI & Data",
+      "tracks": [
+        "AI & Data"
+      ],
+      "kind": "talk",
+      "description": "An executive panel examining AI policies, accountability for errors, output review, and unsanctioned use. Also addresses guardrails for agents and non-human identities, and asks leaders to reassess assumptions behind their current governance practices.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505997/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505997/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505997/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505997/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505997/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505997/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505997/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5539119",
+      "sourceId": "5539119",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Owning Your Personal Brand in an AI-Driven World",
+      "date": "2026-10-21",
+      "startTime": "14:35",
+      "endTime": "15:15",
+      "start": "2026-10-21T14:35:00-05:00",
+      "end": "2026-10-21T15:15:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "Alan White, Angee Noel, Brigette Zorn, Chef LaToya Larkin, MBA",
+      "speakers": [
+        "Alan White",
+        "Angee Noel",
+        "Brigette Zorn",
+        "Chef LaToya Larkin, MBA"
+      ],
+      "speakerDetails": [
+        {
+          "name": "Alan White",
+          "role": "Speakers",
+          "organization": "LSB Industries",
+          "title": "VP of IT",
+          "sourceId": "54239497",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54239497/"
+        },
+        {
+          "name": "Angee Noel",
+          "role": "Speakers",
+          "organization": "Gaming is Rezilience",
+          "title": "Founder",
+          "sourceId": "54313708",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54313708/"
+        },
+        {
+          "name": "Brigette Zorn",
+          "role": "Speakers",
+          "organization": "Modern Media Coach",
+          "title": "",
+          "sourceId": "54456828",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54456828/"
+        },
+        {
+          "name": "Chef LaToya Larkin, MBA",
+          "role": "Speakers",
+          "organization": "",
+          "title": "Mise en Cost-Founder",
+          "sourceId": "54471979",
+          "url": "https://whova.com/embedded/speaker/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/54471979/"
+        }
+      ],
+      "room": "Room 208AB, Second Floor",
+      "track": "Women in Tech Summit",
+      "tracks": [
+        "Women in Tech Summit"
+      ],
+      "kind": "talk",
+      "description": "Separate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539119/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539119/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Separate Women in Tech Summit ticket required according to the official FAQ; confirm any bundled pass entitlement.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": true,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539119/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539119/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539119/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539119/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539119/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "innotech-oklahoma-2026-happy-45-minute-reception",
+      "sourceId": "5479357",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Happy 45-Minute Reception & Passport Prize Drawings",
+      "date": "2026-10-21",
+      "startTime": "15:15",
+      "endTime": "16:00",
+      "start": "2026-10-21T15:15:00-05:00",
+      "end": "2026-10-21T16:00:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "",
+      "speakers": [],
+      "speakerDetails": [],
+      "room": "Exhibit Hall A, First Floor",
+      "track": "Networking and Open to All",
+      "tracks": [
+        "Networking and Open to All"
+      ],
+      "kind": "reception",
+      "description": "",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479357/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479357/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": true,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479357/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479357/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479357/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479357/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479357/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    },
+    {
+      "id": "thunderplains-2026-1271786",
+      "sourceId": "1271786",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "How to build an Agent Harness for AI Code Review",
+      "date": "2026-10-21",
+      "startTime": "15:30",
+      "endTime": "16:30",
+      "start": "2026-10-21T15:30:00-05:00",
+      "end": "2026-10-21T16:30:00-05:00",
+      "speaker": "Hendrik Krack",
+      "speakers": [
+        "Hendrik Krack"
+      ],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "talk",
+      "description": "Architecture for AI-assisted code review, including constrained tools, context selection, agent loops, prompt caching, and memory across pull requests.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1271786",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1271786",
+      "conflictDetection": true
+    },
+    {
+      "id": "thunderplains-2026-4aeec22c-c1f0-43d9-970a-6f9d3a53011d",
+      "sourceId": "4aeec22c-c1f0-43d9-970a-6f9d3a53011d",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Lightning Talks (Round 2)",
+      "date": "2026-10-21",
+      "startTime": "15:30",
+      "endTime": "16:30",
+      "start": "2026-10-21T15:30:00-05:00",
+      "end": "2026-10-21T16:30:00-05:00",
+      "speaker": "",
+      "speakers": [],
+      "room": "Track CD",
+      "track": "Track CD",
+      "kind": "service",
+      "description": "",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-4aeec22c-c1f0-43d9-970a-6f9d3a53011d",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "conflictDetection": true
+    },
+    {
+      "id": "thunderplains-2026-1265754",
+      "sourceId": "1265754",
+      "conferenceId": "thunderplains-2026",
+      "event": "ThunderPlains 2026",
+      "title": "Oklahoma's AI Moment",
+      "date": "2026-10-21",
+      "startTime": "16:30",
+      "endTime": "17:30",
+      "start": "2026-10-21T16:30:00-05:00",
+      "end": "2026-10-21T17:30:00-05:00",
+      "speaker": "Madeline Mitchell",
+      "speakers": [
+        "Madeline Mitchell"
+      ],
+      "room": "Track AB",
+      "track": "Track AB",
+      "kind": "talk",
+      "description": "A perspective on Oklahoma’s opportunities in AI, spanning business, technology, academia, policy, infrastructure, and public opinion.\n\nTiming note: the official session grid ends this talk at 5:30 p.m., although the ThunderPlains homepage summarizes the conference as ending at 5 p.m.",
+      "url": "https://2026.thunderplainsconf.com/#sz-session-1265754",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "sourcePage": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00",
+      "descriptionSourceUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1265754",
+      "conflictDetection": true
+    }
+  ],
+  "notes": [
+    {
+      "text": "Official Sessionize schedule is subject to change. Exact end times were read from source timestamps, not inferred from the next session.",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True"
+    },
+    {
+      "text": "Official grid labels locations as Track AB and Track CD; specific physical meeting-room numbers were not found. Registration, opening, and lunch span both schedule columns but carry Track AB metadata.",
+      "sourceUrl": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True"
+    },
+    {
+      "text": "Homepage format summary says 8 a.m.–5 p.m., but official Sessionize grid lists the final talk from 4:30–5:30 p.m. Dataset follows exact session timestamps.",
+      "sourceUrl": "https://2026.thunderplainsconf.com/"
+    },
+    {
+      "text": "The official InnoTech agenda is loaded by a Wix embedded component and Whova. The public feed explicitly identifies October 21, 2026 and America/Chicago. Its current display settings exclude no days, tracks, tags, or sessions.",
+      "sourceUrl": "https://whova.com/embedded/event/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/"
+    },
+    {
+      "text": "The session-level Whova agenda lists both premium luncheons at 11:50 a.m.–1:20 p.m.; standalone event pages still say 11:30 a.m. The planner follows the detailed agenda and flags the discrepancy for check-in planning.",
+      "sourceUrl": "https://whova.com/embedded/event/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/"
+    },
+    {
+      "text": "The InnoTech source lists two Island demos at 11:00–11:30 in the partner theater with similar location labels. Both source records are preserved with a possible-duplicate note.",
+      "sourceUrl": "https://whova.com/embedded/event/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/"
+    },
+    {
+      "text": "Four October 20 preconference workshops are present in the source but excluded from this October 21 planner import.",
+      "sourceUrl": "https://whova.com/embedded/event/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/"
+    },
+    {
+      "text": "Exhibit opening hours are stored as a flexible reference window, so they do not conflict with scheduled talks.",
+      "sourceUrl": "https://whova.com/embedded/event/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/"
+    }
+  ],
+  "accessNotes": [
+    {
+      "text": "ThunderPlains website says a ThunderPlains ticket is required for its conference and lunch and includes access to the InnoTech exhibit hall and other InnoTech sessions and events. Individual InnoTech ticket restrictions should be checked separately; this statement is not a guarantee of entitlement to premium events.",
+      "sourceUrl": "https://2026.thunderplainsconf.com/#faq",
+      "verifiedAt": "2026-10-11T19:29:01.731901+00:00"
+    },
+    {
+      "text": "InnoTech general admission includes its main talks, AI & Data Forum, Root66, OK-ISAC, keynotes, exhibits, vendor presentations, and reception. Separately ticketed exclusions include the IT Executive Luncheon, Women in Tech Summit, ThunderPlains, We Dreamin’ OK, and October 20 workshops. Premium access through a ThunderPlains ticket should be confirmed; do not infer entitlement from either general-admission statement.",
+      "sourceUrl": "https://www.innotechok.com/faqs",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    }
+  ],
+  "gaps": [
+    "ThunderPlains labels locations as Track AB/CD; separate physical meeting-room numbers not verified.",
+    "ThunderPlains lightning-talk participants and individual mini-talk titles are not listed in the official grid.",
+    "Two Island demo records share 11:00–11:30 in the InterWorks partner theater. Both source entries are retained and flagged as possible duplicates.",
+    "Some InnoTech entries have no published speaker; those speaker lists remain empty.",
+    "Specific premium InnoTech access with a ThunderPlains ticket remains unverified; do not infer premium access from broad admission statements."
+  ],
+  "anchors": [],
+  "referenceWindows": [
+    {
+      "id": "innotech-oklahoma-2026-ai-data-forum-window",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Oklahoma AI & Data Forum",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "15:15",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T15:15:00-05:00",
+      "speaker": "",
+      "speakers": [],
+      "room": null,
+      "track": "InnoTech",
+      "kind": "track_window_not_individual_session",
+      "description": "Published program hours for this track. Individual sessions are now available in the agenda; this whole-program window is not an attendance commitment.",
+      "url": "https://www.innotechok.com/oklahomadataforum",
+      "sourceUrl": "https://www.innotechok.com/oklahomadataforum",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00",
+      "accessNote": "Open to all InnoTech attendees.",
+      "conflictDetection": false
+    },
+    {
+      "id": "innotech-oklahoma-2026-root66-program-window",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Root66 InfoSec Conference",
+      "date": "2026-10-21",
+      "startTime": "09:00",
+      "endTime": "15:15",
+      "start": "2026-10-21T09:00:00-05:00",
+      "end": "2026-10-21T15:15:00-05:00",
+      "speaker": "",
+      "speakers": [],
+      "room": null,
+      "track": "InnoTech",
+      "kind": "track_window_not_individual_session",
+      "description": "Published program hours for this track. Individual sessions are now available in the agenda; this whole-program window is not an attendance commitment.",
+      "url": "https://www.innotechok.com/root66-infosec",
+      "sourceUrl": "https://www.innotechok.com/root66-infosec",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00",
+      "accessNote": "Open to all InnoTech attendees.",
+      "conflictDetection": false
+    },
+    {
+      "id": "innotech-oklahoma-2026-registration-hours",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Attendee registration",
+      "date": "2026-10-21",
+      "startTime": "07:30",
+      "endTime": "16:00",
+      "start": "2026-10-21T07:30:00-05:00",
+      "end": "2026-10-21T16:00:00-05:00",
+      "speaker": "",
+      "speakers": [],
+      "room": null,
+      "track": "InnoTech",
+      "kind": "logistics",
+      "description": "Current FAQ specifies October 21 and these hours; event year established by homepage.",
+      "url": "https://www.innotechok.com/faqs",
+      "sourceUrl": "https://www.innotechok.com/faqs",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00",
+      "accessNote": "An official badge is required. Bring the registration confirmation on a device for check-in.",
+      "conflictDetection": false
+    },
+    {
+      "id": "innotech-oklahoma-2026-whova-5560585",
+      "sourceId": "5560585",
+      "conferenceId": "innotech-oklahoma-2026",
+      "event": "InnoTech Oklahoma 2026",
+      "title": "Tech Exhibits & Networking Open All Day",
+      "date": "2026-10-21",
+      "startTime": "08:30",
+      "endTime": "16:00",
+      "start": "2026-10-21T08:30:00-05:00",
+      "end": "2026-10-21T16:00:00-05:00",
+      "timeZone": "America/Chicago",
+      "speaker": "",
+      "speakers": [],
+      "speakerDetails": [],
+      "room": "Exhibit Hall A, First Floor",
+      "track": "Networking and Open to All",
+      "tracks": [
+        "Networking and Open to All"
+      ],
+      "kind": "logistics",
+      "description": "An all-day expo featuring more than 100 technology companies, product demonstrations, the InterWorks Partner Demo Theater, and networking. The first-floor exhibit area also hosts coffee breaks, the closing reception, and prize drawings.",
+      "url": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560585/",
+      "sourceUrl": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560585/",
+      "sourceDataUrl": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "sourcePage": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00",
+      "accessNote": "Listed in the public InnoTech program. Ticket or badge requirements apply; this listing does not guarantee access.",
+      "accessSourceUrl": "https://www.innotechok.com/faqs",
+      "premiumAccess": false,
+      "conflictDetection": false,
+      "fieldSources": {
+        "title": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560585/",
+        "speakers": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560585/",
+        "start": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560585/",
+        "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560585/",
+        "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560585/",
+        "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://2026.thunderplainsconf.com/",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://sessionize.com/api/v2/xtaduary/view/GridSmart?under=True",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/conference-agenda-info",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/speakers",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/faqs",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/it-executive",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/womenintech",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/okisacsymposium",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/oklahomadataforum",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/root66-infosec",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://www.innotechok.com/exhibitorportal",
+      "verifiedAt": "2026-10-11T19:31:01.162163+00:00"
+    },
+    {
+      "url": "https://whova.com/embedded/event/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00"
+    },
+    {
+      "url": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00"
+    },
+    {
+      "url": "https://www-innotechok-com.filesusr.com/html/c52b3c_ff4d6f0c0f3258c402855f2bc6090d2c.html",
+      "verifiedAt": "2026-10-11T20:07:35.681326+00:00"
+    }
+  ],
+  "innotechAgendaComplete": true,
+  "publishedSourceCounts": {
+    "thunderplainsScheduledEntries": 16,
+    "innotechOctober21SourceEntries": 46,
+    "innotechFixedEntries": 45,
+    "innotechFlexibleExhibitWindows": 1,
+    "excludedOctober20Workshops": 4
+  },
+  "supersedes": {
+    "partialInnotechSnapshot": "2026-10-11T19:31:00Z",
+    "changes": [
+      "Full official program replaces partial anchors.",
+      "Whova timezone is explicit.",
+      "Luncheon times follow detailed agenda at 11:50 rather than standalone 11:30.",
+      "Reception room now verified as Exhibit Hall A, First Floor."
+    ]
+  }
+}
