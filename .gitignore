@@ -22,3 +22,4 @@ docs/*ledger*.json
 docs/*shots/
 docs/*assets/
 next-env.d.ts
+deploy/wrangler.photo-*.json

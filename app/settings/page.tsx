@@ -5,5 +5,5 @@ export const metadata={title:'Profile & account settings · ThunderPlains Devyo'
 export default function Settings(){
  const auth=getAuthContext();if(!auth.user)return<Login status={auth.status} registrationOpen={auth.registrationOpen}/>;
  if(auth.deletionIdentity&&auth.deletionStatus)return<AccountDeletionProgress identity={auth.deletionIdentity} initialStatus={auth.deletionStatus}/>;
- return<SessionBoundary expectedUserId={auth.user.userId.slice(auth.user.userId.lastIndexOf(':')+1)}><Planner initialSection="profile" user={auth.user} signInPath="/sign-in" accountDeletionEnabled={auth.accountDeletionEnabled} accountDeletionSchemaReady={auth.accountDeletionSchemaReady}/></SessionBoundary>;
+ return<SessionBoundary expectedUserId={auth.user.userId.slice(auth.user.userId.lastIndexOf(':')+1)}><Planner profilePhotosEnabled={auth.profilePhotosEnabled} initialSection="profile" user={auth.user} signInPath="/sign-in" accountDeletionEnabled={auth.accountDeletionEnabled} accountDeletionSchemaReady={auth.accountDeletionSchemaReady}/></SessionBoundary>;
 }

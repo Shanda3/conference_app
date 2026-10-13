@@ -68,6 +68,8 @@ export async function cleanupAccountData(db:D1Database,owner:string,now=Date.now
  // AI data is owner-bound. The shared monthly money total contains no owner data and is never refunded.
  const aiTables=(await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name IN('devyo_ai_cache','devyo_ai_reservations','devyo_ai_daily','devyo_ai_session_daily')").all<{name:string}>()).results;
  for(const {name}of aiTables)sql.push(`DELETE FROM ${name} WHERE owner_id=?`);
+ const photoTables=(await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name IN('member_profile_photos','profile_photo_daily','profile_photo_work')").all<{name:string}>()).results;
+ for(const {name}of photoTables)sql.push(`DELETE FROM ${name} WHERE owner_id=?`);
  const statements=sql.map(query=>db.prepare(query.replace(' WHERE ',' WHERE (')+") AND EXISTS(SELECT 1 FROM account_deletions WHERE owner_id=? AND phase='identity_deleted' AND lease_until=? AND attempts=?)").bind(...Array((query.match(/\?/g)||[]).length).fill(owner),owner,job.lease_until,job.attempts));
  statements.push(db.prepare("UPDATE account_deletions SET phase='complete',completed_at=?,error_code=NULL,next_attempt_at=0,lease_until=0 WHERE owner_id=? AND phase='identity_deleted' AND lease_until=? AND attempts=?").bind(now,owner,job.lease_until,job.attempts));
  const result=await db.batch(statements);if(result.at(-1)?.meta.changes!==1)throw new AccountDeletionError('Cleanup lease changed; recovery will continue.',409); // D1 batch is transactional: partial cleanup never reports completion.
