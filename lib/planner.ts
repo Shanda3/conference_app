@@ -1,3 +1,4 @@
+import {validateTalkPreferences,type TalkPrepPreferences} from './talk-preferences.ts';
 /** Shared planner model and validation. Never accepts identity or access-control data. */
 export type Conference = {
   id: string;
@@ -44,6 +45,7 @@ export type PlannerState = {
   sessionNotes: Record<string, string>;
   connections: Connection[];
   initialized: boolean;
+  talkPrepPreferences?: TalkPrepPreferences;
 };
 
 export const PLANNER_LIMITS = {
@@ -241,7 +243,12 @@ function ensureUnique<T extends { id: string }>(items: T[], label: string): Map<
 
 /** Validate and copy an untrusted snapshot; throws PlannerValidationError on failure. */
 export function validateState(input: unknown): PlannerState {
-  const root = record(input, "Planner", ["conferences", "sessions", "savedSessionIds", "sessionNotes", "connections", "initialized"]);
+  const required = ["conferences", "sessions", "savedSessionIds", "sessionNotes", "connections", "initialized"];
+  const root = record(input, "Planner");
+  for (const key of Object.keys(root)) if (![...required,"talkPrepPreferences"].includes(key)) fail(`Planner has an unsupported field: ${key.slice(0,60)}.`);
+  for (const key of required) if (!Object.hasOwn(root,key)) fail(`Planner.${key} is required.`);
+  let talkPrepPreferences:TalkPrepPreferences|undefined;
+  if(Object.hasOwn(root,'talkPrepPreferences'))try{talkPrepPreferences=validateTalkPreferences(root.talkPrepPreferences)}catch(error){fail(error instanceof Error?error.message:'Talk preferences are invalid.')}
   if (typeof root.initialized !== "boolean") fail("Planner.initialized must be true or false.");
   const conferences = list(root.conferences, "Conferences", PLANNER_LIMITS.conferences).map((value): Conference => {
     const item = record(value, "Conference", ["id", "name", "startDate", "endDate", "timeZone", "location", "url", "description"]);
@@ -306,5 +313,5 @@ export function validateState(input: unknown): PlannerState {
     };
   });
   ensureUnique(connections, "Connections");
-  return { conferences, sessions, savedSessionIds, sessionNotes, connections, initialized: root.initialized };
+  return { conferences, sessions, savedSessionIds, sessionNotes, connections, initialized: root.initialized, ...(talkPrepPreferences?{talkPrepPreferences}:{}) };
 }

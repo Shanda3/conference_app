@@ -1,9 +1,10 @@
 import { and, asc, desc, eq, isNull, sql } from "drizzle-orm";
-import { getChatGPTUser } from "@/app/chatgpt-auth";
+import { getAppUser } from "@/app/auth";
 import { getDb } from "@/db";
 import { plannerStates } from "@/db/schema";
 import { profiles, scheduleShares } from "@/lib/social-schema";
 import verifiedCatalog from "@/lib/event-data.json";
+import {latestShareCatalog,type ShareProgramRow} from "@/lib/share-program";
 import { validateState } from "@/lib/planner";
 import { assertSameOrigin, createShareToken, hashShareToken, hashSharedSchedule, objectWithKeys, PRIVATE_RESPONSE_HEADERS, projectSharedSchedule, readSharingBody, SHARE_LIMITS, SharingError, validateDisplayName, validateSharedSchedule } from "@/lib/sharing";
 
@@ -16,14 +17,14 @@ async function ownerSnapshot(ownerId: string) {
   if (!profile) throw new SharingError("Save a display name in your profile before sharing.", 409);
   const [row] = await db.select({ stateJson: plannerStates.stateJson, revision: plannerStates.revision }).from(plannerStates).where(eq(plannerStates.ownerId, ownerId)).limit(1);
   if (!row) throw new SharingError("Save your planner before creating a share link.", 409);
-  const projected = projectSharedSchedule(validateState(JSON.parse(row.stateJson)), validateDisplayName(profile.displayName), verifiedCatalog);
+  const projected = projectSharedSchedule(validateState(JSON.parse(row.stateJson)), validateDisplayName(profile.displayName), await latestShareCatalog(verifiedCatalog,()=>db.all<ShareProgramRow>(sql`SELECT conference_id,last_success_at,sessions_json FROM public_program_sources`)));
   return { ...projected, revision: row.revision, previewHash: await hashSharedSchedule(projected.preview) };
 }
 
 export async function GET(request: Request): Promise<Response> {
   try {
-    const user = await getChatGPTUser();
-    if (!user) return json({ error: "Sign in with ChatGPT to manage schedule links." }, 401);
+    const user = await getAppUser();
+    if (!user) return json({ error: "Sign in to manage schedule links." }, 401);
     if (new URL(request.url).searchParams.get("preview") === "1") return json(await ownerSnapshot(user.userId));
     const rows = await getDb().select({ shareId: scheduleShares.shareId, createdAt: scheduleShares.createdAt, revokedAt: scheduleShares.revokedAt, payloadJson: scheduleShares.payloadJson })
       .from(scheduleShares).where(eq(scheduleShares.ownerId, user.userId))
@@ -37,8 +38,8 @@ export async function GET(request: Request): Promise<Response> {
 
 export async function POST(request: Request): Promise<Response> {
   try {
-    const user = await getChatGPTUser();
-    if (!user) return json({ error: "Sign in with ChatGPT to share your schedule." }, 401);
+    const user = await getAppUser();
+    if (!user) return json({ error: "Sign in to share your schedule." }, 401);
     assertSameOrigin(request);
     const body = objectWithKeys(await readSharingBody(request), ["revision", "previewHash"]);
     if (!Number.isSafeInteger(body.revision) || (body.revision as number) < 1) throw new SharingError("Review the saved schedule before creating a link.");
@@ -79,8 +80,8 @@ export async function POST(request: Request): Promise<Response> {
 
 export async function DELETE(request: Request): Promise<Response> {
   try {
-    const user = await getChatGPTUser();
-    if (!user) return json({ error: "Sign in with ChatGPT to revoke schedule links." }, 401);
+    const user = await getAppUser();
+    if (!user) return json({ error: "Sign in to revoke schedule links." }, 401);
     assertSameOrigin(request);
     const body = objectWithKeys(await readSharingBody(request), ["shareId"]);
     if (typeof body.shareId !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(body.shareId)) throw new SharingError("Choose a valid schedule link.");

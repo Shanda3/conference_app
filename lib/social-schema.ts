@@ -1,4 +1,4 @@
-import { index, sqliteTable, text, uniqueIndex } from "drizzle-orm/sqlite-core";
+import { integer, index, sqliteTable, text, uniqueIndex } from "drizzle-orm/sqlite-core";
 
 /** Names are explicitly chosen; never copy the identity helper's email fallback. */
 export const profiles = sqliteTable("profiles", {
@@ -6,6 +6,7 @@ export const profiles = sqliteTable("profiles", {
   displayName: text("display_name").notNull(),
   company: text("company").notNull().default(""),
   linkedInUrl: text("linkedin_url").notNull().default(""),
+  linkedInVisible: integer("linkedin_visible",{mode:"boolean"}).notNull().default(false),
   createdAt: text("created_at").notNull(),
   updatedAt: text("updated_at").notNull(),
 });

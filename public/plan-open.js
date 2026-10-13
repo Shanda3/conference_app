@@ -1,0 +1,1 @@
+'use strict';const match=location.hash.match(/^#plan=([A-Za-z0-9_-]{43})$/);if(match){const link=document.getElementById('open-plan');link.href='/#shared-plan='+match[1];link.hidden=false;document.getElementById('link-help').textContent='Open the shared schedule to sign in or create an account. You can return to this link at any time.';}

@@ -1,0 +1,33 @@
+"use client";
+import{eventHomeUrl}from"@/lib/social-sharing";
+import { useEffect } from "react";
+import{AccountDeletionProgress}from'./account-deletion-progress';
+import{clearDeletionLocalData,deletionPrincipalMatches,type DeletionIdentity,type DeletionPhase}from'@/lib/account-deletion-browser';
+import {RememberedAuth,RememberVerifiedEmail} from "./remember-email";
+import{captureSharedPlan}from"@/lib/share-navigation";
+import { captureGroupInvite } from "./members";
+import { ClerkProvider, SignOutButton, useAuth, useClerk } from "@clerk/react";
+export function AuthProvider({ publishableKey, children, accountDeletedNotice=false }: { publishableKey?: string; children: React.ReactNode;accountDeletedNotice?:boolean }) {
+  useEffect(()=>{if(!accountDeletedNotice){captureSharedPlan();captureGroupInvite()}},[accountDeletedNotice]);
+  if (!publishableKey) return children;
+  return <ClerkProvider localization={{signIn:{start:{title:"Sign in for ThunderPlains",subtitle:"Open your ThunderPlains attendee planner"}},signUp:{start:{title:"Create your account for ThunderPlains",subtitle:"Start your ThunderPlains attendee planner"}}}} publishableKey={publishableKey} afterSignOutUrl="/" signInUrl="/sign-in" signUpUrl="/sign-up" signInForceRedirectUrl={eventHomeUrl(typeof window==='undefined'?undefined:location.origin)} signUpForceRedirectUrl={eventHomeUrl(typeof window==='undefined'?undefined:location.origin)}>{!accountDeletedNotice&&<RememberVerifiedEmail/>}{children}</ClerkProvider>;
+}
+export function Login({ status, signUp=false, registrationOpen=false,accountDeletedNotice=false,deletionIdentity,deletionStatus }: { status: string; signUp?:boolean; registrationOpen?:boolean;accountDeletedNotice?:boolean;deletionIdentity?:DeletionIdentity;deletionStatus?:DeletionPhase }) {
+  if (status === "unconfigured") return <main className="welcome-login"><h1>Devyo</h1><p>Sign-in is being prepared. Please check back with the organizer.</p></main>;
+  if(status==='deleting'&&deletionIdentity&&deletionStatus)return<AccountDeletionProgress identity={deletionIdentity} initialStatus={deletionStatus}/>;
+  if (status === "forbidden") return <main className="welcome-login"><h1>Access unavailable</h1><p>You’re signed in successfully, but this account can’t open Devyo right now. Please contact the organizer for help.</p><SignOutButton><button className="button">Sign out</button></SignOutButton></main>;
+  return <SignInScreen signUp={signUp} registrationOpen={registrationOpen} accountDeletedNotice={accountDeletedNotice} deletionIdentity={deletionIdentity}/>;
+}
+function SignInScreen({signUp,registrationOpen,accountDeletedNotice,deletionIdentity}:{signUp:boolean;registrationOpen:boolean;accountDeletedNotice:boolean;deletionIdentity?:DeletionIdentity}){
+  const {isLoaded,isSignedIn}=useAuth(),clerk=useClerk();
+  useEffect(()=>{if(!isLoaded||!accountDeletedNotice)return;if(deletionIdentity?!deletionPrincipalMatches(clerk,deletionIdentity,true):!!(clerk.user||clerk.session))return;clearDeletionLocalData(window);if(deletionIdentity&&deletionPrincipalMatches(clerk,deletionIdentity,true)&&clerk.session?.id===deletionIdentity.sessionId)void clerk.signOut(()=>undefined,{sessionId:deletionIdentity.sessionId}).catch(()=>undefined)},[accountDeletedNotice,deletionIdentity?.userId,deletionIdentity?.sessionId,isLoaded]);
+  useEffect(()=>{
+    if(accountDeletedNotice||!isLoaded||!isSignedIn)return;
+    // Refresh stale server-rendered login once; never loop if backend verification fails.
+    try{const last=Number(sessionStorage.getItem("devyo-login-refresh")||0);if(Date.now()-last<10000)return;sessionStorage.setItem("devyo-login-refresh",String(Date.now()));window.location.replace(eventHomeUrl(location.origin))}catch{/* Manual retry remains available when browser storage is disabled. */}
+  },[isLoaded,isSignedIn,accountDeletedNotice]);
+  if(accountDeletedNotice&&isLoaded&&isSignedIn)return <main className="welcome-login"><h1>Account deleted</h1><p>Your previous account is closed. Refresh sign-in if the form has not appeared yet.</p><a className="button primary" href="/sign-in">Refresh ThunderPlains sign-in</a></main>;
+  if(isLoaded&&isSignedIn)return <main className="welcome-login"><h1>Checking your sign-in</h1><p>If your planner does not open, retry or sign out and sign in again.</p><a className="button primary" href={eventHomeUrl(typeof window==='undefined'?undefined:location.origin)}>Retry opening planner</a><Logout/></main>;
+  return <main className="conference-auth"><aside className="conference-auth-story"><a className="conference-auth-brand" href="/"><span className="conference-auth-mark"><img src="/thunderplains-mark.svg" width={38} height={74} alt="ThunderPlains lightning mark"/></span><span><b>ThunderPlains</b><small>BY TECHLAHOMA · 2026</small></span></a><div className="conference-auth-intro"><span className="conference-auth-eyebrow">YOUR CONFERENCE. YOUR DAY.</span><h2>Make room for<br/>your next big idea.</h2><p>A thoughtful plan for the sessions, people and conversations that make ThunderPlains yours.</p></div><div className="conference-auth-event"><b>October 21, 2026</b><span>Oklahoma City Convention Center</span><span>ThunderPlains + InnoTech</span></div><ul className="conference-auth-benefits"><li>Build your personal agenda</li><li>Keep your notes private</li><li>Connect with fellow attendees</li></ul><p className="conference-auth-byline">Your conference planner, powered by Devyo.</p></aside><section className="welcome-login conference-auth-form"><span className="eyebrow">THUNDERPLAINS ATTENDEE PLANNER</span>{accountDeletedNotice&&<p className="success-banner" role="status">Account deleted. You have been signed out.</p>}<h1>{signUp?"Create your account for ThunderPlains.":"Sign in for ThunderPlains."}</h1><p>{signUp?"Create your Devyo attendee account to save your ThunderPlains plan, private notes and connections.":registrationOpen?"Welcome back. Use your email or a verified phone number to open your saved ThunderPlains conference plan.":"Use your email to open your private ThunderPlains planner."}</p><div className="conference-auth-widget"><RememberedAuth signUp={signUp}/></div><p className="auth-switch">{signUp?<a href="/sign-in">Already have an account? Sign in for ThunderPlains</a>:<a href="/sign-up">New to ThunderPlains? Create an attendee account</a>}</p><div className="conference-auth-footer"><a className="auth-venue-link" href="/venue">Find your way at the convention center ↗</a><p>Your agenda, notes and connections stay private unless you choose to share a schedule.</p></div></section></main>;
+}
+export function Logout() { return <SignOutButton><button className="button">Sign out</button></SignOutButton>; }

@@ -1,5 +1,7 @@
 import { and, eq } from "drizzle-orm";
-import { getChatGPTUser } from "@/app/chatgpt-auth";
+import { getAppUser } from "@/app/auth";
+import {getAuthContext} from '@/lib/auth-context';
+import {plannerIdentityMatches} from '@/lib/talk-preferences';
 import { getDb } from "@/db";
 import { plannerStates } from "@/db/schema";
 import { emptyState, PLANNER_LIMITS, PlannerValidationError, validateState } from "@/lib/planner";
@@ -48,8 +50,8 @@ async function readBody(request: Request): Promise<unknown> {
 
 export async function GET(): Promise<Response> {
   try {
-    const user = await getChatGPTUser();
-    if (!user) return json({ error: "Sign in with ChatGPT to open your private planner." }, 401);
+    const user = await getAppUser();
+    if (!user) return json({ error: "Sign in to open your private planner." }, 401);
     const db = getDb();
     const [row] = await db.select().from(plannerStates).where(eq(plannerStates.ownerId, user.userId)).limit(1);
     if (!row) return json({ state: emptyState(), revision: 0 });
@@ -63,10 +65,11 @@ export async function GET(): Promise<Response> {
 
 export async function PUT(request: Request): Promise<Response> {
   try {
-    const user = await getChatGPTUser();
-    if (!user) return json({ error: "Sign in with ChatGPT to save your private planner." }, 401);
+    const user = await getAppUser();
+    if (!user) return json({ error: "Sign in to save your private planner." }, 401);
+    if(!plannerIdentityMatches(request.headers.get('X-Expected-Devyo-User'),request.headers.get('X-Expected-Devyo-Session'),user.userId,getAuthContext().sessionId))return json({error:'Your sign-in session changed. Reload before saving.'},409);
     const origin = request.headers.get("Origin");
-    if ((origin !== null && origin !== new URL(request.url).origin) || request.headers.get("Sec-Fetch-Site") === "cross-site") {
+    if ((origin !== new URL(request.url).origin) || request.headers.get("Sec-Fetch-Site") === "cross-site") {
       return json({ error: "Planner changes must come from this site." }, 403);
     }
     const body = await readBody(request);

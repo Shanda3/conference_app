@@ -1,0 +1,8 @@
+import {integer,sqliteTable,text,primaryKey,index} from "drizzle-orm/sqlite-core";
+export const communityMembers=sqliteTable("community_members",{id:text("id").primaryKey(),ownerId:text("owner_id").notNull().unique()});
+export const memberPlans=sqliteTable("member_plans",{ownerId:text("owner_id").primaryKey(),payloadJson:text("payload_json").notNull()});
+export const privateGroups=sqliteTable("private_groups",{id:text("id").primaryKey(),ownerId:text("owner_id").notNull(),name:text("name").notNull(),createdAt:integer("created_at").notNull()});
+export const privateGroupMembers=sqliteTable("private_group_members",{groupId:text("group_id").notNull(),ownerId:text("owner_id").notNull(),joinedAt:integer("joined_at").notNull()},t=>[primaryKey({columns:[t.groupId,t.ownerId]})]);
+export const privateGroupInvites=sqliteTable("private_group_invites",{id:text("id").primaryKey(),groupId:text("group_id").notNull(),tokenHash:text("token_hash").notNull().unique(),expiresAt:integer("expires_at").notNull(),revokedAt:integer("revoked_at")},t=>[index("group_invites_group").on(t.groupId)]);
+export const privateGroupMessages=sqliteTable("private_group_messages",{id:text("id").primaryKey(),groupId:text("group_id").notNull(),ownerId:text("owner_id").notNull(),displayName:text("display_name").notNull(),body:text("body").notNull(),createdAt:integer("created_at").notNull(),deletedAt:integer("deleted_at")},t=>[index("group_message_time").on(t.groupId,t.createdAt),index("group_message_owner_time").on(t.ownerId,t.createdAt)]);
+export const memberAvatars=sqliteTable("member_avatars",{ownerId:text("owner_id").primaryKey(),emailHash:text("email_hash").notNull()});

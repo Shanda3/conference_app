@@ -1,0 +1,490 @@
+[
+  {
+    "id": "thunderplains-2026-1219923",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1219923",
+    "title": "Building Rapid Web Applications with Laravel + Filament",
+    "speaker": "Aaron Krauss",
+    "catalogDescription": "Building data-heavy applications with Laravel and Filament, including forms, tables, admin patterns, and a live demonstration.",
+    "abstractHash": "7721e1a5992ae8762fa428f21abea1b73eaf6ea5185a749407412846f7d19a0a",
+    "reviewedAt": "2026-10-13T01:29:09.822Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1219923",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1219923",
+    "primer": "Laravel provides an application framework; Filament builds forms, tables, and administrative interfaces on top. This talk’s abstract centers on turning data-heavy ideas into working applications. Think about where conventions speed up delivery and where your app still needs custom behavior.",
+    "terms": [
+      [
+        "Resource",
+        "A Filament interface for working with application data."
+      ],
+      [
+        "Authorization",
+        "Rules deciding who may view or change a record."
+      ],
+      [
+        "Validation",
+        "Checks that submitted input satisfies your application’s rules."
+      ]
+    ],
+    "background": "Helpful background: basic web forms and database records. PHP experience may help, but is not a published prerequisite.",
+    "questions": [
+      "When would you choose a Filament resource over a custom page?",
+      "Where should record-level authorization live?",
+      "How do you test complex form validation and relationships?",
+      "What limitations would make this approach unsuitable for an app?"
+    ],
+    "readings": [
+      [
+        "Laravel documentation",
+        "https://laravel.com/docs"
+      ],
+      [
+        "Filament documentation",
+        "https://filamentphp.com/docs"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1238448",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1238448",
+    "title": "Confessions of an AI Vampire: Building Software When the Agents Never Sleep",
+    "speaker": "Dale Spoonemore",
+    "catalogDescription": "Experiences with AI-first development and agent orchestration, including a small development team supporting ten companies and the challenge of staying always on.",
+    "abstractHash": "0bfe2f9a064e288f1caa0b434fac5469184c987cc9a48288e61fa6d6923f607e",
+    "reviewedAt": "2026-10-13T01:29:09.822Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1238448",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1238448",
+    "primer": "The abstract describes a shift from editor assistance toward coordinating agents across a software portfolio. Before the talk, separate a model’s output from the human work of planning, reviewing, and deciding when to stop. More concurrent work can also create more review work.",
+    "terms": [
+      [
+        "Orchestration",
+        "Coordinating tasks and handoffs across agents."
+      ],
+      [
+        "Context",
+        "Information an agent has available for a task."
+      ],
+      [
+        "Review queue",
+        "Work waiting for a human check or decision."
+      ]
+    ],
+    "background": "Helpful background: a development workflow you know, including review and release steps.",
+    "questions": [
+      "How do you keep parallel agents from creating an unmanageable review queue?",
+      "What signals tell you to stop an agent rather than keep iterating?",
+      "How do you preserve context when work moves between tools?",
+      "What boundaries help a team switch off outside working hours?"
+    ],
+    "readings": [
+      [
+        "Claude Code best practices",
+        "https://code.claude.com/docs/en/best-practices"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1241331",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1241331",
+    "title": "Stop Building AI Demos: How to Ship AI Features People Actually Trust",
+    "speaker": "Vin Mitty, PhD",
+    "catalogDescription": "Practical lessons for building testable, trustworthy production AI features and deciding when AI fits a workflow.",
+    "abstractHash": "d821c7ad0339a07edf5cb7cb57bdd507ee93a34ae707b1853fe1fb8e65e4c3ba",
+    "reviewedAt": "2026-10-13T01:29:09.832Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1241331",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1241331",
+    "primer": "A useful AI feature needs a clear user task and a way to detect failure. This abstract focuses on moving beyond demos toward tools people can trust. Consider the consequences of a wrong answer, the evidence required to launch, and the experience when AI cannot help.",
+    "terms": [
+      [
+        "Evaluation",
+        "Checking outputs against examples and acceptance criteria."
+      ],
+      [
+        "Fallback",
+        "A usable path when the AI feature cannot complete a task."
+      ],
+      [
+        "Risk context",
+        "Who uses a system, for what purpose, and with what consequences."
+      ]
+    ],
+    "background": "Helpful background: one user problem and an example of a costly failure.",
+    "questions": [
+      "How do you decide that a feature should use AI at all?",
+      "Which failures should block a release?",
+      "What evaluation cases best represent real user work?",
+      "How should the interface explain uncertainty and offer a fallback?"
+    ],
+    "readings": [
+      [
+        "NIST AI Risk Management Framework",
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1242850",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1242850",
+    "title": "RAG for Data Engineers: What It Is, Where It Fits, and Why Your Metadata Is the Missing Piece",
+    "speaker": "Varun Joshi",
+    "catalogDescription": "An introduction to retrieval-augmented generation for data engineering, including how schemas, lineage, query history, and metadata provide useful model context.",
+    "abstractHash": "38dcc0da93cf34671554e05f8e78e65742484fb6e8a607c16be89bb78be7256a",
+    "reviewedAt": "2026-10-13T01:29:10.014Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1242850",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1242850",
+    "primer": "Retrieval-augmented generation supplies retrieved information as context for an answer. The abstract applies this idea to data engineering, where schemas, lineage, query history, and dbt models can carry useful meaning. Prepare to separate finding the right context from producing a reliable answer.",
+    "terms": [
+      [
+        "Retrieval",
+        "Selecting relevant information for a request."
+      ],
+      [
+        "Lineage",
+        "Relationships showing where data comes from and how it changes."
+      ],
+      [
+        "Grounding",
+        "Connecting an answer to supporting information."
+      ]
+    ],
+    "background": "Helpful background: tables, schemas, and the metadata available in your own data platform.",
+    "questions": [
+      "Which metadata would you index first, and why?",
+      "How do you handle stale schemas or changing lineage?",
+      "Where are access permissions enforced during retrieval?",
+      "How do you measure retrieval quality separately from answer quality?"
+    ],
+    "readings": [
+      [
+        "Original RAG research paper",
+        "https://arxiv.org/abs/2005.11401"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1252756",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1252756",
+    "title": "Let's build our own Claude Code",
+    "speaker": "Max Gfeller",
+    "catalogDescription": "Live coding of a small coding agent, exploring tool use, context, model interaction, and the agent harness.",
+    "abstractHash": "88f833c052483d859df99d6828e16b9acec1521b9cf605ffa8847a5d16a74e1a",
+    "reviewedAt": "2026-10-13T01:29:10.004Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1252756",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1252756",
+    "primer": "A coding agent combines a model with an application that manages context and tool calls. The official abstract promises a small live-built agent to explain this harness. It helps to think about the loop: request an action, execute an allowed tool, return its result, and decide what happens next.",
+    "terms": [
+      [
+        "Harness",
+        "The application layer around the model."
+      ],
+      [
+        "Tool call",
+        "A structured request for an application action."
+      ],
+      [
+        "Stop condition",
+        "A rule that ends or pauses the agent’s work."
+      ]
+    ],
+    "background": "Helpful background: ordinary request/response code and command-line tools. These are suggestions, not required preparation.",
+    "questions": [
+      "What is the smallest useful tool set for this agent?",
+      "How do you keep shell or file actions within safe permissions?",
+      "What belongs in context when the repository is too large?",
+      "How do you detect a loop and decide when to stop?"
+    ],
+    "readings": [
+      [
+        "Anthropic: building effective agents",
+        "https://www.anthropic.com/engineering/building-effective-agents"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1265754",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1265754",
+    "title": "Oklahoma's AI Moment",
+    "speaker": "Madeline Mitchell",
+    "catalogDescription": "A perspective on Oklahoma’s opportunities in AI, spanning business, technology, academia, policy, infrastructure, and public opinion.\n\nTiming note: the official session grid ends this talk at 5:30 p.m., although the ThunderPlains homepage summarizes the conference as ending at 5 p.m.",
+    "abstractHash": "5a640948c3e73914456055ef1eead32055f355dadea89447642da92f2dfc4e48",
+    "reviewedAt": "2026-10-13T01:29:10.010Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1265754",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1265754",
+    "primer": "This abstract connects Oklahoma’s AI opportunities with business, technical, academic, and policy perspectives. Prepare by separating a proposed opportunity from the evidence needed to evaluate it. The guide does not predict the speaker’s polling results, policy views, or preferred sectors.",
+    "terms": [
+      [
+        "Infrastructure",
+        "The compute, energy, connectivity, and skills supporting a system."
+      ],
+      [
+        "Adoption",
+        "How an organization puts technology into actual use."
+      ],
+      [
+        "Evidence quality",
+        "How well a finding supports the decision being made."
+      ]
+    ],
+    "background": "Helpful background: an Oklahoma organization or community whose needs you understand.",
+    "questions": [
+      "What evidence should guide priorities among potential growth sectors?",
+      "How were the polling questions and sample selected?",
+      "Which infrastructure constraints most affect practical adoption?",
+      "How can developers, educators, and local businesses collaborate?"
+    ],
+    "readings": [
+      [
+        "NIST AI Risk Management Framework",
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1268807",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1268807",
+    "title": "Leading the Machine: The Software Engineering Managers Playbook for AI-First Teams",
+    "speaker": "Ken Versaw",
+    "catalogDescription": "Engineering management in AI-first teams, with attention to productivity measures, leadership, and the human effects of changing development practices.",
+    "abstractHash": "fd7dce45387bac0d67242cc17d31fc02935ed7b5294b1d029d163cbc799fdf00",
+    "reviewedAt": "2026-10-13T01:29:10.191Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1268807",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1268807",
+    "primer": "The abstract addresses managing people who work with AI, including productivity measures and team dynamics. Before the talk, distinguish the quantity of generated work from useful outcomes. Consider how review, learning, and feedback change when agents become part of the development process.",
+    "terms": [
+      [
+        "Outcome metric",
+        "A measure of a useful result rather than activity alone."
+      ],
+      [
+        "Feedback loop",
+        "A way to learn from results and adjust the process."
+      ],
+      [
+        "Review capacity",
+        "The team’s ability to assess work before release."
+      ]
+    ],
+    "background": "Helpful background: your team’s current quality and delivery measures.",
+    "questions": [
+      "Which outcomes are more useful than counting generated code?",
+      "How do you prevent AI output from overwhelming reviewers?",
+      "How do you protect learning opportunities for less experienced engineers?",
+      "What team feedback indicates that an AI workflow needs to change?"
+    ],
+    "readings": [
+      [
+        "DORA 2025 research",
+        "https://dora.dev/research/2025/dora-report/"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1271786",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1271786",
+    "title": "How to build an Agent Harness for AI Code Review",
+    "speaker": "Hendrik Krack",
+    "catalogDescription": "Architecture for AI-assisted code review, including constrained tools, context selection, agent loops, prompt caching, and memory across pull requests.",
+    "abstractHash": "4c8ddc8e3b65e7a4522fb16e01d4961136b245ab1fa123d41d9c89a4c69f9fb8",
+    "reviewedAt": "2026-10-13T01:29:10.181Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1271786",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1271786",
+    "primer": "An AI code-review harness controls the actions, context, and memory surrounding a model. This abstract includes sandboxing, context slicing, caching, and an agent loop. Consider how a reviewer can produce evidence for a finding while treating repository content as untrusted input.",
+    "terms": [
+      [
+        "Sandbox",
+        "A constrained environment for executing actions."
+      ],
+      [
+        "Context slicing",
+        "Loading the information needed for the current task."
+      ],
+      [
+        "Prompt cache",
+        "Reuse of eligible repeated model input to reduce repeated work."
+      ]
+    ],
+    "background": "Helpful background: pull requests and the checks your team expects before merging.",
+    "questions": [
+      "How do you constrain tools when repository text contains hostile instructions?",
+      "What evidence must a finding include before it reaches a reviewer?",
+      "How do you balance context size against review completeness?",
+      "What should cross-review memory retain, expire, or avoid storing?"
+    ],
+    "readings": [
+      [
+        "GitHub Actions secure use",
+        "https://docs.github.com/en/actions/reference/security/secure-use"
+      ],
+      [
+        "Anthropic: building effective agents",
+        "https://www.anthropic.com/engineering/building-effective-agents"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1274450",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1274450",
+    "title": "When Every Device Speaks a Different Language: Building Resilient Event-Driven Systems",
+    "speaker": "Fatemeh Azam",
+    "catalogDescription": "Lessons from a smart-city testbed on integrating heterogeneous device telemetry, Python and Node.js services, and failure-tolerant event-driven architecture.",
+    "abstractHash": "78bf98e7b7f4b54f5f43d95a76ac4e299a56d276896c6f5ce01dce9e6322dd5d",
+    "reviewedAt": "2026-10-13T01:29:10.210Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1274450",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1274450",
+    "primer": "The abstract describes heterogeneous devices feeding a shared event system. A drone and a small sensor can disagree about formats, timing, and reliability. Useful preparation is to ask how events acquire a consistent meaning and how the system behaves when a device disappears.",
+    "terms": [
+      [
+        "Event contract",
+        "A defined shape and meaning for a message."
+      ],
+      [
+        "Normalization",
+        "Converting different inputs to a consistent representation."
+      ],
+      [
+        "Idempotency",
+        "Handling repetition without repeating an unintended effect."
+      ]
+    ],
+    "background": "Helpful background: a sensor message with an identifier, timestamp, units, and payload. No particular message broker is assumed.",
+    "questions": [
+      "How do you normalize timestamps and measurement units across devices?",
+      "How are duplicate or out-of-order events handled?",
+      "What happens when a device disconnects and later returns?",
+      "How do you evolve event schemas without breaking consumers?"
+    ],
+    "readings": [
+      [
+        "AsyncAPI specification",
+        "https://www.asyncapi.com/docs/reference/specification/latest"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1274507",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1274507",
+    "title": "Everything Old Is New Again: Agentic Spec-Driven Development Makes Rigor Cheap, Fast, and Easy",
+    "speaker": "Frank Evans",
+    "catalogDescription": "A live demonstration of agents applying requirements, testing, task decomposition, and code review to a rigorous software development workflow.",
+    "abstractHash": "9cb903d2603eb28e8ee36ebf9ecd2934894843c466eda8c55a47f42d48e2fc36",
+    "reviewedAt": "2026-10-13T01:29:10.388Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1274507",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1274507",
+    "primer": "Specification-driven development connects requirements, design, tasks, and verification. The abstract explores agents doing this structured work. Before the demo, consider which artifacts remain authoritative and how tests establish that a plan meets the original need. Speed claims still need evidence in your own setting.",
+    "terms": [
+      [
+        "Specification",
+        "An explicit statement of intended behavior and constraints."
+      ],
+      [
+        "Decomposition",
+        "Breaking a goal into smaller implementable tasks."
+      ],
+      [
+        "Acceptance criterion",
+        "An observable condition for deciding whether work is complete."
+      ]
+    ],
+    "background": "Helpful background: a requirement that changed midway through a project.",
+    "questions": [
+      "Which artifact is authoritative when the specification and code disagree?",
+      "How do requirement changes propagate through the generated plan?",
+      "How do you avoid tests that merely repeat the implementation?",
+      "Where does human review add the most value?"
+    ],
+    "readings": [
+      [
+        "GitHub Spec Kit: one example workflow",
+        "https://github.com/github/spec-kit"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1276693",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1276693",
+    "title": "Next generation web development with TanStack Start",
+    "speaker": "Adam Rackis",
+    "catalogDescription": "An overview of TanStack Start features, server-side rendering, loaders, and pre-rendering, with comparisons to Next and Remix.",
+    "abstractHash": "470198648917dc45054cae4ed74635685952f06b243063ad0bfbb83751461537",
+    "reviewedAt": "2026-10-13T01:29:10.381Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1276693",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1276693",
+    "primer": "The abstract introduces TanStack Start through server rendering, isomorphic loaders, prerendering, and integration with React Query. Prepare to follow where code runs and how data reaches the browser. Compare a framework using your app’s authentication, caching, and deployment needs.",
+    "terms": [
+      [
+        "SSR",
+        "Rendering page content on a server before browser interaction."
+      ],
+      [
+        "Hydration",
+        "Connecting browser behavior to server-rendered content."
+      ],
+      [
+        "Prerendering",
+        "Producing pages ahead of a request."
+      ]
+    ],
+    "background": "Helpful background: React components and a basic server/client boundary.",
+    "questions": [
+      "How do loaders behave across server rendering and browser navigation?",
+      "How should authenticated data be cached without leaking between users?",
+      "When would you choose prerendering over request-time rendering?",
+      "What migration or hosting constraints should teams evaluate?"
+    ],
+    "readings": [
+      [
+        "TanStack Start overview",
+        "https://tanstack.com/start/latest/docs/framework/react/overview"
+      ]
+    ]
+  },
+  {
+    "id": "thunderplains-2026-1353991",
+    "conferenceId": "thunderplains-2026",
+    "sourceId": "1353991",
+    "title": "The Pace of Change (ThunderPlains 2026 Opening)",
+    "speaker": "Vance Lucas",
+    "catalogDescription": "Opening remarks on adapting to rapid AI-driven change in the technology industry.",
+    "abstractHash": "3c2a0d92e6c8bad98bb58d17fe3bd611428b1b8e88d2a88b05d91e3d25accd43",
+    "reviewedAt": "2026-10-13T01:29:10.386Z",
+    "sourceUrl": "https://2026.thunderplainsconf.com/#sz-session-1353991",
+    "detailUrl": "https://sessionize.com/api/v2/xtaduary/session?id=1353991",
+    "primer": "The opening abstract asks how to think about rapid AI change and its effect on the industry. Prepare by separating a striking demonstration from a dependable capability in your own work. Useful questions examine evidence, limits, and the skills that remain valuable as tools change.",
+    "terms": [
+      [
+        "Capability",
+        "A task a system can perform under particular conditions."
+      ],
+      [
+        "Benchmark",
+        "A defined test used to compare performance."
+      ],
+      [
+        "Adoption lag",
+        "The time between availability and practical use."
+      ]
+    ],
+    "background": "Helpful background: one recent tool change that affected your workflow.",
+    "questions": [
+      "How do you distinguish a durable shift from a temporary trend?",
+      "What evidence matters beyond a compelling demonstration?",
+      "Which engineering skills stay useful as tools change?",
+      "How should a small team decide what to try next?"
+    ],
+    "readings": [
+      [
+        "Stanford AI Index",
+        "https://hai.stanford.edu/ai-index"
+      ]
+    ]
+  }
+]

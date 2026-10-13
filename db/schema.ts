@@ -10,3 +10,5 @@ export const plannerStates = sqliteTable("planner_states", {
 
 export {profiles,scheduleShares} from "../lib/social-schema";
 export {chatMemberships,chatMessages,chatFlags} from "../lib/chat-schema";
+export * from "../lib/community-schema";
+export * from "../lib/account-schema";

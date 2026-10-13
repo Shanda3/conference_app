@@ -83,14 +83,16 @@ export function validateLinkedInUrl(value: unknown): string {
   return url.href;
 }
 
-export type ProfilePatch = { displayName: string; company?: string; linkedInUrl?: string };
+export type ProfilePatch = { displayName: string; company?: string; linkedInUrl?: string; linkedInVisible?: boolean };
 export function validateProfileBody(body: unknown): ProfilePatch {
   if (!body || typeof body !== "object" || Array.isArray(body)) throw new SharingError("Enter a valid profile.");
   const value = body as Record<string, unknown>;
-  if (Object.keys(value).some(key => !["displayName", "company", "linkedInUrl"].includes(key))) {
+  if (Object.keys(value).some(key => !["displayName", "company", "linkedInUrl", "linkedInVisible"].includes(key))) {
     throw new SharingError("The profile has unsupported fields.");
   }
+  if(Object.hasOwn(value,"linkedInVisible")&&typeof value.linkedInVisible!=="boolean")throw new SharingError("Choose whether to show your LinkedIn to attendees.");
   return {
+    ...(Object.hasOwn(value,"linkedInVisible")?{linkedInVisible:value.linkedInVisible as boolean}:{}),
     displayName: validateDisplayName(value.displayName),
     ...(Object.prototype.hasOwnProperty.call(value, "company") ? {company: validateCompany(value.company)} : {}),
     ...(Object.prototype.hasOwnProperty.call(value, "linkedInUrl") ? {linkedInUrl: validateLinkedInUrl(value.linkedInUrl)} : {}),

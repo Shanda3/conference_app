@@ -1,0 +1,1 @@
+ALTER TABLE `private_group_messages` ADD `deleted_at` integer;
