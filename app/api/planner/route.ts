@@ -5,6 +5,11 @@ import {plannerIdentityMatches} from '@/lib/talk-preferences';
 import { getDb } from "@/db";
 import { plannerStates } from "@/db/schema";
 import { emptyState, PLANNER_LIMITS, PlannerValidationError, validateState } from "@/lib/planner";
+import {env} from 'cloudflare:workers';
+import programSeed from '@/lib/event-data.json';
+import type {ProgramSeed} from '@/lib/program-model';
+import {OrganizerReviewError} from '@/lib/organizer-review-model';
+import {readOrganizerPlanner,saveOrganizerPlanner} from '@/lib/organizer-review-store';
 
 export const dynamic = "force-dynamic";
 
@@ -48,17 +53,22 @@ async function readBody(request: Request): Promise<unknown> {
   catch { throw new RequestError("The planner request contains invalid JSON.", 400); }
 }
 
-export async function GET(): Promise<Response> {
+export async function GET(request?:Request): Promise<Response> {
   try {
     const user = await getAppUser();
     if (!user) return json({ error: "Sign in to open your private planner." }, 401);
+    if(env.DEVYO_ORGANIZER_REVIEW_SCHEMA_READY==='true'){
+      if(!request?.headers.get('X-Expected-Devyo-User')||!request.headers.get('X-Expected-Devyo-Session')||!plannerIdentityMatches(request.headers.get('X-Expected-Devyo-User'),request.headers.get('X-Expected-Devyo-Session'),user.userId,getAuthContext().sessionId))return json({error:'Your sign-in session changed. Reload to open your planner.'},409);
+      if(!env.DB)throw new Error('Missing database');const {intent:_,...snapshot}=await readOrganizerPlanner(env.DB,user.userId,programSeed as unknown as ProgramSeed);return json(snapshot);
+    }
     const db = getDb();
     const [row] = await db.select().from(plannerStates).where(eq(plannerStates.ownerId, user.userId)).limit(1);
     if (!row) return json({ state: emptyState(), revision: 0 });
     // Stored JSON is also validated: a corrupt snapshot must never silently overwrite user data.
     const state = validateState(JSON.parse(row.stateJson));
     return json({ state, revision: row.revision });
-  } catch {
+  } catch (error) {
+    if(error instanceof OrganizerReviewError)return json({error:error.message},error.status);
     return json({ error: "Your saved planner could not be loaded. Please try again; your data has not been changed." }, 503);
   }
 }
@@ -67,7 +77,7 @@ export async function PUT(request: Request): Promise<Response> {
   try {
     const user = await getAppUser();
     if (!user) return json({ error: "Sign in to save your private planner." }, 401);
-    if(!plannerIdentityMatches(request.headers.get('X-Expected-Devyo-User'),request.headers.get('X-Expected-Devyo-Session'),user.userId,getAuthContext().sessionId))return json({error:'Your sign-in session changed. Reload before saving.'},409);
+    if((env.DEVYO_ORGANIZER_REVIEW_SCHEMA_READY==='true'&&(!request.headers.get('X-Expected-Devyo-User')||!request.headers.get('X-Expected-Devyo-Session')))||!plannerIdentityMatches(request.headers.get('X-Expected-Devyo-User'),request.headers.get('X-Expected-Devyo-Session'),user.userId,getAuthContext().sessionId))return json({error:'Your sign-in session changed. Reload before saving.'},409);
     const origin = request.headers.get("Origin");
     if ((origin !== new URL(request.url).origin) || request.headers.get("Sec-Fetch-Site") === "cross-site") {
       return json({ error: "Planner changes must come from this site." }, 403);
@@ -75,7 +85,7 @@ export async function PUT(request: Request): Promise<Response> {
     const body = await readBody(request);
     if (!body || typeof body !== "object" || Array.isArray(body)) throw new RequestError("A planner snapshot and revision are required.", 400);
     const envelope = body as Record<string, unknown>;
-    if (Object.keys(envelope).some((key) => key !== "state" && key !== "revision")) {
+    if (Object.keys(envelope).some((key) => key !== "state" && key !== "revision" && !(env.DEVYO_ORGANIZER_REVIEW_SCHEMA_READY==='true'&&key==='programRevisions'))) {
       throw new RequestError("The request has unsupported fields.", 400);
     }
     if (!Number.isSafeInteger(envelope.revision) || (envelope.revision as number) < 0 || (envelope.revision as number) >= Number.MAX_SAFE_INTEGER) {
@@ -83,6 +93,9 @@ export async function PUT(request: Request): Promise<Response> {
     }
     const state = validateState(envelope.state);
     const revision = envelope.revision as number;
+    if(env.DEVYO_ORGANIZER_REVIEW_SCHEMA_READY==='true'){
+      if(!env.DB)throw new Error('Missing database');return json(await saveOrganizerPlanner(env.DB,user.userId,programSeed as unknown as ProgramSeed,state,revision,envelope.programRevisions));
+    }
     const nextRevision = revision + 1;
     const db = getDb();
     const values = { stateJson: JSON.stringify(state), revision: nextRevision, updatedAt: new Date().toISOString() };
@@ -93,6 +106,7 @@ export async function PUT(request: Request): Promise<Response> {
     if (!written.length) return json({ error: "This planner changed in another tab. Reload to get the latest version before saving again." }, 409);
     return json({ state, revision: nextRevision });
   } catch (error) {
+    if(error instanceof OrganizerReviewError)return json({error:error.message},error.status);
     if (error instanceof RequestError) return json({ error: error.message }, error.status);
     if (error instanceof PlannerValidationError) return json({ error: error.message }, 400);
     return json({ error: "Your changes could not be saved. Please try again." }, 503);

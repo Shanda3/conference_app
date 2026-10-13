@@ -1,0 +1,26 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{readFile}from'node:fs/promises';import{transformSync}from'esbuild';
+const source=await readFile(new URL('../app/organizer/review-panel.tsx',import.meta.url),'utf8');
+const code=transformSync(source,{loader:'tsx',format:'esm',jsx:'transform'}).code.replace(/^import[^;]+;\n/gm,'').replace(/export\s*\{[^}]+\};?\s*$/,'');
+const flush=()=>new Promise<void>(resolve=>setImmediate(resolve));
+type Element={type:unknown;props:Record<string,any>;children:unknown[]};
+function find(value:unknown,check:(node:Element)=>boolean):Element|null{if(!value||typeof value!=='object')return null;const node=value as Element;if(check(node))return node;for(const child of(node.children??[]).flat(Infinity)){const found=find(child,check);if(found)return found;}return null;}
+function harness(){let cursor=0,slots:any[]=[],cleanups:Array<()=>void>=[],effects=false,writesAfterSwitch=0;const clerk={loaded:true,user:{id:'user_A'},session:{id:'sess_A'}},auth={isLoaded:true};
+ const useState=(initial:unknown)=>{const i=cursor++;if(!(i in slots))slots[i]=initial;return[slots[i],(value:unknown)=>{if(clerk.user.id!=='user_A'||!clerk.loaded)writesAfterSwitch++;slots[i]=value}];};
+ const useRef=(initial:unknown)=>{const i=cursor++;if(!(i in slots))slots[i]={current:initial};return slots[i]};const useEffect=(fn:()=>void|(()=>void))=>{if(!effects){const cleanup=fn();if(cleanup)cleanups.push(cleanup)}};
+ const React={createElement:(type:unknown,props:Record<string,unknown>,...children:unknown[])=>({type,props:props??{},children}),Fragment:'Fragment'};
+ const Component=new Function('React','useState','useRef','useEffect','useAuth','useClerk',code+'\nreturn OrganizerReviewPanel;')(React,useState,useRef,useEffect,()=>auth,()=>clerk);
+ const review={conferenceId:'thunderplains-2026',revision:1,approvedAt:'2026-10-13T00:00:00.000Z',canApply:true,paused:false,check:null,candidate:{id:'candidate',previewHash:'hash',changes:[],applicable:true}};
+ const render=()=>{cursor=0;const tree=Component({expectedUserId:'user_A',expectedSessionId:'sess_A',initialReview:review});effects=true;return tree;};
+ const start=()=>{let tree=render();find(tree,n=>n.type==='input')!.props.onChange({target:{checked:true}});tree=render();find(tree,n=>n.type==='button'&&n.children.includes('Apply to the shared program'))!.props.onClick()};
+ return{clerk,auth,render,start,review,unmount:()=>cleanups.forEach(fn=>fn()),writes:()=>writesAfterSwitch};
+}
+test('organizer review hides controls for SDK loading, another account and replacement session',()=>{for(const condition of ['loading','account','session']){const h=harness();if(condition==='loading')h.clerk.loaded=false;if(condition==='account')h.clerk.user.id='user_B';if(condition==='session')h.clerk.session.id='sess_NEW';const tree=h.render();assert.equal(find(tree,n=>n.type==='input'),null);assert.ok(find(tree,n=>n.props.role==='status'));}});
+test('organizer response cannot update the previous account before or after JSON parsing',async()=>{
+ const original=globalThis.fetch;
+ try{for(const phase of ['response','json']){const h=harness();let resolveResponse!:(value:any)=>void,resolveJson!:(value:any)=>void,calls=0;const response=new Promise(resolve=>resolveResponse=resolve),json=new Promise(resolve=>resolveJson=resolve);
+  globalThis.fetch=(async(_url,options)=>{calls++;assert.equal(new Headers(options?.headers).get('X-Expected-Devyo-User'),'user_A');assert.equal(new Headers(options?.headers).get('X-Expected-Devyo-Session'),'sess_A');assert.deepEqual(Object.keys(JSON.parse(String(options?.body))).sort(),['candidateId','previewHash','reviewed','revision']);return await response;}) as typeof fetch;
+  h.start();if(phase==='json'){resolveResponse({ok:true,json:()=>json});await flush();}h.clerk.user.id='user_B';h.clerk.session.id='sess_B';if(phase==='response')resolveResponse({ok:true,json:async()=>({revision:2})});else resolveJson({revision:2});await flush();assert.equal(calls,1);assert.equal(h.writes(),0);h.unmount();
+ }}finally{globalThis.fetch=original;}
+});
+test('unmount aborts an in-flight approval and suppresses its refresh',async()=>{const original=globalThis.fetch;try{const h=harness();let resolve!:(value:any)=>void,signal:AbortSignal|undefined,calls=0;globalThis.fetch=(async(_url,options)=>{calls++;signal=options?.signal??undefined;return new Promise(r=>resolve=r)}) as typeof fetch;h.start();h.unmount();assert.equal(signal?.aborted,true);resolve({ok:true,json:async()=>({revision:2})});await flush();assert.equal(calls,1);}finally{globalThis.fetch=original;}});
+test('normal approval posts once and reloads once with the same captured principal',async()=>{const original=globalThis.fetch;try{const h=harness(),calls:string[]=[];globalThis.fetch=(async(_url,options)=>{calls.push(options?.method??'GET');return{ok:true,json:async()=>options?.method==='POST'?{revision:2}:{...h.review,revision:2,candidate:{...h.review.candidate,applicable:false}}} as Response;}) as typeof fetch;h.start();await flush();assert.deepEqual(calls,['POST','GET']);assert.ok(find(h.render(),n=>n.props.role==='status'&&n.children.some(value=>typeof value==='string'&&value.includes('updated once'))));h.unmount();}finally{globalThis.fetch=original;}});

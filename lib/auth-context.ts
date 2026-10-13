@@ -8,6 +8,7 @@ export type AuthContext = {
   recentlyVerified?: boolean;
   accountDeletionEnabled?:boolean;
   accountDeletionSchemaReady?:boolean;
+  profilePhotosEnabled?:boolean;
   sessionId?: string;
   accountDeletedNotice?:boolean;
   deletionStatus?:'requested'|'identity_deleted'|'complete';

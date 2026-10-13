@@ -20,9 +20,9 @@ export default {async fetch(incoming:Request,env:Cloudflare.Env,ctx:ExecutionCon
  const trusted=[env.DEVYO_ORIGIN,...(env.DEVYO_ADDITIONAL_ORIGINS??'').split(',')].includes(new URL(incoming.url).origin);
  if(trusted&&env.DEVYO_PROGRAM_SYNC_ENABLED==='true'&&env.DB&&incoming.method==='GET'&&['/','/api/program/status'].includes(pathname)){
   // Only fills missing initial public snapshots, under a database lease and hourly retry cap.
-  ctx.waitUntil(runProgramCheck(env.DB,seed,new Date(),{bootstrap:true}).catch(()=>undefined));
+  ctx.waitUntil(runProgramCheck(env.DB,seed,new Date(),{bootstrap:true,organizerReview:{schemaReady:env.DEVYO_ORGANIZER_REVIEW_SCHEMA_READY==='true',enabled:env.DEVYO_ORGANIZER_REVIEW_ENABLED==='true'}}).catch(()=>undefined));
   if(pathname==='/api/program/status'&&incoming.method==='GET'){
-   try{const{sources,stopped,stopAt,cadence}=await readProgram(env.DB,seed);return Response.json({sources,stopped,stopAt,cadence},{headers:programHeaders})}
+   try{const{sources,stopped,stopAt,cadence}=await readProgram(env.DB,seed,new Date(),{organizerReviewSchemaReady:env.DEVYO_ORGANIZER_REVIEW_SCHEMA_READY==='true'});return Response.json({sources,stopped,stopAt,cadence},{headers:programHeaders})}
    catch{return Response.json({error:'Daily schedule verification is temporarily unavailable.'},{status:503,headers:programHeaders})}
   }
  }
@@ -35,7 +35,7 @@ export default {async fetch(incoming:Request,env:Cloudflare.Env,ctx:ExecutionCon
  if(trusted&&!new URL(incoming.url).search){const home=generalHomeResponse(incoming);if(home)return home;}
  const request=stripLegacyIdentity(incoming),auth=await authenticate(request,env);
  if(auth.handshake&&auth.headers.has("location")){auth.headers.set("Cache-Control","private, no-store");return new Response(null,{status:307,headers:auth.headers})}
- auth.context={...auth.context,accountDeletionEnabled:trusted&&env.DEVYO_ACCOUNT_DELETION_ENABLED==='true',accountDeletionSchemaReady:trusted&&env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY==='true',accountDeletedNotice:pathname==='/sign-in'&&request.headers.get('Cookie')?.split(';').some(value=>value.trim()==='devyo-account-deleted=1')};
+ auth.context={...auth.context,profilePhotosEnabled:trusted&&auth.context.eventId==='thunderplains-2026'&&env.DEVYO_PROFILE_PHOTOS_ENABLED==='true'&&env.DEVYO_PROFILE_PHOTOS_SCHEMA_READY==='true',accountDeletionEnabled:trusted&&env.DEVYO_ACCOUNT_DELETION_ENABLED==='true',accountDeletionSchemaReady:trusted&&env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY==='true',accountDeletedNotice:pathname==='/sign-in'&&request.headers.get('Cookie')?.split(';').some(value=>value.trim()==='devyo-account-deleted=1')};
  if(trusted&&env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY==='true'&&auth.context.user&&pathname!=='/api/account'){
   try{if(!env.DB)throw Error('Missing database');const job=await deletionJob(env.DB,auth.context.user.userId);if(job){const identity={userId:auth.context.user.userId.slice(auth.context.user.userId.lastIndexOf(':')+1),sessionId:auth.context.sessionId!};auth.context={...auth.context,user:pathname==='/settings'?auth.context.user:null,status:job.phase==='complete'&&pathname==='/sign-in'?'anonymous':'deleting',deletionStatus:job.phase,deletionIdentity:identity,accountDeletedNotice:job.phase==='complete'&&pathname==='/sign-in'}}}
   catch{return Response.json({error:'Account status could not be checked. Please retry.'},{status:503,headers:programHeaders})}
@@ -45,7 +45,7 @@ export default {async fetch(incoming:Request,env:Cloudflare.Env,ctx:ExecutionCon
  let response:Response;
  if(pathname==='/api/program'){
   if(request.method!=='GET')response=Response.json({error:'This program endpoint is read-only.'},{status:405,headers:programHeaders});
-  else try{if(!env.DB)throw new Error('Missing database');response=Response.json(await readProgram(env.DB,seed),{headers:programHeaders})}
+  else try{if(!env.DB)throw new Error('Missing database');response=Response.json(await readProgram(env.DB,seed,new Date(),{organizerReviewSchemaReady:env.DEVYO_ORGANIZER_REVIEW_SCHEMA_READY==='true'}),{headers:programHeaders})}
   catch{response=Response.json({error:'The last program could not be loaded. Your planner has not changed.'},{status:503,headers:programHeaders})}
  }else response=await runWithAuth(auth.context,()=>handler.fetch(request,env,ctx));const headers=new Headers(response.headers);
  for(const cookie of auth.headers.getSetCookie())headers.append("Set-Cookie",cookie);
@@ -53,7 +53,7 @@ export default {async fetch(incoming:Request,env:Cloudflare.Env,ctx:ExecutionCon
  headers.set("Cache-Control","private, no-store");headers.set("X-Robots-Tag","noindex, nofollow");headers.set("Referrer-Policy","no-referrer");
  return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
 },async scheduled(event:ScheduledController,env:Cloudflare.Env,ctx:ExecutionContext){
- if((!event.cron||event.cron==='0 14 * * *')&&env.DEVYO_PROGRAM_SYNC_ENABLED==='true'&&env.DB)ctx.waitUntil(runProgramCheck(env.DB,seed));
+ if((!event.cron||event.cron==='0 14 * * *')&&env.DEVYO_PROGRAM_SYNC_ENABLED==='true'&&env.DB)ctx.waitUntil(runProgramCheck(env.DB,seed,new Date(),{organizerReview:{schemaReady:env.DEVYO_ORGANIZER_REVIEW_SCHEMA_READY==='true',enabled:env.DEVYO_ORGANIZER_REVIEW_ENABLED==='true'}}));
  if(env.DB&&(env.OPENAI_API_KEY||env.OPEN_API_KEY))ctx.waitUntil(env.DB.prepare('DELETE FROM devyo_ai_cache WHERE expires_at<=?').bind(Date.now()).run().catch(()=>undefined));
  if(env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY==='true'&&env.DB){const config=readAuthConfig(env);if(config)ctx.waitUntil(recoverAccountDeletions(env.DB,owner=>deleteClerkIdentity(config,owner)).catch(()=>undefined))}
 }};

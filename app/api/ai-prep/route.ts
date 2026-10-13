@@ -8,7 +8,7 @@ export async function POST(request:Request){try{
  const auth=getAuthContext();if(!auth.user)return json({error:'Sign in to use AI preparation.'},401);assertSameOrigin(request);
  if(!request.headers.has('X-Expected-Devyo-User')||!plannerIdentityMatches(request.headers.get('X-Expected-Devyo-User'),request.headers.get('X-Expected-Devyo-Session'),auth.user.userId,auth.sessionId))return json({error:'Your sign-in session changed. Reopen this page.'},409);
  if(!env.DB||!apiKey())return json({error:'AI preparation is not configured. The shared guide is still available.'},503);
- const body=validateAIPrepRequest(await readSharingBody(request)),program=await readProgram(env.DB,seedData as unknown as ProgramSeed),session=program.sessions.find(s=>s.id===body.sessionId);if(!session)return json({error:'This session has no verified preparation source.'},400);
+ const body=validateAIPrepRequest(await readSharingBody(request)),program=await readProgram(env.DB,seedData as unknown as ProgramSeed,new Date(),{organizerReviewSchemaReady:env.DEVYO_ORGANIZER_REVIEW_SCHEMA_READY==='true'}),session=program.sessions.find(s=>s.id===body.sessionId);if(!session)return json({error:'This session has no verified preparation source.'},400);
  const prep=talkPrepFor(session,program.sessions);if(prep.status!=='ready')return json({error:'This abstract needs a fresh review before AI preparation.'},409);
  const result=await generateAIPrep(env.DB,auth.user.userId,apiKey()!,body,prep.guide);return json({...result,model:AI_MODEL,remaining:await aiCallsRemaining(env.DB,auth.user.userId)});
  }catch(error){

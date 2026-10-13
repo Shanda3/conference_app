@@ -14,5 +14,15 @@ declare namespace Cloudflare {
     DEVYO_ALLOWED_USER_IDS?: string;
     DB?: D1Database;
     BUCKET?: R2Bucket;
+    DEVYO_PROFILE_PHOTOS?: R2Bucket;
+    DEVYO_PROFILE_IMAGES?: ImagesBinding;
+    DEVYO_PROFILE_PHOTOS_ENABLED?: string;
+    DEVYO_PROFILE_PHOTOS_SCHEMA_READY?: string;
+    DEVYO_PHOTO_STORAGE?: 'd1'|'r2';
+    DEVYO_NETWORKING_ENABLED?: string;
+    DEVYO_NETWORKING_SCHEMA_READY?: string;
+    DEVYO_ORGANIZER_REVIEW_ENABLED?: string;
+    DEVYO_ORGANIZER_REVIEW_SCHEMA_READY?: string;
+    DEVYO_SELF_IDENTITY_ENABLED?: string;
   }
 }

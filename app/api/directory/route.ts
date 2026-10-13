@@ -1,0 +1,3 @@
+import{NetworkingError}from'@/lib/networking';import{networkingService,networkingResponse,networkingFailure}from'@/lib/networking-http';
+export const dynamic='force-dynamic';
+export async function GET(request:Request){try{const service=await networkingService(request);if(!service)return networkingResponse({error:'Networking is not enabled.'},503);const q=new URL(request.url).searchParams;if(q.has('member')){if([...q.keys()].length!==1||q.getAll('member').length!==1)throw new NetworkingError('Choose a valid shared plan.');return networkingResponse(await service.sharedPlan(q.get('member')!))}return networkingResponse(await service.directory(q))}catch(e){return networkingFailure(e)}}
