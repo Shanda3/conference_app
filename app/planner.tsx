@@ -1,4 +1,6 @@
 "use client";
+import{newScheduleConflicts}from'@/lib/program-conflicts';
+import{ScheduleChangeAlert}from'./schedule-change-alert';
 import{reconcileThunderPlains}from'@/lib/program-reconcile';
 import {discussionForSession,discussionPath} from '@/lib/talk-discussion';
 import './talk-discussion.css';
@@ -61,14 +63,14 @@ export default function Planner({user,signInPath,eventId,accountDeletionEnabled=
   const expectedOwner=user?.userId?.slice(user.userId.lastIndexOf(":")+1)??"";
   const [programPayload,setProgramPayload]=useState<ProgramPayload|null>(null);const [programError,setProgramError]=useState("");
   const [state,setState]=useState<PlannerState>(emptyState()); const [revision,setRevision]=useState(0); const [loading,setLoading]=useState(!!user); const [busy,setBusy]=useState(false); const [error,setError]=useState(""); const [toast,setToast]=useState("");
-  const [venueAnchor,setVenueAnchor]=useState('');const [tab,setTab]=useState<Tab>(initialSection); const [conferenceFilter,setConferenceFilter]=useState("all"); const [day,setDay]=useState("all"); const [search,setSearch]=useState(""); const [track,setTrack]=useState("all"); const [modal,setModal]=useState<Modal>(null); const [menu,setMenu]=useState(false); const [statusFilter,setStatusFilter]=useState("all"); const initRef=useRef(false);const programFetchInFlight=useRef(false);
+  const [venueAnchor,setVenueAnchor]=useState('');const [tab,setTab]=useState<Tab>(initialSection); const [conferenceFilter,setConferenceFilter]=useState("all"); const [day,setDay]=useState("all"); const [search,setSearch]=useState(""); const [track,setTrack]=useState("all"); const [modal,setModal]=useState<Modal>(null); const [menu,setMenu]=useState(false); const [statusFilter,setStatusFilter]=useState("all"); const initRef=useRef(false);const programFetchInFlight=useRef(false);const [scheduleConflictOnly,setScheduleConflictOnly]=useState(false);
   const navigationRef=useRef<HTMLElement>(null);
   const menuButtonRef=useRef<HTMLButtonElement>(null);
   const contentRef=useRef<HTMLDivElement>(null);
   const previousTab=useRef(tab);
   const saveInFlight=useRef(false);
   const[keyboardOpen,setKeyboardOpen]=useState(false);
-  function selectSection(section:Tab){setTab(section);setSearch('');setMenu(false);if(section!=='venue')setVenueAnchor('')}
+  function selectSection(section:Tab){if(section!=="agenda")setScheduleConflictOnly(false);setTab(section);setSearch('');setMenu(false);if(section!=='venue')setVenueAnchor('')}
   function showVenue(event:React.MouseEvent<HTMLAnchorElement>,anchor=''){if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();setVenueAnchor(anchor);selectSection('venue');setModal(null)}
   function openNavigation(event:React.MouseEvent<HTMLButtonElement>){menuButtonRef.current=event.currentTarget;setMenu(true)}
   useEffect(()=>{
@@ -122,7 +124,9 @@ export default function Planner({user,signInPath,eventId,accountDeletionEnabled=
   const days=Array.from(new Set(relevantSessions.map(s=>dateInZone(s.start,confById[s.conferenceId]?.timeZone||"UTC")))).sort();
   const tracks=Array.from(new Set(relevantSessions.map(s=>s.track).filter(Boolean))).sort();
   const filtered=relevantSessions.filter(s=>(day==="all"||dateInZone(s.start,confById[s.conferenceId].timeZone)===day)&&(track==="all"||s.track===track)&&`${s.title} ${s.speaker} ${s.room} ${s.track}`.toLowerCase().includes(search.toLowerCase())).sort((a,b)=>a.start.localeCompare(b.start)||a.title.localeCompare(b.title));
-  const displayed=tab==="agenda"?filtered.filter(s=>state.savedSessionIds.includes(s.id)):filtered;
+  const scheduleChangeConflicts=newScheduleConflicts(state,programPayload?.sessions??[],programPayload?.thunderPlainsUpdate),changedConflictIds=new Set(scheduleChangeConflicts.flatMap(pair=>pair.map(s=>s.id)));
+  const displayed=tab==="agenda"?filtered.filter(s=>state.savedSessionIds.includes(s.id)&&(!scheduleConflictOnly||changedConflictIds.has(s.id))):filtered;
+  useEffect(()=>{if(!scheduleChangeConflicts.length)setScheduleConflictOnly(false)},[scheduleChangeConflicts.length]);
   const displayedGroups=sessionGroups(displayed,state.conferences,tab==="sessions");
   const connections=state.connections.filter(c=>(conferenceFilter==="all"||c.conferenceId===conferenceFilter)&&(statusFilter==="all"||c.status===statusFilter)&&`${c.name} ${c.company} ${c.role} ${c.notes}`.toLowerCase().includes(search.toLowerCase()));
   const due=state.connections.filter(c=>c.followUpDate&&c.followUpDate<=dateToday(confById[c.conferenceId]?.timeZone)).sort((a,b)=>a.followUpDate.localeCompare(b.followUpDate));
@@ -179,6 +183,8 @@ export default function Planner({user,signInPath,eventId,accountDeletionEnabled=
     </aside>
     {menu&&<button className="sidebar-scrim" onClick={()=>setMenu(false)} aria-label="Close menu"/>}
     <main className="main" inert={menu}><header className="topbar"><div className="breadcrumb"><button className="icon-btn mobile-menu" aria-label="Open menu" aria-controls="planner-navigation" aria-expanded={menu} onClick={openNavigation}><Menu size={21}/><span>Menu</span></button><span>My workspace</span><ChevronRight size={14}/><b>{navItems.find(n=>n.id===tab)?.label}</b></div><div className="topbar-right"><Logout/><span className="sync"><span className={busy?"pulse":""}/>{busy?"Saving…":error?"Not synced":state.initialized?"Private & synced":"Private planner"}</span><button className="icon-btn" title="Sources and help" aria-label="Sources and help" onClick={()=>setModal({kind:"sources"})}><CircleHelp size={19}/></button></div></header>
+      <ScheduleChangeAlert count={scheduleChangeConflicts.length} version={programPayload?.thunderPlainsUpdate?.version??""} owner={expectedOwner} onReview={()=>{viewSavedAgenda();setScheduleConflictOnly(true)}}/>
+      {tab==="agenda"&&scheduleConflictOnly&&<p className="schedule-conflict-filter"><button type="button" className="text-button" onClick={()=>setScheduleConflictOnly(false)}>Show my full agenda</button></p>}
     <div className="content" ref={contentRef} tabIndex={-1} aria-label={`${navItems.find(n=>n.id===tab)?.label} content`}>
       {error&&<div role="alert" className="error-banner"><AlertTriangle size={18}/><span>{error}</span><button onClick={load} disabled={busy}><RefreshCw size={15}/>Reload</button><button className="icon-btn" aria-label="Dismiss error" onClick={()=>setError("")}><X size={16}/></button></div>}
       {tab==="profile"?<ProfilePanel profilePhotosEnabled={profilePhotosEnabled} accountDeletionEnabled={accountDeletionEnabled} accountDeletionSchemaReady={accountDeletionSchemaReady} savedCount={saved.length} onExplore={()=>selectSection("agenda")}/>:loading?<div className="loading"><LoaderCircle className="spin"/><h2>Opening your planner…</h2><p>Gathering your sessions, notes, and people.</p></div>:tab==="venue"?<VenueGuide focusAnchor={venueAnchor}/>:tab==="attendees"||tab==="groups"?<Members key={tab} groupsOnly={tab==="groups"} onProfile={()=>setTab("profile")} onConnect={saveAttendee} savedConnectionIds={state.connections.map(connection=>connection.id)} connectionsBusy={busy} connectionsEnabled={state.initialized&&state.conferences.length>0} onStartPlanner={()=>selectSection("sessions")}/>:!state.initialized&&eventId==="thunderplains-2026"?<Empty icon={RefreshCw} title="Open your ThunderPlains planner" action={<button className="button primary" disabled={busy} onClick={load}><RefreshCw size={16}/>Try again</button>}>Your conference program could not be opened yet. Try again to prepare your private planner.</Empty>:!state.initialized?<div className="onboarding"><span className="eyebrow">THUNDERPLAINS + INNOTECH · OKLAHOMA CITY</span><h1>Your people.<br/>Your sessions. Your day.</h1><p>Start with the ThunderPlains + InnoTech program in Oklahoma City. Save the sessions you want to attend.</p><div className="starter-card"><div className="starter-illustration"><Compass size={82}/><span>OKC<br/><b>2026</b></span></div><div><span className="event-tag">OCTOBER 21 · OKLAHOMA CITY</span><h2>ThunderPlains + InnoTech</h2><p>October 21, 2026 · Oklahoma City Convention Center</p><p className="muted">Verified public schedule snapshot. Your agenda and connections start empty. Times, rooms, and speakers come from organizer sources. Saving a session doesn’t reserve a seat or guarantee admission.</p><button className="button primary" disabled={busy||!program.conferences.length} onClick={()=>save(makeStarter(programPayload?.sessions),"Your conference planner is ready")}>Plan my conference <ArrowRight size={17}/></button></div></div></div>:tab==="chat"?<ConferenceChat onProfile={()=>setTab("profile")}/>:<>

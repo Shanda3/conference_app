@@ -11,6 +11,7 @@ export function deletionSignInUrl(origin:string){
 }
 export function clearDeletionLocalData(browser:Pick<Window,'localStorage'|'sessionStorage'>){
  for(const key of ['devyo.remembered-email.v1','devyo.remember-email-choice.v1'])try{browser.localStorage.removeItem(key)}catch{}
+ try{for(let i=browser.localStorage.length-1;i>=0;i--){const key=browser.localStorage.key(i);if(key?.startsWith('devyo-schedule-announcement:'))browser.localStorage.removeItem(key)}}catch{}
  for(const key of ['devyo-shared-plan-intent.v1','devyo-group-invite','devyo-login-refresh'])try{browser.sessionStorage.removeItem(key)}catch{}
 }
 export function installPrivateHistoryGuard(browser:Pick<Window,'addEventListener'|'removeEventListener'|'location'>,doc:Pick<Document,'querySelector'>){
