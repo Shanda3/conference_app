@@ -1,4 +1,7 @@
 import{env}from'cloudflare:workers';
+import {getAuthContext} from '@/lib/auth-context';
+import {AttendeeSocialD1,assertSocialSchema} from '@/lib/attendee-social-d1';
+import {SOCIAL_EVENT,communityDefinition,publicCommunities,AttendeeSocialError} from '@/lib/attendee-social';
 import {ensureLinkedInVisibility,publicLinkedIn} from "@/lib/profile-visibility";
 import { chatRequestId } from "@/lib/chat";
 import { sql } from "drizzle-orm";
@@ -37,11 +40,20 @@ export async function GET(request: Request): Promise<Response> {
     if(!user)return json({error:"Sign in to see attendees and groups."},401);
     const owner=user.userId, db=getDb(), q=new URL(request.url).searchParams;
     await ensureLinkedInVisibility(db);
+    const social=env.DEVYO_ATTENDEE_SOCIAL_SCHEMA_READY==='true';
+    if(social){if(env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY!=='true'||!env.DB)throw new SharingError('Community privacy controls are being prepared.',503);await assertSocialSchema(env.DB)}
     // The directory registers app attendees, not unrelated users in the identity provider.
     await db.run(sql`INSERT INTO community_members(id,owner_id) VALUES(${crypto.randomUUID()},${owner}) ON CONFLICT(owner_id) DO NOTHING`);
     if(q.has("preview"))return json(await snapshot(owner));
+    if(q.has('profile')){
+      if(!social||getAuthContext().eventId!==SOCIAL_EVENT)throw new SharingError('Attendee profile unavailable.',404);
+      if(q.size!==1||q.getAll('profile').length!==1)throw new SharingError('Choose one attendee.');
+      const member=await new AttendeeSocialD1(env.DB!,owner).member(id(q.get('profile')));
+      return json({member:{...member,communities:env.DEVYO_COMMUNITIES_ENABLED==='true'?member.communities:[]}});
+    }
     if(q.has("member")) {
       const member=id(q.get("member"));
+      if(social){if(getAuthContext().eventId!==SOCIAL_EVENT)throw new SharingError('Open this on the ThunderPlains site.',404);await new AttendeeSocialD1(env.DB!,owner).member(member)}
       const [row]=await db.all<{payload_json:string}>(sql`SELECT p.payload_json FROM member_plans p JOIN community_members m ON m.owner_id=p.owner_id WHERE m.id=${member}`);
       if(!row)return json({error:"This attendee has not shared a plan, or has stopped sharing."},404);
       return json({plan:validateSharedSchedule(JSON.parse(row.payload_json))});
@@ -54,11 +66,19 @@ export async function GET(request: Request): Promise<Response> {
       await membership(group,owner); // Recheck after reads if removal raced this request.
       return json({group:selected,messages:messages.reverse(),members,invites});
     }
+    if(social&&getAuthContext().eventId!==SOCIAL_EVENT)throw new SharingError('Open attendees on the ThunderPlains site.',404);
+    const community=q.get('community'),relationship=q.get('relationship')??'all';
+    if([...q.keys()].some(k=>!['offset','community','relationship'].includes(k))||[...new Set(q.keys())].some(k=>q.getAll(k).length!==1))throw new SharingError('Use valid directory filters.');
+    if(community&&!communityDefinition(community)||!['all','member','interested'].includes(relationship)||q.has('relationship')&&!community)throw new SharingError('Choose a listed community and relationship.');
+    if(community&&(!social||env.DEVYO_COMMUNITIES_ENABLED!=='true'))throw new SharingError('Community filters are being prepared.',503);
     const offset=Math.max(0,Math.min(100000,Number(q.get("offset"))||0));
-    const members=await db.all<{id:string;displayName:string;me:number;shared:number;publicLinkedIn:string|null}>(sql`SELECT m.id,COALESCE(p.display_name,'Attendee') AS displayName,m.owner_id=${owner} AS me,EXISTS(SELECT 1 FROM member_plans s WHERE s.owner_id=m.owner_id) AS shared,CASE WHEN p.linkedin_visible=1 THEN p.linkedin_url ELSE NULL END AS publicLinkedIn FROM community_members m LEFT JOIN profiles p ON p.owner_id=m.owner_id ORDER BY displayName,m.id LIMIT 101 OFFSET ${Math.floor(offset)}`);
+    const privacy=social?sql`NOT EXISTS(SELECT 1 FROM account_deletions WHERE owner_id IN(${owner},m.owner_id)) AND NOT EXISTS(SELECT 1 FROM attendee_blocks WHERE event_id=${SOCIAL_EVENT} AND ((owner_id=${owner} AND blocked_owner_id=m.owner_id) OR(owner_id=m.owner_id AND blocked_owner_id=${owner})))`:sql`1`;
+    const filter=community?sql`EXISTS(SELECT 1 FROM attendee_communities c WHERE c.owner_id=m.owner_id AND c.event_id=${SOCIAL_EVENT} AND c.community_id=${community} AND (${relationship}='all' OR c.relationship=${relationship}))`:sql`1`;
+    const badges=social&&env.DEVYO_COMMUNITIES_ENABLED==='true'?sql`COALESCE((SELECT json_group_array(json_object('id',community_id,'relationship',relationship)) FROM attendee_communities WHERE owner_id=m.owner_id AND event_id=${SOCIAL_EVENT}),'[]')`:sql`'[]'`;
+    const members=await db.all<{id:string;displayName:string;me:number;shared:number;publicLinkedIn:string|null;communities:string}>(sql`SELECT m.id,COALESCE(p.display_name,'Attendee') AS displayName,m.owner_id=${owner} AS me,EXISTS(SELECT 1 FROM member_plans s WHERE s.owner_id=m.owner_id) AS shared,CASE WHEN p.linkedin_visible=1 THEN p.linkedin_url ELSE NULL END AS publicLinkedIn,${badges} communities FROM community_members m LEFT JOIN profiles p ON p.owner_id=m.owner_id WHERE ${privacy} AND ${filter} ORDER BY displayName,m.id LIMIT 101 OFFSET ${Math.floor(offset)}`);
     const groups=await db.all(sql`SELECT g.id,g.name,g.owner_id=${owner} AS isOwner,${archivedGroup()} AS archived FROM private_groups g WHERE g.owner_id=${owner} OR EXISTS(SELECT 1 FROM private_group_members m WHERE m.group_id=g.id AND m.owner_id=${owner}) ORDER BY g.created_at DESC`);
     const [self]=await db.all<{shared:number}>(sql`SELECT EXISTS(SELECT 1 FROM member_plans WHERE owner_id=${owner}) AS shared`);
-    return json({members:members.slice(0,100).map(({publicLinkedIn:link,...member})=>{const linkedInUrl=publicLinkedIn(link);return{...member,...(linkedInUrl?{linkedInUrl}:{})}}),hasMore:members.length>100,groups,sharing:!!self.shared});
+    return json({members:members.slice(0,100).map(({publicLinkedIn:link,communities,...member})=>{const linkedInUrl=publicLinkedIn(link);return{...member,communities:publicCommunities(communities),...(linkedInUrl?{linkedInUrl}:{})}}),hasMore:members.length>100,groups,sharing:!!self.shared});
   } catch(error) {return failure(error);}
 }
 export async function POST(request: Request): Promise<Response> {
@@ -135,4 +155,4 @@ export async function POST(request: Request): Promise<Response> {
     throw new SharingError("Choose a supported action.");
   } catch(error) {return failure(error);}
 }
-function failure(error:unknown) {return error instanceof SharingError?json({error:error.message},error.status):json({error:"The community could not be loaded or saved. Please try again."},503);}
+function failure(error:unknown) {return error instanceof SharingError||error instanceof AttendeeSocialError?json({error:error.message},error.status):json({error:"The community could not be loaded or saved. Please try again."},503);}

@@ -1,4 +1,5 @@
 import{photoAvatarResponse,photoFailure}from'@/lib/photo-http';
+import{assertAttendeeImageAccess}from'@/lib/attendee-image-access';
 import{PhotoError}from'@/lib/photo-model';
 import {sql} from "drizzle-orm";
 import{env}from'cloudflare:workers';
@@ -14,6 +15,7 @@ export async function GET(request:Request){
  try{
  const user=await getAppUser();if(!user)return json({error:"Sign in to see avatars."},401);
  const q=new URL(request.url).searchParams,member=q.get('member'),db=getDb();
+ if(member&&env.DEVYO_ATTENDEE_SOCIAL_SCHEMA_READY==='true')await assertAttendeeImageAccess(env.DB!,user.userId,member);
  if(q.has('gravatar')){if(q.get('gravatar')!=='1'||q.get('self')!=='1'||q.has('member')||[...q.keys()].some(k=>!['gravatar','self','v'].includes(k)))throw new SharingError('Avatar unavailable.',404);}else if(q.has('self')||q.has('member')){const photo=await photoAvatarResponse(request);if(photo)return photo;}
  if(member===null&&!q.has('self')){const [row]=await db.all<{email_hash:string}>(sql`SELECT email_hash FROM member_avatars WHERE owner_id=${user.userId}`);const email=await accountPrimaryEmail(user.userId,env);return json({enabled:!!row,verifiedEmailAvailable:!!email,maskedEmail:email?maskedAccountEmail(email):null,currentEmailMatches:!!row&&!!email&&row.email_hash===await gravatarHash(email)})}
  let row:{email_hash:string}|undefined;
@@ -22,7 +24,7 @@ export async function GET(request:Request){
  if(!row)return json({error:"Avatar unavailable."},404);
  const response=await cachedGravatar(row.email_hash);
  const [stillAllowed]=q.has('self')?await db.all(sql`SELECT owner_id FROM member_avatars WHERE owner_id=${user.userId} AND email_hash=${row.email_hash}`):await db.all(sql`SELECT a.owner_id FROM member_avatars a JOIN community_members m ON m.owner_id=a.owner_id WHERE m.id=${member} AND a.email_hash=${row.email_hash}`);
- if(!stillAllowed)return json({error:"Avatar unavailable."},404);for(const[key,value]of Object.entries(PRIVATE_RESPONSE_HEADERS))response.headers.set(key,value);return response;
+ if(!stillAllowed)return json({error:"Avatar unavailable."},404);if(member&&env.DEVYO_ATTENDEE_SOCIAL_SCHEMA_READY==='true')await assertAttendeeImageAccess(env.DB!,user.userId,member);for(const[key,value]of Object.entries(PRIVATE_RESPONSE_HEADERS))response.headers.set(key,value);return response;
  }catch(error){if(error instanceof PhotoError)return photoFailure(error);if(error instanceof SharingError)return json({error:error.message},error.status);return json({error:"Avatar settings or image could not be loaded. Please retry."},503)}
 }
 export async function PUT(request:Request){

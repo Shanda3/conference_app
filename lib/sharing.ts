@@ -164,10 +164,10 @@ export function assertSameOrigin(request: Request): void {
   }
 }
 
-export async function readSharingBody(request: Request): Promise<unknown> {
+export async function readSharingBody(request: Request, limit: number = SHARE_LIMITS.bodyBytes): Promise<unknown> {
   if (!/^application\/json(?:\s*;|$)/i.test(request.headers.get("Content-Type") ?? "")) throw new SharingError("Send application/json.", 415);
   const length = request.headers.get("Content-Length");
-  if (length && (!/^\d+$/.test(length) || Number(length) > SHARE_LIMITS.bodyBytes)) throw new SharingError("Keep requests under 8 KB.", 413);
+  if (length && (!/^\d+$/.test(length) || Number(length) > limit)) throw new SharingError(`Keep requests under ${Math.floor(limit/1024)} KB.`, 413);
   if (!request.body) throw new SharingError("A JSON request is required.");
   const reader = request.body.getReader();
   const chunks: Uint8Array[] = [];
@@ -177,9 +177,9 @@ export async function readSharingBody(request: Request): Promise<unknown> {
       const { done, value } = await reader.read();
       if (done) break;
       bytes += value.byteLength;
-      if (bytes > SHARE_LIMITS.bodyBytes) {
+      if (bytes > limit) {
         await reader.cancel();
-        throw new SharingError("Keep requests under 8 KB.", 413);
+        throw new SharingError(`Keep requests under ${Math.floor(limit/1024)} KB.`, 413);
       }
       chunks.push(value);
     }

@@ -1,0 +1,28 @@
+// Exact migration definitions; fail closed when privacy or quota guards are absent/changed.
+export const SOCIAL_SCHEMA_HASHES:Record<string,string>={
+  "attendee_social_settings": "361757d7bf73cd4b7004b3b4ddc3918de2e3bb78f9fad3d06997abb4a3c93d6e",
+  "attendee_communities": "1a7b2a66bf4ff89bdcc06f4f31b0ab6b14b94a605737738c9c32e634309f2388",
+  "attendee_community_filter": "07d9d5e9c5b6a7e61cf7f75b0a27462a420433e9d83f9e93b886ede43365b12c",
+  "attendee_blocks": "cec4612ba29060b7b87936feb651aeb78ccd3f12c541319f172486e4726ae9db",
+  "attendee_block_target": "35c884529a6c5f6ce9582e295377a56323423ba0046fe189c4f790c2310b2ad7",
+  "attendee_connection_events": "224bdf8de520af25a182f252ffcad75b696d978815edcf49606eb528fd7ca9c4",
+  "attendee_notification_recipient": "0ab4ba4a657b21014775cef8167b2b9a5cba7a2b15fd8875161e070c098839f2",
+  "attendee_connection_actor_rate": "992574b1c9e8cc44ffbc5423a6433ca858de23de2b1b71a96fc5074301416b5f",
+  "attendee_connection_limits": "de39cb741c57804ea8a3626481808ef3a4514338c92a869cc972c49bbf6cd3dc",
+  "attendee_limit_owner_time": "546431810192ca4dca99d6a01a6bc1f588de7d6452ea1539422dd18b514af3a9",
+  "attendee_event_eligible": "312b38d8b2e0976a87a6da79349a345762bb9348f56ced4924a61135c90264c0",
+  "attendee_event_rate": "ccd8c9b03aa9585883faaee4d92ba3a50c62657de5478604858a809144b9e86d",
+  "attendee_record_limits": "f4f45908b8d8374b87af2a1a4b1fefdcd97319ab5236e566af0d91991a46c8f0",
+  "attendee_notice_time_immutable": "f1646fe4c76194c06941aba6d9970dcacf97245d14e273f68e1382de0262ecf5",
+  "attendee_settings_block_insert": "196c037ac8cd1a1e9f951ad9319e962a618196fb26d96976afe0f8614171bc41",
+  "attendee_settings_block_update": "f00dbb001db596a1ef97764a05a248c5cf8dd763bcc0368fa39317fa8c5f1775",
+  "attendee_community_block_insert": "4be5571b7a2eec1b3b73dfd795c60070e2f79ff3dbf71b4b1a2451aa510a7567",
+  "attendee_community_block_update": "001bddbb0968bba49343b92f3506b02a6f8f5e127232d975d628a91f36a3cfae",
+  "attendee_block_guard": "e8514d34f839c4ca6323615c4e700a2f2a56da43f2783124ce1a0752bf569baa",
+  "attendee_block_hide": "565e6f25571b5742ef4a92e823f2fa30e4eebdbfd7f8929045e7e13cf0aad68a",
+  "attendee_pause_notifications": "bd54974b440f3905780e2e86b969a61f3f0bd8d25ab8f94ec0d61a16655c4e4a",
+  "attendee_pause_notifications_insert": "89de1c38246c389d7e520c497d27dd7e7567e152a75fcf03d9a369d1d29a7e35",
+  "attendee_close_account": "a15315b5ad9b3c4e942b19b8b944286c4c26836ed79ce3f21be8d5ac24c541e5",
+  "attendee_legacy_insert": "19fd4943fa49eb4f7c83b0b29bd32fd2211b58dd0fee7b450d50f9a8b0d2850a",
+  "attendee_legacy_update": "b426a8cbfb1818438018e3c9a625a87283263712991ee176586aa026d70a4c39"
+};

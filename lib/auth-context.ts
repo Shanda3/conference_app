@@ -10,6 +10,9 @@ export type AuthContext = {
   accountDeletionSchemaReady?:boolean;
   profilePhotosEnabled?:boolean;
   talkDiscussionsEnabled?:boolean;
+  attendeeSocialSchemaReady?:boolean;
+  connectionNotificationsEnabled?:boolean;
+  communitiesEnabled?:boolean;
   sessionId?: string;
   accountDeletedNotice?:boolean;
   deletionStatus?:'requested'|'identity_deleted'|'complete';

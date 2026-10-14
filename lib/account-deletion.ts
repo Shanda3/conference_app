@@ -68,6 +68,8 @@ export async function cleanupAccountData(db:D1Database,owner:string,now=Date.now
  // Talk messages, memberships and flags already use the shared chat cleanup above.
  const discussionAudit=await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='talk_discussion_moderation'").first();
  if(discussionAudit)sql.unshift('DELETE FROM talk_discussion_moderation WHERE moderator_owner_id=? OR message_id IN (SELECT id FROM chat_messages WHERE owner_id=?)');
+ const socialTables=(await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name IN('attendee_social_settings','attendee_communities','attendee_blocks','attendee_connection_events','attendee_connection_limits')").all<{name:string}>()).results;
+ for(const {name}of socialTables)sql.unshift(name==='attendee_connection_events'?'DELETE FROM attendee_connection_events WHERE actor_owner_id=? OR recipient_owner_id=?':name==='attendee_blocks'?'DELETE FROM attendee_blocks WHERE owner_id=? OR blocked_owner_id=?':`DELETE FROM ${name} WHERE owner_id=?`);
  // AI data is owner-bound. The shared monthly money total contains no owner data and is never refunded.
  const aiTables=(await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name IN('devyo_ai_cache','devyo_ai_reservations','devyo_ai_daily','devyo_ai_session_daily')").all<{name:string}>()).results;
  for(const {name}of aiTables)sql.push(`DELETE FROM ${name} WHERE owner_id=?`);
