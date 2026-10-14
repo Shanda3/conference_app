@@ -1,6 +1,6 @@
 # Attendee connections and communities — local release review
 
-This change is based on the released talk-discussion/photo code at `aee8e6ae992f08ef566ed4ad2e7961d0d1a7ec76`. It is prepared locally only. It does not publish source, deploy a Worker, create a database, change Clerk, activate event cleanup, or send email/SMS/push notifications.
+This change is based on the released schedule code at `b730414` (Worker `a6c3a5ff-d55d-4e31-b9aa-64ada9ac093e`). It is prepared locally only. It does not publish source, deploy a Worker, create a database, change Clerk, activate event cleanup, or send email/SMS/push notifications.
 
 ## Behavior
 
@@ -44,9 +44,9 @@ All three default to `false` in `.env.example`; they are ordinary feature variab
 
 Do not change Clerk, sign-in policy, SMS settings, moderator grants, existing photo bindings/variables, hostnames, production secrets, program sync or cron settings for this feature.
 
-## Release sequence requiring approval
+## Authorized production release sequence
 
-1. Finish the outstanding browser checks and review the source/migration. GitHub publication and production changes remain separate pending approvals.
+1. Finish the outstanding browser checks and review the source/migration. Production implementation of the scoped social features was explicitly authorized; public GitHub publication remains blocked pending the specific applicable authorization. Do not retry the rejected public push.
 2. Read the target D1 schema without exposing attendee data. Verify the prerequisite tables/column and whether any of the 25 new definitions already exist. Apply the reviewed migration once; after an uncertain result, compare exact definitions rather than dropping or blindly recreating tables.
 3. Upload this code with new public features disabled and preserve the existing Worker variables, secrets, bindings and role configuration. Applying the migration while older code is still running is quiet: its planner writes create only legacy receipts.
 4. Verify all expected definitions and enable schema readiness. Validate the new authenticated service, anonymous denial and existing account/photo/talk flows before enabling either public feature. No real attendee save is needed for read-only hosted checks.
@@ -62,6 +62,9 @@ After any writes, do **not** roll back to code that ignores social blocks or cle
 
 The actual Worker routes with disposable D1 and synthetic verified-context accounts exercise authorization/origin/session/event checks, private projections, atomic saves, concurrent duplicates, quiet legacy/manual saves, opt-out/blocking, removal, read/dismiss ownership, daily limits across restart and peer deletion, malformed legacy data, tampered schema, paused-feature controls, and account deletion while preserving another owner's data. Unit/render checks cover explicit community validation, verified URLs/aliases, escaped names and bounded bodies. See the private local readiness evidence for final counts.
 
-Browser checks completed before the Mac locked include desktop 1280px notices/review disclosure; 320px notices, keyboard save and scrolling dialog; and 390px directory/filter/settings, aliases, explicit labels, recipient projection, profile navigation and dismissal. A narrow-screen explanation/link wrap was corrected. Block confirmation/unblock, opt-out save, cleared-badge cross-account removal and the final refreshed layouts remain blocked until the Mac is manually unlocked. The temporary Chrome viewport was reset successfully; the remaining UI steps still require manual Mac unlock.
+Browser checks completed before the Mac locked include desktop 1280px notices/review disclosure; 320px notices, keyboard save and scrolling dialog; and 390px directory/filter/settings, aliases, explicit labels, recipient projection, profile navigation and dismissal. A narrow-screen explanation/link wrap was corrected. The opt-out save and removal of notices after Refresh were verified with synthetic accounts; immediate unread-count refresh was then fixed and rebuilt, but the refreshed UI behavior still needs verification. Block confirmation/unblock, cleared-badge cross-account removal, delete/re-save through the UI and final refreshed layouts remain unverified. On resumption the Mac was available, but the browser confirmation API timed out/reset, and native fallback stopped when user activity switched Chrome to the official conference page. Do not claim these UI checks passed. Arrange a short uninterrupted browser window before completing them.
 
 No real provider sign-in, SMS delivery, multi-user hosted test or production capacity guarantee is implied. The automatic seven-day event purge is still off. Any future event cleanup must include these five tables and requires its own reviewed implementation before an automatic deletion promise can be treated as fulfilled.
+
+
+The combined local source passes 66 unit/render checks and TypeScript; the production build passes. The actual isolated social Worker/D1 suite passes 124 requests with synthetic identities and blocked provider calls. The deployed schedule is preserved; no social production schema, variables or Worker release has been applied. The schedule review remains attendee-applied by design.
