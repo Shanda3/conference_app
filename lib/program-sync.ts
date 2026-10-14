@@ -23,7 +23,7 @@ function text(value:unknown,max:number,required=false):string{if(typeof value!==
 function cancelled(value:Record<string,unknown>):boolean{return value.cancelled===true||value.canceled===true||['cancelled','canceled'].includes(String(value.status??'').toLowerCase())||/^(?:\[?cancelled\]?|\[?canceled\]?)\s*[:–-]/i.test(String(value.name??value.title??''))}
 function finish(session:PublishedSession):PublishedSession {
  if(dateInZone(session.start,'America/Chicago')!==PROGRAM_EVENT_DATE||dateInZone(session.end,'America/Chicago')!==PROGRAM_EVENT_DATE||Date.parse(session.end)<=Date.parse(session.start))throw new SourceError('A session is outside the event date or has invalid times.');
- if(session.status==='cancelled'&&!/^\[Cancelled\] /i.test(session.title))session.title=`[Cancelled] ${session.title}`;
+ if(session.status==='cancelled'&&!/^\[(?:Cancelled|Removed from current program)\] /i.test(session.title))session.title=`[Cancelled] ${session.title}`;
  return session;
 }
 function deduplicate(values:PublishedSession[]):PublishedSession[]{const found=new Map<string,PublishedSession>();for(const s of values){const previous=found.get(s.id);if(previous&&JSON.stringify(previous)!==JSON.stringify(s))throw new SourceError('Conflicting copies of the same organizer session were returned.');found.set(s.id,s)}return [...found.values()].sort((a,b)=>a.id.localeCompare(b.id))}
@@ -42,6 +42,9 @@ export function parseSessionize(html:string,previous:PublishedSession[]):Parsed 
   const old=previous.find(s=>s.sourceId===sourceId),id=old?.id??`thunderplains-2026-${sourceId}`,name=text(plain(title[1]),240,true),place=text(plain(room[1]),160,true);
   sessions.push(finish({id,sourceId,conferenceId:'thunderplains-2026',title:name,start:start.toISOString(),end:end.toISOString(),speaker:text(speaker,300),room:place,track:place,description:old?.description??'',url:old?.url??`https://2026.thunderplainsconf.com/#sz-session-${sourceId}`,sourceUrl:PROGRAM_SOURCES[0].sourceUrl,status:cancelled({title:name})||/data-status="cancel(?:led|ed)"/i.test(m[0])?'cancelled':'scheduled'}));
  }
+ // A previously reviewed removal keeps its original identity and any private references.
+ // Newly missing scheduled records still fail completeness validation.
+ for(const old of previous)if(old.status==='cancelled'&&!sessions.some(s=>s.sourceId===old.sourceId))sessions.push({...old});
  return{sessions:deduplicate(sessions),references:[]};
 }
 
