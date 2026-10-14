@@ -1,6 +1,6 @@
-# Attendee connections and communities — local release review
+# Attendee connections and communities — release review
 
-This change is based on the released schedule code at `b730414` (Worker `a6c3a5ff-d55d-4e31-b9aa-64ada9ac093e`). It is prepared locally only. It does not publish source, deploy a Worker, create a database, change Clerk, activate event cleanup, or send email/SMS/push notifications.
+This change merges the released automatic schedule updates and conflict alert (Worker `d5209455-c266-406e-9e40-830768168744`, source `da359f5`) with the approved attendee connections and communities work. Public source publication, Clerk changes and automatic event cleanup are outside this release. There are no email/SMS/push notifications.
 
 ## Behavior
 
@@ -50,7 +50,7 @@ Do not change Clerk, sign-in policy, SMS settings, moderator grants, existing ph
 2. Read the target D1 schema without exposing attendee data. Verify the prerequisite tables/column and whether any of the 25 new definitions already exist. Apply the reviewed migration once; after an uncertain result, compare exact definitions rather than dropping or blindly recreating tables.
 3. Upload this code with new public features disabled and preserve the existing Worker variables, secrets, bindings and role configuration. Applying the migration while older code is still running is quiet: its planner writes create only legacy receipts.
 4. Verify all expected definitions and enable schema readiness. Validate the new authenticated service, anonymous denial and existing account/photo/talk flows before enabling either public feature. No real attendee save is needed for read-only hosted checks.
-5. Enable notifications and/or communities only as approved. Complete a consented hosted test with approved test accounts before broad release; local synthetic auth is not a live Clerk/SMS verification.
+5. Enable notifications and/or communities only as approved. Verify the active Worker, exact live schema, public feature availability and anonymous denial. Do not create test connections or notices for real attendees. Local synthetic auth does not establish live Clerk/SMS delivery or two-person hosted behavior; record that verification limit.
 
 ## Pause and rollback
 
@@ -62,9 +62,11 @@ After any writes, do **not** roll back to code that ignores social blocks or cle
 
 The actual Worker routes with disposable D1 and synthetic verified-context accounts exercise authorization/origin/session/event checks, private projections, atomic saves, concurrent duplicates, quiet legacy/manual saves, opt-out/blocking, removal, read/dismiss ownership, daily limits across restart and peer deletion, malformed legacy data, tampered schema, paused-feature controls, and account deletion while preserving another owner's data. Unit/render checks cover explicit community validation, verified URLs/aliases, escaped names and bounded bodies. See the private local readiness evidence for final counts.
 
-Browser checks completed before the Mac locked include desktop 1280px notices/review disclosure; 320px notices, keyboard save and scrolling dialog; and 390px directory/filter/settings, aliases, explicit labels, recipient projection, profile navigation and dismissal. A narrow-screen explanation/link wrap was corrected. The opt-out save and removal of notices after Refresh were verified with synthetic accounts; immediate unread-count refresh was then fixed and rebuilt, but the refreshed UI behavior still needs verification. Block confirmation/unblock, cleared-badge cross-account removal, delete/re-save through the UI and final refreshed layouts remain unverified. On resumption the Mac was available, but the browser confirmation API timed out/reset, and native fallback stopped when user activity switched Chrome to the official conference page. Do not claim these UI checks passed. Arrange a short uninterrupted browser window before completing them.
+Browser checks now pass with disposable D1 and synthetic accounts through the actual Worker routes: explicit save and cancellation, connect-back, notice read/dismiss, recipient opt-out with immediate unread refresh, mutual block/unblock, community alias search and mutually exclusive member/interested labels, cross-account badge clearing, connection-delete cancellation/confirmation and quiet re-save. The block and connection-delete actions use accessible in-page confirmation dialogs with initial focus on Cancel. At 320px the block dialog is 282px wide with 16px text and 72px buttons; the page has no horizontal overflow. At 390px the community alias search has 16px text, the save button is 49px tall and there is no horizontal overflow. The 19-choice desktop chooser also fits at 1280px. A synthetic attendee with the affected saved sessions continues to see the schedule conflict alert throughout the social flows.
 
 No real provider sign-in, SMS delivery, multi-user hosted test or production capacity guarantee is implied. The automatic seven-day event purge is still off. Any future event cleanup must include these five tables and requires its own reviewed implementation before an automatic deletion promise can be treated as fulfilled.
 
 
-The combined local source passes 66 unit/render checks and TypeScript; the production build passes. The actual isolated social Worker/D1 suite passes 124 requests with synthetic identities and blocked provider calls. The deployed schedule is preserved; no social production schema, variables or Worker release has been applied. The schedule review remains attendee-applied by design.
+The combined source passes 72 unit/render checks, TypeScript and the production build. The actual isolated social Worker/D1 suite passes 124 requests with synthetic identities and all provider calls blocked. A regression test verifies that an explicit connection save also reconciles stale official session fields while preserving the saved selection and private note. The current ThunderPlains schedule is applied automatically; its conflict alert remains in place, and InnoTech retains its separate review behavior.
+
+Production release status is recorded in the private local readiness evidence and final release report.
