@@ -36,5 +36,5 @@ export function applyProgramReview(state:PlannerState,review:ProgramReview):Plan
  return{...state,sessions:[...state.sessions.map(s=>updates.get(s.id)??s),...review.added]};
 }
 export function toPlannerSession(s:Session):Session{return{id:s.id,conferenceId:s.conferenceId,title:s.title,start:s.start,end:s.end,speaker:s.speaker,room:s.room,track:s.track,description:s.description,url:s.url,sourceUrl:s.sourceUrl}}
-export function seedSessions(seed:{sessions:unknown[]}):PublishedSession[]{return(seed.sessions as Array<Session&{sourceId:string}>).map(s=>({...toPlannerSession(s),start:new Date(s.start).toISOString(),end:new Date(s.end).toISOString(),sourceId:s.sourceId,status:'scheduled'}))}
-export type ProgramSeed={sessions:Array<Session&{sourceId:string}>;referenceWindows:Array<Record<string,unknown>>;conferences:Conference[]};
+export function seedSessions(seed:{sessions:unknown[]}):PublishedSession[]{return(seed.sessions as Array<Session&{sourceId:string;status?:'scheduled'|'cancelled'}>).map(s=>({...toPlannerSession(s),start:new Date(s.start).toISOString(),end:new Date(s.end).toISOString(),sourceId:s.sourceId,status:s.status==='cancelled'?'cancelled':'scheduled'}))}
+export type ProgramSeed={sessions:Array<Session&{sourceId:string;status?:'scheduled'|'cancelled'}>;referenceWindows:Array<Record<string,unknown>>;conferences:Conference[]};

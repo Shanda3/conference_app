@@ -4,7 +4,7 @@ import {seedSessions,reviewProgram,applyProgramReview,toPlannerSession} from '..
 import {emptyState,validateState} from '../lib/planner.ts';
 const seed=JSON.parse(await readFile(new URL('../lib/event-data.json',import.meta.url),'utf8')) as ProgramSeed;
 const tp=await readFile(new URL('./fixtures/thunderplains.html',import.meta.url),'utf8'),whova=await readFile(new URL('./fixtures/innotech.json',import.meta.url),'utf8');
-const baseline=seedSessions(seed),previousTP=baseline.filter(s=>s.conferenceId==='thunderplains-2026'),previousInno=baseline.filter(s=>s.conferenceId==='innotech-oklahoma-2026');
+const baseline=seedSessions(seed),previousTP=parseSessionize(tp,baseline.filter(s=>s.conferenceId==='thunderplains-2026'&&s.status!=='cancelled')).sessions,previousInno=baseline.filter(s=>s.conferenceId==='innotech-oklahoma-2026');
 const refs=seed.referenceWindows.filter(s=>s.sourceId).map(s=>({...toPlannerSession(s as any),sourceId:String(s.sourceId),status:'scheduled',start:new Date(String(s.start)).toISOString(),end:new Date(String(s.end)).toISOString()})) as PublishedSession[];
 const completeTP=parseSessionize(tp,previousTP),completeInno=parseWhova(whova,previousInno,refs);
 function editWhova(callback:(s:any)=>void){const body=JSON.parse(whova);function visit(o:any){if(Array.isArray(o))for(const x of o)visit(x);else if(o&&typeof o==='object'){if(Array.isArray(o.sessions))for(const x of o.sessions)callback(x);else for(const v of Object.values(o))visit(v)}}visit(body.data.agenda);return JSON.stringify(body)}
