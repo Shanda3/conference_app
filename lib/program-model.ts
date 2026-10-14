@@ -7,7 +7,8 @@ export const PROGRAM_FIELDS=['title','start','end','room','speaker','track'] as 
 export type ProgramField=typeof PROGRAM_FIELDS[number];
 export type PublishedSession=Session & {sourceId:string;status:'scheduled'|'cancelled';prepAbstract?:{status:'ok'|'failed';hash:string;checkedAt:string}};
 export type SourceStatus={conferenceId:string;name:string;sourceUrl:string;status:'ok'|'failed'|'not-checked';checkedAt:string|null;lastSuccessAt:string|null;message:string;sessionCount:number;changeCount:number};
-export type ProgramPayload={sessions:PublishedSession[];knownSessions:Session[];sources:SourceStatus[];stopped:boolean;stopAt:string;cadence:string};
+export type ThunderPlainsUpdate={version:string;previousSessions:Session[];movedSessionIds:string[]};
+export type ProgramPayload={thunderPlainsUpdate?:ThunderPlainsUpdate;sessions:PublishedSession[];knownSessions:Session[];sources:SourceStatus[];stopped:boolean;stopAt:string;cadence:string};
 export type ProgramReview={added:Session[];updates:Array<{session:Session;fields:ProgramField[];before:Session}>;keptPrivateFields:number};
 
 /** Only organizer-owned fields are candidates. Applying this review never changes choices, notes, connections, or private edits. */

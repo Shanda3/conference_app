@@ -1,3 +1,8 @@
+import{env}from'cloudflare:workers';
+import seed from '@/lib/event-data.json';
+import{readProgram}from'@/lib/program-sync';
+import type{ProgramSeed}from'@/lib/program-model';
+import{reconcileThunderPlains}from'@/lib/program-reconcile';
 import { and, eq } from "drizzle-orm";
 import { getAppUser } from "@/app/auth";
 import {getAuthContext} from '@/lib/auth-context';
@@ -48,6 +53,12 @@ async function readBody(request: Request): Promise<unknown> {
   catch { throw new RequestError("The planner request contains invalid JSON.", 400); }
 }
 
+async function officialState(state:ReturnType<typeof emptyState>){
+ if(getAuthContext().eventId!=='thunderplains-2026'||env.DEVYO_PROGRAM_SYNC_ENABLED!=='true')return state;
+ if(!env.DB)throw Error('Official program unavailable');
+ return reconcileThunderPlains(state,(await readProgram(env.DB,seed as unknown as ProgramSeed)).sessions);
+}
+
 export async function GET(): Promise<Response> {
   try {
     const user = await getAppUser();
@@ -56,7 +67,7 @@ export async function GET(): Promise<Response> {
     const [row] = await db.select().from(plannerStates).where(eq(plannerStates.ownerId, user.userId)).limit(1);
     if (!row) return json({ state: emptyState(), revision: 0 });
     // Stored JSON is also validated: a corrupt snapshot must never silently overwrite user data.
-    const state = validateState(JSON.parse(row.stateJson));
+    const state = await officialState(validateState(JSON.parse(row.stateJson)));
     return json({ state, revision: row.revision });
   } catch {
     return json({ error: "Your saved planner could not be loaded. Please try again; your data has not been changed." }, 503);
@@ -81,7 +92,7 @@ export async function PUT(request: Request): Promise<Response> {
     if (!Number.isSafeInteger(envelope.revision) || (envelope.revision as number) < 0 || (envelope.revision as number) >= Number.MAX_SAFE_INTEGER) {
       throw new RequestError("The planner revision must be a non-negative integer.", 400);
     }
-    const state = validateState(envelope.state);
+    const state = await officialState(validateState(envelope.state));
     const revision = envelope.revision as number;
     const nextRevision = revision + 1;
     const db = getDb();

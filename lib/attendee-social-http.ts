@@ -1,3 +1,6 @@
+import seed from'./event-data.json'with{type:'json'};
+import{readProgram}from'./program-sync.ts';
+import type{ProgramSeed}from'./program-model.ts';
 import {env} from 'cloudflare:workers';
 import {getAuthContext} from './auth-context.ts';
 import {plannerIdentityMatches} from './talk-preferences.ts';
@@ -24,7 +27,7 @@ export async function attendeeSocialGET(request:Request){try{
  }catch(e){return failure(e)}}
 export async function attendeeSocialPOST(request:Request){try{
  if(new URL(request.url).search)throw new AttendeeSocialError('Use a JSON action.');const store=await attendeeSocialService(request,true),body=await readSharingBody(request,16384) as Record<string,unknown>;if(!body||typeof body!=='object'||Array.isArray(body))throw new AttendeeSocialError('Use a valid action.');
- if(body.action==='save-connection'){notificationsEnabled();keys(body,['action','connection','revision']);return json(await store.saveConnection(body.connection,socialRevision(body.revision)))}
+ if(body.action==='save-connection'){notificationsEnabled();keys(body,['action','connection','revision']);const official=env.DEVYO_PROGRAM_SYNC_ENABLED==='true'?(await readProgram(env.DB!,seed as unknown as ProgramSeed)).sessions:undefined;return json(await store.saveConnection(body.connection,socialRevision(body.revision),Date.now(),official))}
  if(body.action==='read'||body.action==='dismiss'){notificationsEnabled();keys(body,['action','id']);return json(await store.notificationAction(socialId(body.id),body.action))}
  if(body.action==='block'||body.action==='unblock'){keys(body,['action','memberId']);return json({...await store.block(socialId(body.memberId),body.action==='block'),communitiesEnabled:env.DEVYO_COMMUNITIES_ENABLED==='true',notificationsEnabled:env.DEVYO_CONNECTION_NOTIFICATIONS_ENABLED==='true'})}
  if(body.action==='settings'){

@@ -1,5 +1,7 @@
 # ThunderPlains schedule update — October 14, 2026
 
+**Superseded behavior:** the later [automatic schedule release](thunderplains-automatic-schedule.md) applies official ThunderPlains metadata to all plans without attendee review acceptance. The earlier source comparison below remains valid.
+
 The live ThunderPlains shared program was synchronized with the current Sessionize GridSmart feed linked by https://2026.thunderplainsconf.com/. The source was rechecked immediately before release.
 
 All times below are October 21 in America/Chicago (CDT).
