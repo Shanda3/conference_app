@@ -1,3 +1,5 @@
+> Prepared feature branch: per-talk discussions are implemented locally and are **not deployed or activated**. See [the release and approval notes](docs/talk-discussions-release.md). GitHub main and the live photo release remain the baseline below.
+
 # Devyo conference planner
 
 Devyo is a ThunderPlains and Techlahoma conference planner with registered attendee accounts, private agendas and notes, connections, group conversations and revocable schedule sharing.

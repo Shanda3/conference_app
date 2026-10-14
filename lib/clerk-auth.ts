@@ -1,3 +1,4 @@
+import{DISCUSSION_TALKS}from'./talk-discussion.ts';
 import{eventContextForOrigin}from'./event-context.ts';
 import{publicPlanPath}from'./public-plan.ts';
 import{publicVenuePath}from'./venue.ts';
@@ -74,6 +75,7 @@ export function privateAccessResponse(request: Request, context: AuthContext): R
   if (context.user) return null;
   // Only login shells/static assets can be anonymous. Shared schedules remain private in staging.
   if ((request.method === "GET" || request.method === "HEAD") && (publicVenuePath(path) || publicPlanPath(path) || ["/", "/sign-in", "/sign-up", "/privacy"].includes(path) || path.startsWith("/assets/") || ["/favicon.svg", "/thunderplains-mark.svg"].includes(path))) return null;
+  if((request.method==='GET'||request.method==='HEAD')&&request.headers.get('Accept')?.includes('text/html')&&(path==='/discussion-moderation'||DISCUSSION_TALKS.some(t=>path==='/discussions/'+encodeURIComponent(t.id))))return new Response(null,{status:303,headers:{...headers,Location:'/sign-in'}});
   // Browser deep links open the app's auth flow without forwarding the share token.
   if ((request.method === "GET" || request.method === "HEAD") && /^\/share\/[A-Za-z0-9_-]{43}$/.test(path) && request.headers.get("Accept")?.includes("text/html")) return new Response(null, { status: 303, headers: { ...headers, Location: "/sign-in" } });
   const status = context.status === "unconfigured" ? 503 : context.status === "forbidden" ? 403 : 401;

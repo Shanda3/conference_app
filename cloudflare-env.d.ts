@@ -15,6 +15,9 @@ declare namespace Cloudflare {
     DB?: D1Database;
     BUCKET?: R2Bucket;
     DEVYO_PROFILE_IMAGES?: ImagesBinding;
+    DEVYO_TALK_DISCUSSIONS_ENABLED?: string;
+    DEVYO_TALK_DISCUSSIONS_SCHEMA_READY?: string;
+    DEVYO_TALK_MODERATOR_USER_IDS?: string;
     DEVYO_PROFILE_PHOTOS_ENABLED?: string;
     DEVYO_PROFILE_PHOTOS_SCHEMA_READY?: string;
     DEVYO_PHOTO_STORAGE?: 'd1';

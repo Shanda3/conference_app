@@ -1,3 +1,4 @@
+import {discussionModerators} from '../lib/talk-discussion.ts';
 import{generalHomeResponse}from'../lib/general-home.ts';
 import{publicPlanPath,publicPlanResponse}from'../lib/public-plan.ts';
 import{publicVenuePath}from'../lib/venue.ts';
@@ -35,7 +36,7 @@ export default {async fetch(incoming:Request,env:Cloudflare.Env,ctx:ExecutionCon
  if(trusted&&!new URL(incoming.url).search){const home=generalHomeResponse(incoming);if(home)return home;}
  const request=stripLegacyIdentity(incoming),auth=await authenticate(request,env);
  if(auth.handshake&&auth.headers.has("location")){auth.headers.set("Cache-Control","private, no-store");return new Response(null,{status:307,headers:auth.headers})}
- auth.context={...auth.context,profilePhotosEnabled:trusted&&auth.context.eventId==='thunderplains-2026'&&env.DEVYO_PROFILE_PHOTOS_ENABLED==='true'&&env.DEVYO_PROFILE_PHOTOS_SCHEMA_READY==='true',accountDeletionEnabled:trusted&&env.DEVYO_ACCOUNT_DELETION_ENABLED==='true',accountDeletionSchemaReady:trusted&&env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY==='true',accountDeletedNotice:pathname==='/sign-in'&&request.headers.get('Cookie')?.split(';').some(value=>value.trim()==='devyo-account-deleted=1')};
+ auth.context={...auth.context,talkDiscussionsEnabled:discussionModerators(env.DEVYO_TALK_MODERATOR_USER_IDS).size>0&&trusted&&auth.context.eventId==='thunderplains-2026'&&env.DEVYO_TALK_DISCUSSIONS_ENABLED==='true'&&env.DEVYO_TALK_DISCUSSIONS_SCHEMA_READY==='true'&&env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY==='true',profilePhotosEnabled:trusted&&auth.context.eventId==='thunderplains-2026'&&env.DEVYO_PROFILE_PHOTOS_ENABLED==='true'&&env.DEVYO_PROFILE_PHOTOS_SCHEMA_READY==='true',accountDeletionEnabled:trusted&&env.DEVYO_ACCOUNT_DELETION_ENABLED==='true',accountDeletionSchemaReady:trusted&&env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY==='true',accountDeletedNotice:pathname==='/sign-in'&&request.headers.get('Cookie')?.split(';').some(value=>value.trim()==='devyo-account-deleted=1')};
  if(trusted&&env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY==='true'&&auth.context.user&&pathname!=='/api/account'){
   try{if(!env.DB)throw Error('Missing database');const job=await deletionJob(env.DB,auth.context.user.userId);if(job){const identity={userId:auth.context.user.userId.slice(auth.context.user.userId.lastIndexOf(':')+1),sessionId:auth.context.sessionId!};auth.context={...auth.context,user:pathname==='/settings'?auth.context.user:null,status:job.phase==='complete'&&pathname==='/sign-in'?'anonymous':'deleting',deletionStatus:job.phase,deletionIdentity:identity,accountDeletedNotice:job.phase==='complete'&&pathname==='/sign-in'}}}
   catch{return Response.json({error:'Account status could not be checked. Please retry.'},{status:503,headers:programHeaders})}
