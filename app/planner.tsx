@@ -1,4 +1,5 @@
 "use client";
+import{reconcileThunderPlains}from'@/lib/program-reconcile';
 import {discussionForSession,discussionPath} from '@/lib/talk-discussion';
 import './talk-discussion.css';
 import{loadPlannerForEvent}from'@/lib/event-context';
@@ -60,7 +61,7 @@ export default function Planner({user,signInPath,eventId,accountDeletionEnabled=
   const expectedOwner=user?.userId?.slice(user.userId.lastIndexOf(":")+1)??"";
   const [programPayload,setProgramPayload]=useState<ProgramPayload|null>(null);const [programError,setProgramError]=useState("");
   const [state,setState]=useState<PlannerState>(emptyState()); const [revision,setRevision]=useState(0); const [loading,setLoading]=useState(!!user); const [busy,setBusy]=useState(false); const [error,setError]=useState(""); const [toast,setToast]=useState("");
-  const [venueAnchor,setVenueAnchor]=useState('');const [tab,setTab]=useState<Tab>(initialSection); const [conferenceFilter,setConferenceFilter]=useState("all"); const [day,setDay]=useState("all"); const [search,setSearch]=useState(""); const [track,setTrack]=useState("all"); const [modal,setModal]=useState<Modal>(null); const [menu,setMenu]=useState(false); const [statusFilter,setStatusFilter]=useState("all"); const initRef=useRef(false);
+  const [venueAnchor,setVenueAnchor]=useState('');const [tab,setTab]=useState<Tab>(initialSection); const [conferenceFilter,setConferenceFilter]=useState("all"); const [day,setDay]=useState("all"); const [search,setSearch]=useState(""); const [track,setTrack]=useState("all"); const [modal,setModal]=useState<Modal>(null); const [menu,setMenu]=useState(false); const [statusFilter,setStatusFilter]=useState("all"); const initRef=useRef(false);const programFetchInFlight=useRef(false);
   const navigationRef=useRef<HTMLElement>(null);
   const menuButtonRef=useRef<HTMLButtonElement>(null);
   const contentRef=useRef<HTMLDivElement>(null);
@@ -109,7 +110,7 @@ export default function Planner({user,signInPath,eventId,accountDeletionEnabled=
     const previousOverflow=document.body.style.overflow;document.body.style.overflow="hidden";
     return()=>{document.removeEventListener("keydown",onKey);document.body.style.overflow=previousOverflow;menuButtonRef.current?.focus()};
   },[menu]);
-  const programReview=reviewProgram(state,programPayload?.sessions??seedSessions(starterData as unknown as ProgramSeed),programPayload?.knownSessions??seedSessions(starterData as unknown as ProgramSeed));
+  const programReview=reviewProgram(state,(programPayload?.sessions??seedSessions(starterData as unknown as ProgramSeed)).filter(s=>s.conferenceId!=="thunderplains-2026"),programPayload?.knownSessions??seedSessions(starterData as unknown as ProgramSeed));
   const missingProgramCount=programReview.added.length+programReview.updates.length;
   const confById=useMemo(()=>Object.fromEntries(state.conferences.map(c=>[c.id,c])),[state.conferences]);
   const unavailableIds=useMemo(()=>new Set((programPayload?.sessions??seedSessions(starterData as unknown as ProgramSeed)).filter(s=>s.status==='cancelled').map(s=>s.id)),[programPayload]);
@@ -126,12 +127,13 @@ export default function Planner({user,signInPath,eventId,accountDeletionEnabled=
   const connections=state.connections.filter(c=>(conferenceFilter==="all"||c.conferenceId===conferenceFilter)&&(statusFilter==="all"||c.status===statusFilter)&&`${c.name} ${c.company} ${c.role} ${c.notes}`.toLowerCase().includes(search.toLowerCase()));
   const due=state.connections.filter(c=>c.followUpDate&&c.followUpDate<=dateToday(confById[c.conferenceId]?.timeZone)).sort((a,b)=>a.followUpDate.localeCompare(b.followUpDate));
 
-  async function loadProgram(){try{const response=await fetch("/api/program",{cache:"no-store"});const data=await response.json() as ProgramPayload&{error?:string};if(!response.ok)throw new Error(data.error||"Daily schedule verification is unavailable.");setProgramPayload(data);setProgramError("")}catch(e){setProgramError(e instanceof Error?e.message:"Daily schedule verification is unavailable.")}}
+  async function loadProgram(){if(programFetchInFlight.current)return;programFetchInFlight.current=true;try{const response=await fetch("/api/program",{cache:"no-store"});const data=await response.json() as ProgramPayload&{error?:string};if(!response.ok)throw new Error(data.error||"Daily schedule verification is unavailable.");setProgramPayload(data);if(eventId==="thunderplains-2026")setState(current=>reconcileThunderPlains(current,data.sessions));setProgramError("")}catch(e){setProgramError(e instanceof Error?e.message:"Daily schedule verification is unavailable.")}finally{programFetchInFlight.current=false}}
   async function load() {
     setLoading(true);setError("");
     try{const data=await loadPlannerForEvent(eventId,()=>makeStarter(programPayload?.sessions));setState(data.state);setRevision(data.revision);}catch(e){setError(e instanceof Error?e.message:"We couldn’t load your planner.");}finally{setLoading(false);}
   }
   useEffect(()=>{captureSharedPlan();if(user&&resumeSharedPlan())return;if(user&&!initRef.current){initRef.current=true;void load();void loadProgram();void fetch("/api/community",{cache:"no-store"});if(captureGroupInvite())setTab("groups");}},[]);
+  useEffect(()=>{if(!user||eventId!=="thunderplains-2026")return;const refresh=()=>{if(document.visibilityState!=="hidden"&&navigator.onLine)void loadProgram()};window.addEventListener("focus",refresh);window.addEventListener("online",refresh);document.addEventListener("visibilitychange",refresh);const timer=setInterval(refresh,60000);return()=>{window.removeEventListener("focus",refresh);window.removeEventListener("online",refresh);document.removeEventListener("visibilitychange",refresh);clearInterval(timer)}},[eventId,expectedOwner]);
   useEffect(()=>{if(conferenceFilter!=="all"&&!confById[conferenceFilter])changeConference("all")},[state.conferences]);
   useEffect(()=>{if(!toast)return;const id=setTimeout(()=>setToast(""),3800);return()=>clearTimeout(id)},[toast]);
   async function save(next:PlannerState,message="Saved",providedIdentity?:PrepSaveIdentity) {
