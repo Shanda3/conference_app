@@ -1,6 +1,6 @@
-# Per-talk discussions: prepared release
+# Per-talk discussions: live release
 
-This feature is local and awaiting production approval. Its baseline is GitHub main 5484ba3 and live Worker version 9846bb71-dad1-45c6-a8c1-ed706b2a5a41. The live photo feature is retained. The organizer/directory WIP and canceled sign-in persistence task are excluded.
+This feature was approved and deployed on October 14, 2026 as Worker version 988b8a55-099b-4f3a-bb0c-f481306423e5. The baseline was GitHub main 5484ba3 and Worker version 9846bb71-dad1-45c6-a8c1-ed706b2a5a41. The live photo feature is retained. The organizer/directory WIP and canceled sign-in persistence task are excluded.
 
 ## Attendee experience
 
@@ -20,7 +20,7 @@ The new central /discussion-moderation queue is available only to an explicitly 
 
 The additive migration deploy/sql/talk-discussions-prepared.sql adds two tables, four indexes and six triggers. It reuses existing chat_messages, chat_memberships and chat_flags. It does not copy attendee records, delete data, change credentials or grant roles. Existing account-deletion receipt triggers are required.
 
-Approval is needed before applying this migration to devyo-production-db, deploying the code to devyo-production, activating DEVYO_TALK_DISCUSSIONS_ENABLED=true and DEVYO_TALK_DISCUSSIONS_SCHEMA_READY=true, and assigning verified named Clerk user IDs in DEVYO_TALK_MODERATOR_USER_IDS. The latter grants access to reported talk messages and their reasons, plus rights to remove text from canonical talk messages and resolve reports, until the ID is removed or the feature is paused. It grants no organizer access and no rights over private agendas, notes, account data or photos. No actual IDs have been selected or granted. The example environment is off with an empty moderator list.
+Future rollouts require approval before applying this migration to devyo-production-db, deploying the code to devyo-production, activating DEVYO_TALK_DISCUSSIONS_ENABLED=true and DEVYO_TALK_DISCUSSIONS_SCHEMA_READY=true, and assigning verified named Clerk user IDs in DEVYO_TALK_MODERATOR_USER_IDS. The latter grants access to reported talk messages and their reasons, plus rights to remove text from canonical talk messages and resolve reports, until the ID is removed or the feature is paused. It grants no organizer access and no rights over private agendas, notes, account data or photos. Exactly one current server-verified attendee account was approved and assigned talk-chat moderation. Its identifier and verified login methods are private deployment evidence and are not published here. The example environment remains off with an empty moderator list.
 
 An approved rollout should preserve existing secrets, vars, Images/D1 bindings, routes and cron; deploy disabled first, check the existing hosted sign-in and photo controls, then activate only after the schema and named moderator configuration are verified. Inspect live discussion/read/report access without real account deletion or unnecessary SMS. Keep all provider configuration out of Git.
 
@@ -41,3 +41,7 @@ Only an open, joined, visible and online discussion polls. Active polling averag
 At 200–300 simultaneously active discussion viewers, nominal polling is about 13–20 requests per second, or roughly 384,000–576,000 requests over an eight-hour day before idle/hidden-tab reductions. This uses the existing Worker/D1 resources; it is an estimate, not a claim that usage is free or a hosted capacity guarantee. The local fixture includes a 300-attendee conditional-read burst. Hosted latency, ongoing billing/quotas, real Clerk sessions and mobile operating-system keyboards still require release verification.
 
 Validation commands: npm test; npx tsc --noEmit; npm run build; node tests/talk-discussion-d1.mjs. The local browser fixture tests/talk-discussion-browser-stage.mjs uses synthetic attendees and must never be deployed. Screenshots, local databases and execution traces remain outside Git.
+
+## Hosted rollout verification
+
+All 12 additive schema definitions were verified. The disabled stage preserved encrypted secrets, unrelated dashboard variables and existing photo bindings. The current attendee account was verified using a temporary server account-ID view with matching Clerk client identity and masked verified login methods; that view was removed before activation. The existing signed-in sign-in route returned to the planner and the Add image control loaded. The enabled version serves all production traffic. The live discussion link, explicit join screen, moderator navigation and moderator report queue were verified with the approved existing account. No real discussion messages were posted, no real account was deleted and no SMS was sent during verification. Anonymous discussion/photo requests returned 401 and off-site writes returned 403. Local validation passed 55 unit/render tests, TypeScript, build and 415 Worker/D1 fixture requests. Two-user hosted isolation and real mobile operating-system keyboards were not exercised.

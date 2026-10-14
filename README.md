@@ -1,10 +1,8 @@
-> Prepared feature branch: per-talk discussions are implemented locally and are **not deployed or activated**. See [the release and approval notes](docs/talk-discussions-release.md). GitHub main and the live photo release remain the baseline below.
-
 # Devyo conference planner
 
 Devyo is a ThunderPlains and Techlahoma conference planner with registered attendee accounts, private agendas and notes, connections, group conversations and revocable schedule sharing.
 
-This branch contains the sanitized source associated with live Cloudflare version 9846bb71-dad1-45c6-a8c1-ed706b2a5a41, released October 13, 2026. The release adds optional profile photos; the organizer, attendee filtering and self-identity work remains on the WIP branch.
+This branch contains the sanitized source associated with live Cloudflare version 988b8a55-099b-4f3a-bb0c-f481306423e5, released October 14, 2026. The release includes private-by-default profile photos and per-talk attendee discussions. The organizer, attendee filtering and self-identity work remains on the WIP branch.
 
 ## Local development
 
@@ -25,3 +23,7 @@ The release requires the reviewed additive schema in deploy/sql/profile-photos-l
 To pause uploads, keep this photo-aware code and its schema, and set DEVYO_PROFILE_PHOTOS_ENABLED to false. Retain DEVYO_PROFILE_PHOTOS_SCHEMA_READY=true so privacy preferences and account-deletion cleanup remain supported. Rolling back to pre-photo code after photo writes could disregard photo privacy choices or cleanup. No rollback command or live provider configuration is committed.
 
 Validation: 49 unit/model tests, TypeScript and the production build passed. The separate local D1 fixture exercised 74 photo requests and the real managed image-processing test completed two transformations. Hosted verification used an existing signed-in account: account settings and the sign-in return flow worked, the photo settings loaded with the real client session pins, and Add image was enabled. Anonymous photo access returned 401 and off-site writes returned 403. No real production profile was edited; a fresh SMS sign-in and two-user hosted isolation were not exercised.
+
+## Talk discussions
+
+Talk cards and details open their own attendee discussion. Joining and posting are explicit, and private notes and AI preferences are not shared. The approved moderator can review reports at /discussion-moderation. Moderator identities are configured privately and are excluded from this repository. See [release, limits and retention details](docs/talk-discussions-release.md). Automatic seven-day event purge remains off.
