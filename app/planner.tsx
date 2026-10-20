@@ -1,5 +1,6 @@
 "use client";
 import{InstallBanner}from"./install-banner";
+import{NotificationOnboarding}from"./notification-onboarding";
 import{ChatWorkspace}from"./chat-workspace";
 import{useChatActivity}from"./messaging-client";
 import{ScreenTour}from'./screen-tour';
@@ -204,6 +205,7 @@ export default function Planner({user,signInPath,eventId,accountDeletionEnabled=
     {menu&&<button className="sidebar-scrim" onClick={()=>setMenu(false)} aria-label="Close menu"/>}
     <main className="main" inert={menu}><header className="topbar"><div className="breadcrumb"><button className="icon-btn mobile-menu" aria-label="Open menu" aria-controls="planner-navigation" aria-expanded={menu} onClick={openNavigation}><Menu size={21}/><span>Menu</span></button><span>My workspace</span><ChevronRight size={14}/><b>{navItems.find(n=>n.id===tab)?.label}</b></div><div className="topbar-right">{connectionNotificationsEnabled&&<button className="icon-btn notification-bell" aria-label={`Notifications, ${notices.unreadCount} unread`} onClick={()=>selectSection("notifications")}><Bell size={20}/>{notices.unreadCount>0&&<b aria-hidden="true">{notices.unreadCount>99?"99+":notices.unreadCount}</b>}</button>}<Logout/><span className="sync"><span className={busy?"pulse":""}/>{busy?"Saving…":error?"Not synced":state.initialized?"Private & synced":"Private planner"}</span><button className="icon-btn" title="Sources and help" aria-label="Sources and help" data-tour-return onClick={()=>setModal({kind:"sources"})}><CircleHelp size={19}/></button></div></header>
       <InstallBanner/>
+      <NotificationOnboarding onOpenSettings={()=>selectSection("profile")}/>
       <ScheduleChangeAlert count={scheduleChangeConflicts.length} version={(programPayload?.programUpdate??programPayload?.thunderPlainsUpdate)?.version??""} owner={expectedOwner} onReview={()=>{viewSavedAgenda();setScheduleConflictOnly(true)}}/>
       <ScreenTour key={expectedOwner} owner={expectedOwner} authenticated={auth.isLoaded&&auth.userId===expectedOwner&&!!auth.sessionId} eligibleToOffer={state.initialized&&revision<=1} blocked={loading||busy||!!modal||menu||keyboardOpen} section={tab} requestStart={tourRequest} onNavigate={selectSection}/>
       {tab==="agenda"&&scheduleConflictOnly&&<p className="schedule-conflict-filter"><button type="button" className="text-button" onClick={()=>setScheduleConflictOnly(false)}>Show my full agenda</button></p>}

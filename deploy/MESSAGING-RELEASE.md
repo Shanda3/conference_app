@@ -1,6 +1,6 @@
 # Phone installation and messaging operations
 
-Devyo supports an installable web app, member-only chat navigation, unread tracking, optional Web Push and emoji reactions. Installing the app does not subscribe a device to notifications. The planner's installation banner scrolls naturally with the page and remains until the browser supplies installation evidence; Safari tabs cannot universally detect an installed iPhone app.
+Devyo supports an installable web app, member-only chat navigation, unread tracking, optional Web Push and emoji reactions. Installing the app does not subscribe a device to notifications. Signed-in standalone app users see an in-flow notification offer with Enable notifications and Not now. A per-account, per-browser dismissal survives reopening; existing enabled or paused subscriptions also suppress the offer. Browser tabs do not show it. Unsupported or denied permissions are explained without requesting permission. Account settings remain available. Account deletion clears stored onboarding choices from persistent and fallback browser storage. The planner's installation banner scrolls naturally with the page and remains until the browser supplies installation evidence; Safari tabs cannot universally detect an installed iPhone app.
 
 ## Configuration
 
