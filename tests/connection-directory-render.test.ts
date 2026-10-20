@@ -1,0 +1,22 @@
+import test from'node:test';import assert from'node:assert/strict';
+import{build}from'esbuild';import{mkdir,mkdtemp,rm}from'node:fs/promises';import{join}from'node:path';import{pathToFileURL}from'node:url';import{createElement}from'react';import{renderToStaticMarkup}from'react-dom/server';
+const root=new URL('../',import.meta.url).pathname;await mkdir(join(root,'.wrangler'),{recursive:true});const temp=await mkdtemp(join(root,'.wrangler/directory-render-'));
+try{
+ await build({entryPoints:[join(root,'app/connection-directory.tsx')],outfile:join(temp,'components.mjs'),bundle:true,format:'esm',platform:'node',packages:'external',loader:{'.css':'empty'},tsconfig:join(root,'tsconfig.json')});
+ const{AttendeeRow,AttendeeProfile,SavedConnectionsList,directoryLetter}=await import(pathToFileURL(join(temp,'components.mjs')).href);
+ const member={id:'00000000-0000-4000-8000-000000000001',displayName:'Avery <Finch>',me:0,shared:0,communities:[{id:'shecodesokc',relationship:'member'}],email:'PRIVATE_EMAIL_SENTINEL',phone:'PRIVATE_PHONE_SENTINEL',company:'PRIVATE_COMPANY_SENTINEL',role:'PRIVATE_ROLE_SENTINEL',location:'PRIVATE_LOCATION_SENTINEL',notes:'OTHER_PERSON_PRIVATE_NOTES'};
+ const connection={id:'member-'+member.id,conferenceId:'thunderplains-2026',name:'Avery Finch',role:'My private reminder',company:'My private team',notes:'VIEWER_PRIVATE_NOTE',linkedInUrl:'',followUpDate:'2026-10-23',status:'want-to-meet'};
+ test('compact attendee rows escape names and render only deliberately shared directory fields',()=>{
+  const html=renderToStaticMarkup(createElement(AttendeeRow,{member,saved:false,canSave:true,busy:false,onProfile(){},onSave(){},onPlan(){}}));assert.match(html,/Avery &lt;Finch&gt;/);assert.match(html,/Member · SheCodesOKC/);assert.match(html,/View profile:/);assert.match(html,/Save as connection:/);assert.match(html,/Plan kept private/);assert.doesNotMatch(html,/PRIVATE_|OTHER_PERSON|mailto:|sms:|tel:|Say Hi|Let.s Meet|<script/);const fallback=renderToStaticMarkup(createElement(AttendeeRow,{member:{...member,linkedInUrl:'https://www.linkedin.com/in/example/'},saved:false,canSave:false,busy:false,onPlan(){}}));assert.match(fallback,/LinkedIn profile/);assert.match(fallback,/referrerPolicy="no-referrer"/);
+ });
+ test('profile keeps viewer-owned notes clearly private and does not invent contacts or affiliations',()=>{
+  const html=renderToStaticMarkup(createElement(AttendeeProfile,{member,connection,canSave:true,busy:false,onClose(){},onSave(){},onEditNotes(){},onPlan(){},onChat(){}}));assert.match(html,/VIEWER_PRIVATE_NOTE/);assert.match(html,/Your private notes/);assert.match(html,/Only you/);assert.match(html,/Conference chat/);assert.match(html,/No contact link has been shared/);assert.match(html,/membership is not verified/);assert.doesNotMatch(html,/PRIVATE_EMAIL|PRIVATE_PHONE|PRIVATE_COMPANY|PRIVATE_ROLE|PRIVATE_LOCATION|OTHER_PERSON|My private team|My private reminder|Say Hi|Let.s Meet|mailto:|sms:|tel:/);
+ });
+ test('contact and plan actions appear only when the attendee explicitly shares them',()=>{
+  const common={busy:false,canSave:true,onClose(){},onPlan(){}};const privateHtml=renderToStaticMarkup(createElement(AttendeeProfile,{...common,member}));assert.doesNotMatch(privateHtml,/VIEWER_PRIVATE_NOTE|>Shared plan<|LinkedIn profile/);const sharedHtml=renderToStaticMarkup(createElement(AttendeeProfile,{...common,member:{...member,shared:1,linkedInUrl:'https://www.linkedin.com/in/example/'}}));assert.match(sharedHtml,/>Shared plan</);assert.match(sharedHtml,/LinkedIn profile/);assert.match(sharedHtml,/referrerPolicy="no-referrer"/);
+ });
+ test('saved connection rows remain a private view with existing edit and attendee profile actions',()=>{
+  const html=renderToStaticMarkup(createElement(SavedConnectionsList,{connections:[connection],conferenceNames:{'thunderplains-2026':'ThunderPlains'},onEdit(){},onProfile(){}}));assert.match(html,/visible only to you/);assert.match(html,/VIEWER_PRIVATE_NOTE/);assert.match(html,/My private team/);assert.match(html,/Edit Avery Finch/);assert.match(html,/Profile/);assert.match(html,/2026-10-23/);
+ });
+ test('letter headings use display names without guessing surnames or locations',()=>{assert.equal(directoryLetter(' Avery Finch'),'A');assert.equal(directoryLetter('mira west'),'M');assert.equal(directoryLetter('123 attendee'),'#');assert.equal(directoryLetter(''),'#');});
+}finally{await rm(temp,{recursive:true,force:true});}
