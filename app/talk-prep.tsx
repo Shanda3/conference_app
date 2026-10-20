@@ -3,17 +3,18 @@ import{useEffect,useRef,useState}from'react';
 import{useAuth,useClerk}from'@clerk/react';
 import{BookOpen,Check,ChevronDown,LoaderCircle}from'lucide-react';
 import{AIPrep}from'./ai-prep';import{PrepNoteSave}from'./prep-note-save';
-import{talkPrepFor}from'@/lib/talk-prep';
+import{talkPrepFor}from'@/lib/talk-prep';import{aiSessionSource}from'@/lib/ai-session';
+import{TalkPrepUnavailable}from'./talk-prep-unavailable';
 import{STACK_CHOICES,INTEREST_CHOICES,PREFERENCE_LIMIT,emptyTalkPreferences,validateTalkPreferences,type TalkPrepPreferences}from'@/lib/talk-preferences';
 import type{Session}from'@/lib/planner';
 import type{PublishedSession}from'@/lib/program-model';
 export type PrepSaveIdentity={userId:string;sessionId:string};
 type Props={session:Session;published:PublishedSession[];initiallyOpen?:boolean;expectedUserId:string;preferences?:TalkPrepPreferences;busy:boolean;onSavePreferences:(preferences:TalkPrepPreferences,identity:PrepSaveIdentity)=>Promise<boolean>;onAppend:(section:string,identity:PrepSaveIdentity)=>Promise<string>};
 export function TalkPrep(props:Props){
-  const result=talkPrepFor(props.session,props.published);
+  const result=talkPrepFor(props.session,props.published),ai=aiSessionSource(props.session,props.published);
   const [open,setOpen]=useState(!!props.initiallyOpen),section=useRef<HTMLDetailsElement>(null);
   useEffect(()=>{if(props.initiallyOpen)section.current?.scrollIntoView({block:'start'})},[]);
-  if(result.status==='excluded')return null;
+  if(result.status==='excluded'&&!ai.eligible)return null;
   return <details ref={section} className="talk-prep" open={open} onToggle={event=>setOpen(event.currentTarget.open)}><summary><BookOpen size={20} aria-hidden="true"/><span>Before this talk</span><ChevronDown size={18} aria-hidden="true"/></summary><div className="talk-prep-body">
     {result.status==='ready'?<>
       <p className="prep-disclosure">A shared preparation guide. Background and suggested questions are not a promise of what the speaker will cover.</p>
@@ -24,9 +25,9 @@ export function TalkPrep(props:Props){
       <h4>Read a little further</h4><ul className="prep-readings">{result.guide.readings.map(([label,url])=><li key={url}><a href={url} target="_blank" rel="noreferrer">{label} ↗</a></li>)}</ul>
       <p className="prep-source">Based on the <a href={result.guide.sourceUrl} target="_blank" rel="noreferrer">official session abstract ↗</a>, reviewed October 13, 2026. {result.dailyVerified?`Abstract checked ${new Date(result.verifiedAt).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/Chicago'})} (conference time).`:'Daily abstract verification is pending.'}</p>
       <PrepNoteSave expectedUserId={props.expectedUserId} primer={result.guide.primer} questions={result.guide.questions} label="Before this talk · shared guide reviewed October 13" onAppend={props.onAppend}/>
-    </>:<p role="status">{result.status==='unreviewed'?'A reviewed guide is not available for this entry yet. Lightning Talk rounds do not publish individual topics here. Check the official program for details.':result.status==='changed'?'This session or its source changed, so the older guide is hidden until reviewed.':'The abstract check is out of date, so the guide is hidden until it can be verified again.'}</p>}
+    </>:<TalkPrepUnavailable session={props.session} published={props.published} status={result.status==='excluded'?'unreviewed':result.status} aiAvailable={ai.eligible}/>}
     <PreferenceSettings expectedUserId={props.expectedUserId} preferences={props.preferences} busy={props.busy} onSave={props.onSavePreferences}/>
-    {result.status==='ready'&&<AIPrep sessionId={props.session.id} expectedUserId={props.expectedUserId} preferences={props.preferences} kind="prep" onAppend={props.onAppend}/>}
+    {ai.eligible&&<AIPrep sessionId={props.session.id} expectedUserId={props.expectedUserId} preferences={props.preferences} kind="prep" onAppend={props.onAppend}/>}
   </div></details>;
 }
 function PreferenceSettings({expectedUserId,preferences,busy,onSave}:{expectedUserId:string;preferences?:TalkPrepPreferences;busy:boolean;onSave:Props['onSavePreferences']}){

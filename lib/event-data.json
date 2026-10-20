@@ -38,8 +38,8 @@
       "date": "2026-10-21",
       "startTime": "08:00",
       "endTime": "08:50",
-      "start": "2026-10-21T08:00:00-05:00",
-      "end": "2026-10-21T08:50:00-05:00",
+      "start": "2026-10-21T13:00:00.000Z",
+      "end": "2026-10-21T13:50:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Scott Klososky",
       "speakers": [
@@ -78,7 +78,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479353/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479353/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5480584",
@@ -89,8 +90,8 @@
       "date": "2026-10-21",
       "startTime": "09:00",
       "endTime": "09:40",
-      "start": "2026-10-21T09:00:00-05:00",
-      "end": "2026-10-21T09:40:00-05:00",
+      "start": "2026-10-21T14:00:00.000Z",
+      "end": "2026-10-21T14:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Shane Kempton, Misty Isaacs, Scott Davenport, Jeff Story",
       "speakers": [
@@ -156,7 +157,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480584/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480584/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5485409",
@@ -167,8 +169,8 @@
       "date": "2026-10-21",
       "startTime": "09:00",
       "endTime": "09:40",
-      "start": "2026-10-21T09:00:00-05:00",
-      "end": "2026-10-21T09:40:00-05:00",
+      "start": "2026-10-21T14:00:00.000Z",
+      "end": "2026-10-21T14:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Amy Finley",
       "speakers": [
@@ -207,7 +209,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485409/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485409/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5551126",
@@ -218,10 +221,10 @@
       "date": "2026-10-21",
       "startTime": "09:00",
       "endTime": "09:40",
-      "start": "2026-10-21T09:00:00-05:00",
-      "end": "2026-10-21T09:40:00-05:00",
+      "start": "2026-10-21T14:00:00.000Z",
+      "end": "2026-10-21T14:40:00.000Z",
       "timeZone": "America/Chicago",
-      "speaker": "Mike Pinto",
+      "speaker": "Michael Pinto",
       "speakers": [
         "Mike Pinto"
       ],
@@ -258,7 +261,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551126/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551126/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5566374",
@@ -269,8 +273,8 @@
       "date": "2026-10-21",
       "startTime": "09:00",
       "endTime": "09:40",
-      "start": "2026-10-21T09:00:00-05:00",
-      "end": "2026-10-21T09:40:00-05:00",
+      "start": "2026-10-21T14:00:00.000Z",
+      "end": "2026-10-21T14:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Brent Feller",
       "speakers": [
@@ -309,7 +313,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5566374/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5566374/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5584649",
@@ -320,8 +325,8 @@
       "date": "2026-10-21",
       "startTime": "09:00",
       "endTime": "09:40",
-      "start": "2026-10-21T09:00:00-05:00",
-      "end": "2026-10-21T09:40:00-05:00",
+      "start": "2026-10-21T14:00:00.000Z",
+      "end": "2026-10-21T14:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Amber Mangham",
       "speakers": [
@@ -360,7 +365,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584649/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584649/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5345070",
@@ -371,8 +377,8 @@
       "date": "2026-10-21",
       "startTime": "09:00",
       "endTime": "09:40",
-      "start": "2026-10-21T09:00:00-05:00",
-      "end": "2026-10-21T09:40:00-05:00",
+      "start": "2026-10-21T14:00:00.000Z",
+      "end": "2026-10-21T14:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Kelli Beck, Anh Selissen, Jalen Byford",
       "speakers": [
@@ -430,7 +436,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345070/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345070/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5565004",
@@ -441,8 +448,8 @@
       "date": "2026-10-21",
       "startTime": "09:00",
       "endTime": "09:40",
-      "start": "2026-10-21T09:00:00-05:00",
-      "end": "2026-10-21T09:40:00-05:00",
+      "start": "2026-10-21T14:00:00.000Z",
+      "end": "2026-10-21T14:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Melissa Aarskaug",
       "speakers": [
@@ -481,7 +488,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5565004/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5565004/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5479403",
@@ -492,8 +500,8 @@
       "date": "2026-10-21",
       "startTime": "09:40",
       "endTime": "10:10",
-      "start": "2026-10-21T09:40:00-05:00",
-      "end": "2026-10-21T10:10:00-05:00",
+      "start": "2026-10-21T14:40:00.000Z",
+      "end": "2026-10-21T15:10:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "",
       "speakers": [],
@@ -521,7 +529,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479403/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479403/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5626168",
@@ -532,8 +541,8 @@
       "date": "2026-10-21",
       "startTime": "09:45",
       "endTime": "10:15",
-      "start": "2026-10-21T09:45:00-05:00",
-      "end": "2026-10-21T10:15:00-05:00",
+      "start": "2026-10-21T14:45:00.000Z",
+      "end": "2026-10-21T15:15:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Vince Johnson",
       "speakers": [
@@ -570,7 +579,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626168/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626168/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5480671",
@@ -581,8 +591,8 @@
       "date": "2026-10-21",
       "startTime": "10:10",
       "endTime": "10:50",
-      "start": "2026-10-21T10:10:00-05:00",
-      "end": "2026-10-21T10:50:00-05:00",
+      "start": "2026-10-21T15:10:00.000Z",
+      "end": "2026-10-21T15:50:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Travis Ferrell, Mike Wood, Kenneth Miles, Victor Carneiro",
       "speakers": [
@@ -648,7 +658,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480671/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5480671/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5570137",
@@ -659,8 +670,8 @@
       "date": "2026-10-21",
       "startTime": "10:10",
       "endTime": "10:50",
-      "start": "2026-10-21T10:10:00-05:00",
-      "end": "2026-10-21T10:50:00-05:00",
+      "start": "2026-10-21T15:10:00.000Z",
+      "end": "2026-10-21T15:50:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Blake Holman",
       "speakers": [
@@ -699,7 +710,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5570137/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5570137/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5482573",
@@ -710,8 +722,8 @@
       "date": "2026-10-21",
       "startTime": "10:10",
       "endTime": "10:50",
-      "start": "2026-10-21T10:10:00-05:00",
-      "end": "2026-10-21T10:50:00-05:00",
+      "start": "2026-10-21T15:10:00.000Z",
+      "end": "2026-10-21T15:50:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Geoff Wilson",
       "speakers": [
@@ -750,7 +762,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5482573/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5482573/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5345072",
@@ -761,8 +774,8 @@
       "date": "2026-10-21",
       "startTime": "10:10",
       "endTime": "10:50",
-      "start": "2026-10-21T10:10:00-05:00",
-      "end": "2026-10-21T10:50:00-05:00",
+      "start": "2026-10-21T15:10:00.000Z",
+      "end": "2026-10-21T15:50:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Russell Parker, Mike Anderson, Nathan Sweaney, Scott Banks",
       "speakers": [
@@ -829,7 +842,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345072/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345072/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5584655",
@@ -840,8 +854,8 @@
       "date": "2026-10-21",
       "startTime": "10:10",
       "endTime": "10:50",
-      "start": "2026-10-21T10:10:00-05:00",
-      "end": "2026-10-21T10:50:00-05:00",
+      "start": "2026-10-21T15:10:00.000Z",
+      "end": "2026-10-21T15:50:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Camron Borders, Will El Assili, Amber Mangham, Daisha Darnaby",
       "speakers": [
@@ -907,7 +921,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584655/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584655/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5483768",
@@ -918,8 +933,8 @@
       "date": "2026-10-21",
       "startTime": "10:10",
       "endTime": "10:50",
-      "start": "2026-10-21T10:10:00-05:00",
-      "end": "2026-10-21T10:50:00-05:00",
+      "start": "2026-10-21T15:10:00.000Z",
+      "end": "2026-10-21T15:50:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "George Trujillo",
       "speakers": [
@@ -958,7 +973,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5483768/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5483768/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5539037",
@@ -969,8 +985,8 @@
       "date": "2026-10-21",
       "startTime": "10:10",
       "endTime": "10:50",
-      "start": "2026-10-21T10:10:00-05:00",
-      "end": "2026-10-21T10:50:00-05:00",
+      "start": "2026-10-21T15:10:00.000Z",
+      "end": "2026-10-21T15:50:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Nikki Parker",
       "speakers": [
@@ -1009,7 +1025,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539037/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539037/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5627033",
@@ -1020,8 +1037,8 @@
       "date": "2026-10-21",
       "startTime": "11:00",
       "endTime": "11:30",
-      "start": "2026-10-21T11:00:00-05:00",
-      "end": "2026-10-21T11:30:00-05:00",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T16:30:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Garrett Pillasch",
       "speakers": [
@@ -1062,7 +1079,8 @@
       "dataQualityNote": "The official feed also lists another Island demo at the same 11:00–11:30 interval in the InterWorks partner theater. These may be duplicate/alternate titles; both source records are preserved pending organizer clarification.",
       "possibleDuplicateSourceIds": [
         "5626171"
-      ]
+      ],
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5626171",
@@ -1073,8 +1091,8 @@
       "date": "2026-10-21",
       "startTime": "11:00",
       "endTime": "11:30",
-      "start": "2026-10-21T11:00:00-05:00",
-      "end": "2026-10-21T11:30:00-05:00",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T16:30:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "",
       "speakers": [],
@@ -1104,7 +1122,8 @@
       "dataQualityNote": "The official feed also lists another Island demo at the same 11:00–11:30 interval in the InterWorks partner theater. These may be duplicate/alternate titles; both source records are preserved pending organizer clarification.",
       "possibleDuplicateSourceIds": [
         "5627033"
-      ]
+      ],
+      "status": "cancelled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5345066",
@@ -1115,8 +1134,8 @@
       "date": "2026-10-21",
       "startTime": "11:00",
       "endTime": "11:40",
-      "start": "2026-10-21T11:00:00-05:00",
-      "end": "2026-10-21T11:40:00-05:00",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T16:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Hursh Juneja, Lauren Fassio, Cory Carson, Michael Mathews",
       "speakers": [
@@ -1182,7 +1201,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345066/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345066/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5551125",
@@ -1193,8 +1213,8 @@
       "date": "2026-10-21",
       "startTime": "11:00",
       "endTime": "11:40",
-      "start": "2026-10-21T11:00:00-05:00",
-      "end": "2026-10-21T11:40:00-05:00",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T16:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Robert Nettles",
       "speakers": [
@@ -1233,7 +1253,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551125/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5551125/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5542957",
@@ -1244,8 +1265,8 @@
       "date": "2026-10-21",
       "startTime": "11:00",
       "endTime": "11:40",
-      "start": "2026-10-21T11:00:00-05:00",
-      "end": "2026-10-21T11:40:00-05:00",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T16:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Andy Adams",
       "speakers": [
@@ -1284,7 +1305,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5542957/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5542957/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5556948",
@@ -1295,8 +1317,8 @@
       "date": "2026-10-21",
       "startTime": "11:00",
       "endTime": "11:40",
-      "start": "2026-10-21T11:00:00-05:00",
-      "end": "2026-10-21T11:40:00-05:00",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T16:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Donovan Farrow",
       "speakers": [
@@ -1335,7 +1357,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5556948/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5556948/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5584660",
@@ -1346,8 +1369,8 @@
       "date": "2026-10-21",
       "startTime": "11:00",
       "endTime": "11:40",
-      "start": "2026-10-21T11:00:00-05:00",
-      "end": "2026-10-21T11:40:00-05:00",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T16:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Tab Pierce, Nick Travis, Kabutey Ebeheakey",
       "speakers": [
@@ -1404,7 +1427,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584660/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584660/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5578525",
@@ -1415,8 +1439,8 @@
       "date": "2026-10-21",
       "startTime": "11:00",
       "endTime": "11:40",
-      "start": "2026-10-21T11:00:00-05:00",
-      "end": "2026-10-21T11:40:00-05:00",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T16:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Matthew Harrison, Zachary Miller",
       "speakers": [
@@ -1464,7 +1488,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5578525/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5578525/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5345076",
@@ -1475,8 +1500,8 @@
       "date": "2026-10-21",
       "startTime": "11:00",
       "endTime": "11:40",
-      "start": "2026-10-21T11:00:00-05:00",
-      "end": "2026-10-21T11:40:00-05:00",
+      "start": "2026-10-21T16:00:00.000Z",
+      "end": "2026-10-21T16:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Jenae Thompson, Samantha Werner, Dajah Brooks, Melissa Aarskaug",
       "speakers": [
@@ -1542,7 +1567,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345076/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5345076/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5479384",
@@ -1553,8 +1579,8 @@
       "date": "2026-10-21",
       "startTime": "11:50",
       "endTime": "13:20",
-      "start": "2026-10-21T11:50:00-05:00",
-      "end": "2026-10-21T13:20:00-05:00",
+      "start": "2026-10-21T16:50:00.000Z",
+      "end": "2026-10-21T18:20:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "",
       "speakers": [],
@@ -1583,7 +1609,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479384/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479384/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5479389",
@@ -1594,8 +1621,8 @@
       "date": "2026-10-21",
       "startTime": "11:50",
       "endTime": "13:20",
-      "start": "2026-10-21T11:50:00-05:00",
-      "end": "2026-10-21T13:20:00-05:00",
+      "start": "2026-10-21T16:50:00.000Z",
+      "end": "2026-10-21T18:20:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Blake Holman, Anh Selissen, Kevin Johnson",
       "speakers": [
@@ -1654,7 +1681,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479389/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479389/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5599918",
@@ -1665,8 +1693,8 @@
       "date": "2026-10-21",
       "startTime": "13:00",
       "endTime": "13:40",
-      "start": "2026-10-21T13:00:00-05:00",
-      "end": "2026-10-21T13:40:00-05:00",
+      "start": "2026-10-21T18:00:00.000Z",
+      "end": "2026-10-21T18:40:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Perry Correll",
       "speakers": [
@@ -1706,7 +1734,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5599918/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5599918/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5628112",
@@ -1717,8 +1746,8 @@
       "date": "2026-10-21",
       "startTime": "13:30",
       "endTime": "14:10",
-      "start": "2026-10-21T13:30:00-05:00",
-      "end": "2026-10-21T14:10:00-05:00",
+      "start": "2026-10-21T18:30:00.000Z",
+      "end": "2026-10-21T19:10:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Jordan Capps, Lauren Fassio",
       "speakers": [
@@ -1767,7 +1796,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5628112/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5628112/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5585660",
@@ -1778,8 +1808,8 @@
       "date": "2026-10-21",
       "startTime": "13:30",
       "endTime": "14:10",
-      "start": "2026-10-21T13:30:00-05:00",
-      "end": "2026-10-21T14:10:00-05:00",
+      "start": "2026-10-21T18:30:00.000Z",
+      "end": "2026-10-21T19:10:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Aaron Krauss",
       "speakers": [
@@ -1818,7 +1848,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5585660/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5585660/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5505953",
@@ -1829,8 +1860,8 @@
       "date": "2026-10-21",
       "startTime": "13:30",
       "endTime": "14:10",
-      "start": "2026-10-21T13:30:00-05:00",
-      "end": "2026-10-21T14:10:00-05:00",
+      "start": "2026-10-21T18:30:00.000Z",
+      "end": "2026-10-21T19:10:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Andrew Garrett",
       "speakers": [
@@ -1870,7 +1901,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505953/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505953/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5505347",
@@ -1881,8 +1913,8 @@
       "date": "2026-10-21",
       "startTime": "13:30",
       "endTime": "14:10",
-      "start": "2026-10-21T13:30:00-05:00",
-      "end": "2026-10-21T14:10:00-05:00",
+      "start": "2026-10-21T18:30:00.000Z",
+      "end": "2026-10-21T19:10:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Jonathan Kimmitt",
       "speakers": [
@@ -1922,7 +1954,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505347/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505347/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5485410",
@@ -1933,8 +1966,8 @@
       "date": "2026-10-21",
       "startTime": "13:30",
       "endTime": "14:10",
-      "start": "2026-10-21T13:30:00-05:00",
-      "end": "2026-10-21T14:10:00-05:00",
+      "start": "2026-10-21T18:30:00.000Z",
+      "end": "2026-10-21T19:10:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Trevor Wiseman, Chris Scully, Ben Bausili, Joe Bowersox",
       "speakers": [
@@ -2000,7 +2033,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485410/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5485410/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5519569",
@@ -2011,10 +2045,10 @@
       "date": "2026-10-21",
       "startTime": "13:30",
       "endTime": "14:10",
-      "start": "2026-10-21T13:30:00-05:00",
-      "end": "2026-10-21T14:10:00-05:00",
+      "start": "2026-10-21T18:30:00.000Z",
+      "end": "2026-10-21T19:10:00.000Z",
       "timeZone": "America/Chicago",
-      "speaker": "Kate Curran, Hursh Juneja, Jordan Capps, Cindy Wilson, John Marcellus",
+      "speaker": "Kate Curran, Hursh Juneja, Cindy Wilson, John Marcellus",
       "speakers": [
         "Kate Curran",
         "Hursh Juneja",
@@ -2087,19 +2121,20 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5519569/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5519569/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5479405",
       "sourceId": "5479405",
       "conferenceId": "innotech-oklahoma-2026",
       "event": "InnoTech Oklahoma 2026",
-      "title": "Expo Break - Coffee, Exhibits and Networking",
+      "title": "Expo Break - Exhibits and Networking",
       "date": "2026-10-21",
       "startTime": "14:10",
       "endTime": "14:35",
-      "start": "2026-10-21T14:10:00-05:00",
-      "end": "2026-10-21T14:35:00-05:00",
+      "start": "2026-10-21T19:10:00.000Z",
+      "end": "2026-10-21T19:35:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "",
       "speakers": [],
@@ -2127,7 +2162,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479405/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479405/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5626172",
@@ -2138,8 +2174,8 @@
       "date": "2026-10-21",
       "startTime": "14:15",
       "endTime": "14:45",
-      "start": "2026-10-21T14:15:00-05:00",
-      "end": "2026-10-21T14:45:00-05:00",
+      "start": "2026-10-21T19:15:00.000Z",
+      "end": "2026-10-21T19:45:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "John Crowley",
       "speakers": [
@@ -2176,7 +2212,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626172/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5626172/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5567109",
@@ -2187,8 +2224,8 @@
       "date": "2026-10-21",
       "startTime": "14:35",
       "endTime": "15:15",
-      "start": "2026-10-21T14:35:00-05:00",
-      "end": "2026-10-21T15:15:00-05:00",
+      "start": "2026-10-21T19:35:00.000Z",
+      "end": "2026-10-21T20:15:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "",
       "speakers": [],
@@ -2218,7 +2255,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5567109/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5567109/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5559248",
@@ -2229,8 +2267,8 @@
       "date": "2026-10-21",
       "startTime": "14:35",
       "endTime": "15:15",
-      "start": "2026-10-21T14:35:00-05:00",
-      "end": "2026-10-21T15:15:00-05:00",
+      "start": "2026-10-21T19:35:00.000Z",
+      "end": "2026-10-21T20:15:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Phillip Vargyas",
       "speakers": [
@@ -2269,7 +2307,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5559248/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5559248/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5560230",
@@ -2280,8 +2319,8 @@
       "date": "2026-10-21",
       "startTime": "14:35",
       "endTime": "15:15",
-      "start": "2026-10-21T14:35:00-05:00",
-      "end": "2026-10-21T15:15:00-05:00",
+      "start": "2026-10-21T19:35:00.000Z",
+      "end": "2026-10-21T20:15:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Zach Draper",
       "speakers": [
@@ -2320,7 +2359,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560230/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560230/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5568869",
@@ -2331,8 +2371,8 @@
       "date": "2026-10-21",
       "startTime": "14:35",
       "endTime": "15:15",
-      "start": "2026-10-21T14:35:00-05:00",
-      "end": "2026-10-21T15:15:00-05:00",
+      "start": "2026-10-21T19:35:00.000Z",
+      "end": "2026-10-21T20:15:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Walter Hirsekorn",
       "speakers": [
@@ -2371,7 +2411,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5568869/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5568869/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5584661",
@@ -2382,8 +2423,8 @@
       "date": "2026-10-21",
       "startTime": "14:35",
       "endTime": "15:15",
-      "start": "2026-10-21T14:35:00-05:00",
-      "end": "2026-10-21T15:15:00-05:00",
+      "start": "2026-10-21T19:35:00.000Z",
+      "end": "2026-10-21T20:15:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Gavin McMahan, Randall Munsinger, Elbert Myles",
       "speakers": [
@@ -2440,7 +2481,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584661/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5584661/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5505997",
@@ -2451,8 +2493,8 @@
       "date": "2026-10-21",
       "startTime": "14:35",
       "endTime": "15:15",
-      "start": "2026-10-21T14:35:00-05:00",
-      "end": "2026-10-21T15:15:00-05:00",
+      "start": "2026-10-21T19:35:00.000Z",
+      "end": "2026-10-21T20:15:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "Ian Anderson, Charlie Ray, Mary Sumner, Taylor Rhoades",
       "speakers": [
@@ -2518,7 +2560,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505997/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5505997/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-whova-5539119",
@@ -2529,10 +2572,10 @@
       "date": "2026-10-21",
       "startTime": "14:35",
       "endTime": "15:15",
-      "start": "2026-10-21T14:35:00-05:00",
-      "end": "2026-10-21T15:15:00-05:00",
+      "start": "2026-10-21T19:35:00.000Z",
+      "end": "2026-10-21T20:15:00.000Z",
       "timeZone": "America/Chicago",
-      "speaker": "Alan White, Angee Noel, Brigette Zorn, Chef LaToya Larkin, MBA",
+      "speaker": "Alan White, Angee Noel, Brigette Zorn, Chef LaToya Larkin",
       "speakers": [
         "Alan White",
         "Angee Noel",
@@ -2596,7 +2639,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539119/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5539119/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "innotech-oklahoma-2026-happy-45-minute-reception",
@@ -2607,8 +2651,8 @@
       "date": "2026-10-21",
       "startTime": "15:15",
       "endTime": "16:00",
-      "start": "2026-10-21T15:15:00-05:00",
-      "end": "2026-10-21T16:00:00-05:00",
+      "start": "2026-10-21T20:15:00.000Z",
+      "end": "2026-10-21T21:00:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "",
       "speakers": [],
@@ -2636,7 +2680,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479357/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5479357/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     },
     {
       "id": "thunderplains-2026-02499046-49d3-460e-8e42-81a71065f258",
@@ -3232,8 +3277,8 @@
       "date": "2026-10-21",
       "startTime": "08:30",
       "endTime": "16:00",
-      "start": "2026-10-21T08:30:00-05:00",
-      "end": "2026-10-21T16:00:00-05:00",
+      "start": "2026-10-21T13:30:00.000Z",
+      "end": "2026-10-21T21:00:00.000Z",
       "timeZone": "America/Chicago",
       "speaker": "",
       "speakers": [],
@@ -3261,7 +3306,8 @@
         "end": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560585/",
         "room": "https://whova.com/embedded/session/8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D/5560585/",
         "timeZone": "https://whova.com/xems/apis/event_webpage/agenda/public/get_agendas/?event_id=8DafSwBx7usrDvwSDIsZZFzlUZta5B%40sh3%40JWy6Q6sY%3D"
-      }
+      },
+      "status": "scheduled"
     }
   ],
   "sources": [

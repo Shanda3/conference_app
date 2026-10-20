@@ -70,3 +70,11 @@ No real provider sign-in, SMS delivery, multi-user hosted test or production cap
 The combined source passes 72 unit/render checks, TypeScript and the production build. The actual isolated social Worker/D1 suite passes 124 requests with synthetic identities and all provider calls blocked. A regression test verifies that an explicit connection save also reconciles stale official session fields while preserving the saved selection and private note. The current ThunderPlains schedule is applied automatically; its conflict alert remains in place, and InnoTech retains its separate review behavior.
 
 Production release status is recorded in the private local readiness evidence and final release report.
+
+## Settings and group-label follow-up
+
+Blocking is managed only in Account settings. The attendee cards and attendee profile preview have no block action. Settings includes a bounded display-name search over the existing privacy-filtered directory, a native attendee selector, explicit confirmation and the existing blocked list with named Unblock controls. Search is literal, supports the existing 100-result pagination, and never changes block state. Existing server-side block enforcement and all schema definitions are unchanged.
+
+Group links on cards, profile previews, Settings and directory options show the group name without a generic community prefix. A Communities label appears above badge groups, while separate member/interested captions provide accessible descriptions. Settings actions use “Edit my choices” and “Clear selections.” Group badges use 16px text and 44px touch targets.
+
+Synthetic checks cover cards and profile previews, search/no matches, 102-result pagination, confirmation cancellation and blocking/unblocking, mutual hiding, retaining unsaved choices, clearing a now-blocked profile, and 320/390px layouts. Confirmation focus stays inside the dialog with Tab/Shift+Tab; Escape returns focus to the review action, and completion returns focus to search. No real attendee block was changed for verification.

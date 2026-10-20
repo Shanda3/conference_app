@@ -12,6 +12,11 @@ declare namespace Cloudflare {
     DEVYO_EVENT_ENDS_AT?: string;
     DEVYO_CLEANUP_INSTANCE_ID?: string;
     DEVYO_ALLOWED_USER_IDS?: string;
+    DEVYO_MESSAGING_SCHEMA_READY?: string;
+    DEVYO_PUSH_ENABLED?: string;
+    DEVYO_VAPID_PUBLIC_KEY?: string;
+    DEVYO_VAPID_PRIVATE_KEY?: string;
+    DEVYO_VAPID_SUBJECT?: string;
     DB?: D1Database;
     BUCKET?: R2Bucket;
     DEVYO_PROFILE_IMAGES?: ImagesBinding;

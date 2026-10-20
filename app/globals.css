@@ -19,7 +19,7 @@
 .group-message {padding:16px 0;border-bottom:1px solid var(--border, #403247);}
 .community-page details {margin:16px 0;}
 
-.member-avatar {display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;overflow:hidden;background:#423151;color:#fff;font-weight:700;margin:0 10px 8px 0;flex-shrink:0;}
+.member-avatar,.share-row .member-avatar {display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;overflow:hidden;background:#423151;color:#fff;font-weight:700;margin:0 10px 8px 0;flex-shrink:0;}
 .member-avatar img {width:100%;height:100%;object-fit:cover;}
 
 /* Keep every navigation item reachable on short screens. */
@@ -262,3 +262,9 @@ body {font-size:16px;}
 .ai-prep,.prep-note-save{border-top:1px solid #ded4e8;margin-top:22px;padding-top:16px}.ai-prep h4{font-size:1.05rem}.ai-prep p{margin:10px 0;line-height:1.6;font-size:1rem}.ai-prep textarea{width:100%;font-size:16px;line-height:1.6;min-height:140px}.ai-prep details>summary,.prep-note-save>summary{font-size:1rem;line-height:1.5;cursor:pointer;min-height:44px;padding:10px 0;font-weight:650}.prep-note-save label{display:flex;align-items:flex-start;gap:12px;margin:14px 0;line-height:1.6;font-size:1rem;cursor:pointer}.prep-note-save input{width:22px;height:22px;flex:0 0 22px;margin-top:3px}.prep-note-save pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;padding:14px;border-radius:10px;background:#fff;border:1px solid #ded4e8}.ai-prep-result{margin-top:20px;padding:16px;border:1px solid #ded4e8;border-radius:14px;background:#fff}.ai-prep button{min-height:46px;white-space:normal}.ai-prep button:focus-visible,.prep-note-save input:focus-visible,.prep-note-save summary:focus-visible,.ai-prep summary:focus-visible{outline:3px solid #68418b;outline-offset:3px}
 
 .prep-note-save label{min-height:44px;padding:8px 0}
+
+.venue-program-rooms{display:grid;gap:24px;margin:20px 0 24px;min-width:0}.venue-room-shortcuts{display:flex;flex-wrap:wrap;gap:10px}.venue-guide .venue-room-shortcuts a{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:60px;max-width:100%;padding:10px 14px;border:1px solid #d9c9e5;border-radius:10px;text-decoration:none;font-size:16px;line-height:1.5}.venue-room-shortcuts a span{overflow-wrap:anywhere}.venue-room-shortcuts a small{font-size:14px;color:#60546e}.venue-reference-plans{margin:20px 0;padding:16px 0;border-top:1px solid #e1d7eb}.venue-reference-plans>summary{min-height:44px;font-weight:650;cursor:pointer}.venue-reference-plans>section{margin-top:20px;scroll-margin-top:24px}.venue-reference-plans h3{margin-top:16px}@media(max-width:640px){.venue-room-shortcuts a{flex:1 1 130px}.venue-program-rooms h3{font-size:20px}}
+
+.ai-public-context{padding:16px;border:1px solid #ded4e8;border-radius:12px;background:#faf7fd;overflow-wrap:anywhere}.ai-public-context h5{font-size:1rem;margin:0 0 10px}.ai-public-context a{display:inline-flex;align-items:center;min-height:44px;font-size:1rem}
+
+.venue-arrival-note{border:2px solid #b99bcf;background:#f7f0ff;margin:22px 0}.venue-arrival-note h2{font-size:24px}.venue-arrival-note p{font-size:16px;line-height:1.6}.venue-arrival-note .button{min-height:44px}

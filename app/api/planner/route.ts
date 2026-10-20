@@ -2,7 +2,7 @@ import{env}from'cloudflare:workers';
 import seed from '@/lib/event-data.json';
 import{readProgram}from'@/lib/program-sync';
 import type{ProgramSeed}from'@/lib/program-model';
-import{reconcileThunderPlains}from'@/lib/program-reconcile';
+import{reconcileOfficialProgram}from'@/lib/program-reconcile';
 import { and, eq } from "drizzle-orm";
 import { getAppUser } from "@/app/auth";
 import {getAuthContext} from '@/lib/auth-context';
@@ -56,7 +56,7 @@ async function readBody(request: Request): Promise<unknown> {
 async function officialState(state:ReturnType<typeof emptyState>){
  if(getAuthContext().eventId!=='thunderplains-2026'||env.DEVYO_PROGRAM_SYNC_ENABLED!=='true')return state;
  if(!env.DB)throw Error('Official program unavailable');
- return reconcileThunderPlains(state,(await readProgram(env.DB,seed as unknown as ProgramSeed)).sessions);
+ return reconcileOfficialProgram(state,(await readProgram(env.DB,seed as unknown as ProgramSeed)).sessions);
 }
 
 export async function GET(): Promise<Response> {

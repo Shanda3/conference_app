@@ -1,3 +1,4 @@
+import type{ReactionCount}from'./messaging';
 import source from './event-data.json' with {type:'json'};
 import {isNonTalk} from './talk-prep.ts';
 export const DISCUSSION_EVENT='thunderplains-2026';
@@ -15,6 +16,6 @@ export function isDiscussionModerator(owner:string,value:unknown){return discuss
 export function safeDiscussionLink(value:string){try{const url=new URL(value);return url.protocol==='https:'&&!url.username&&!url.password&&!/[\u0000-\u0020\u007f]/.test(value)?url.href:null}catch{return null}}
 export function discussionParts(text:string):Array<{text:string;href?:string}>{const parts:Array<{text:string;href?:string}>=[];let end=0;for(const match of text.matchAll(/https:\/\/[^\s<>"']+/g)){const start=match.index!,raw=match[0],clean=raw.replace(/[.,;!?\)\]]+$/,'');if(start>end)parts.push({text:text.slice(end,start)});const href=safeDiscussionLink(clean);parts.push({text:clean,...(href?{href}:{})});if(clean.length<raw.length)parts.push({text:raw.slice(clean.length)});end=start+raw.length}if(end<text.length)parts.push({text:text.slice(end)});return parts}
 export function discussionPollDelay(quiet:number,failures:number,jitter=.5){return Math.min(DISCUSSION_LIMITS.maxPoll,(failures?DISCUSSION_LIMITS.poll*2**Math.min(failures,2):quiet>=3?DISCUSSION_LIMITS.idlePoll:DISCUSSION_LIMITS.poll))*(.9+.2*Math.max(0,Math.min(1,jitter)))}
-export type DiscussionMessage={id:string;displayName:string;body:string;createdAt:number;isOwn:boolean};
-export type DiscussionSnapshot={talk:DiscussionTalk;joined:boolean;displayName:string|null;moderator:boolean;messages:DiscussionMessage[]};
+export type DiscussionMessage={readOrder?:number;reactions?:ReactionCount[];id:string;displayName:string;body:string;createdAt:number;isOwn:boolean};
+export type DiscussionSnapshot={messagingEnabled?:boolean;talk:DiscussionTalk;joined:boolean;displayName:string|null;moderator:boolean;messages:DiscussionMessage[]};
 export type DiscussionReport={talk:DiscussionTalk;message:DiscussionMessage;reasons:string[];reportCount:number};

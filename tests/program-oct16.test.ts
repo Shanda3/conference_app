@@ -1,0 +1,30 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {parseSessionize,validateComplete} from '../lib/program-sync.ts';
+import {seedSessions,toPlannerSession,type ProgramSeed} from '../lib/program-model.ts';
+import {mergeAfterParty,ORGANIZER_AFTER_PARTY} from '../lib/organizer-session-extras.ts';
+import {reconcileThunderPlains} from '../lib/program-reconcile.ts';
+import {emptyState,validateState} from '../lib/planner.ts';
+const seed=JSON.parse(await readFile(new URL('../lib/event-data.json',import.meta.url),'utf8')) as ProgramSeed;
+const previous=seedSessions(seed).filter(s=>s.conferenceId==='thunderplains-2026');
+const parsed=parseSessionize(await readFile(new URL('./fixtures/thunderplains-oct16.html',import.meta.url),'utf8'),previous);
+test('October 16 feed is complete and exact durations, lunch and final are authoritative',()=>{
+ validateComplete(parsed,{sessions:previous,references:[]},seed);
+ const byId=(id:string)=>parsed.sessions.find(s=>s.sourceId===id)!;
+ assert.equal(byId('1271786').end,'2026-10-21T15:15:00.000Z');
+ assert.equal(byId('1268807').end,'2026-10-21T20:10:00.000Z');
+ assert.equal(byId('02499046-49d3-460e-8e42-81a71065f258').start,'2026-10-21T17:15:00.000Z');
+ assert.equal(byId('1265754').end,'2026-10-21T22:15:00.000Z');
+ assert.equal(byId('d83eb1e9-4bf2-46c4-89ba-59ead52e773c').room,'Track CD');
+ assert.ok(parsed.sessions.some(s=>s.status==='cancelled'));
+});
+test('publisher afterparty uses its stable existing identity and actual venue, and automatically updates saved plans without touching private data',()=>{
+ const program=mergeAfterParty(parsed.sessions,ORGANIZER_AFTER_PARTY);
+ const parties=program.filter(s=>/after.?party/i.test(s.title));assert.equal(parties.length,1);
+ const party=parties[0];assert.equal(party.id,ORGANIZER_AFTER_PARTY.id);assert.equal(party.sourceId,ORGANIZER_AFTER_PARTY.sourceId);assert.equal(party.room,ORGANIZER_AFTER_PARTY.room);
+ assert.equal(party.start,'2026-10-21T22:15:00.000Z');assert.equal(party.end,'2026-10-22T01:00:00.000Z');
+ const oldParty={...toPlannerSession(ORGANIZER_AFTER_PARTY),start:'2026-10-21T22:30:00.000Z',end:'2026-10-22T00:30:00.000Z'};
+ const state={...emptyState(),initialized:true,conferences:seed.conferences.map(({id,name,startDate,endDate,timeZone,location,url,description})=>({id,name,startDate,endDate,timeZone,location,url,description})),sessions:[...previous.map(toPlannerSession),oldParty],savedSessionIds:[oldParty.id],sessionNotes:{[oldParty.id]:'private unsaved note'}};
+ const after=reconcileThunderPlains(state,program);validateState(after);assert.equal(after.sessions.find(s=>s.id===oldParty.id)!.end,party.end);assert.deepEqual(after.savedSessionIds,state.savedSessionIds);assert.deepEqual(after.sessionNotes,state.sessionNotes);assert.equal(reconcileThunderPlains(after,program),after);
+});

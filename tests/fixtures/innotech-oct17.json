@@ -1,0 +1,1693 @@
+{
+  "result": "success",
+  "data": {
+    "event_basics": {
+      "event_name": "InnoTech Oklahoma",
+      "timezone": "America/Chicago"
+    },
+    "agenda": [
+      {
+        "date": "Oct 20, 2026",
+        "day": "Tue",
+        "time_ranges": [
+          [
+            "09:00",
+            [
+              [
+                {
+                  "start_time": "09:00 AM",
+                  "calendar_stime": "2026-10-20 09:00:00",
+                  "sessions": [
+                    {
+                      "id": 5480596,
+                      "name": "AI in the Enterprise: A Working Session for Leaders",
+                      "calendar_stime": "2026-10-20 09:00:00",
+                      "calendar_etime": "2026-10-20 11:45:00",
+                      "place": "Room 202, Second Floor",
+                      "speaker": {},
+                      "tracks": [
+                        {
+                          "name": "Workshop"
+                        },
+                        {
+                          "name": "AI & Data"
+                        },
+                        {
+                          "name": "Paid Luncheon & Special Event"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "11:45 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "09:00 AM",
+                  "calendar_stime": "2026-10-20 09:00:00",
+                  "sessions": [
+                    {
+                      "id": 5541089,
+                      "name": "AI Contract Risk: What Security Professionals Need to Know",
+                      "calendar_stime": "2026-10-20 09:00:00",
+                      "calendar_etime": "2026-10-20 12:00:00",
+                      "place": "Room 203, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Jonathan Kimmitt"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Workshop"
+                        },
+                        {
+                          "name": "Security"
+                        },
+                        {
+                          "name": "Paid Luncheon & Special Event"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "12:00 PM"
+                }
+              ]
+            ]
+          ],
+          [
+            "13:00",
+            [
+              [
+                {
+                  "start_time": "01:00 PM",
+                  "calendar_stime": "2026-10-20 13:00:00",
+                  "sessions": [
+                    {
+                      "id": 5545553,
+                      "name": "AI Accountability Workshop",
+                      "calendar_stime": "2026-10-20 13:00:00",
+                      "calendar_etime": "2026-10-20 16:00:00",
+                      "place": "Room 202, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Walter Hirsekorn"
+                          },
+                          {
+                            "name": "Matthew Williamson"
+                          },
+                          {
+                            "name": "Matt Murphy"
+                          },
+                          {
+                            "name": "Robin Meyer"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Workshop"
+                        },
+                        {
+                          "name": "AI & Data"
+                        },
+                        {
+                          "name": "Paid Luncheon & Special Event"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "04:00 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "01:00 PM",
+                  "calendar_stime": "2026-10-20 13:00:00",
+                  "sessions": [
+                    {
+                      "id": 5554926,
+                      "name": "AI Incident Response: Tabletop Exercise",
+                      "calendar_stime": "2026-10-20 13:00:00",
+                      "calendar_etime": "2026-10-20 16:00:00",
+                      "place": "Room 203, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Jonathan Kimmitt"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Workshop"
+                        },
+                        {
+                          "name": "Security"
+                        },
+                        {
+                          "name": "Paid Luncheon & Special Event"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "04:00 PM"
+                }
+              ]
+            ]
+          ]
+        ],
+        "type": "Normal",
+        "formatted_date": "Tuesday, October 20, 2026"
+      },
+      {
+        "date": "Oct 21, 2026",
+        "day": "Wed",
+        "time_ranges": [
+          [
+            "08:00",
+            [
+              [
+                {
+                  "start_time": "08:00 AM",
+                  "calendar_stime": "2026-10-21 08:00:00",
+                  "sessions": [
+                    {
+                      "id": 5479353,
+                      "name": "Morning Keynote - Tackling the AI Enterprise Architecture Puzzle",
+                      "calendar_stime": "2026-10-21 08:00:00",
+                      "calendar_etime": "2026-10-21 08:50:00",
+                      "place": "Room 301A-D, Third Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Scott Klososky"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Keynote"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "08:50 AM"
+                }
+              ]
+            ]
+          ],
+          [
+            "08:30",
+            [
+              [
+                {
+                  "start_time": "08:30 AM",
+                  "calendar_stime": "2026-10-21 08:30:00",
+                  "sessions": [
+                    {
+                      "id": 5560585,
+                      "name": "Tech Exhibits & Networking Open All Day",
+                      "calendar_stime": "2026-10-21 08:30:00",
+                      "calendar_etime": "2026-10-21 16:00:00",
+                      "place": "Exhibit Hall A, First Floor",
+                      "speaker": {},
+                      "tracks": [
+                        {
+                          "name": "Networking and Open to All"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "04:00 PM"
+                }
+              ]
+            ]
+          ],
+          [
+            "09:00",
+            [
+              [
+                {
+                  "start_time": "09:00 AM",
+                  "calendar_stime": "2026-10-21 09:00:00",
+                  "sessions": [
+                    {
+                      "id": 5565004,
+                      "name": "The Leadership Firewall",
+                      "calendar_stime": "2026-10-21 09:00:00",
+                      "calendar_etime": "2026-10-21 09:40:00",
+                      "place": "Room 208AB, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Melissa Aarskaug"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Women in Tech Summit"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "09:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "09:00 AM",
+                  "calendar_stime": "2026-10-21 09:00:00",
+                  "sessions": [
+                    {
+                      "id": 5345070,
+                      "name": "The AI Policy Gap: What IT Leaders Must Fix Before It’s Too Late",
+                      "calendar_stime": "2026-10-21 09:00:00",
+                      "calendar_etime": "2026-10-21 09:40:00",
+                      "place": "Room 207AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Kelli Beck"
+                          },
+                          {
+                            "name": "Anh Selissen"
+                          },
+                          {
+                            "name": "Jalen Byford"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "IT Leadership Track"
+                        },
+                        {
+                          "name": "AI & Data"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "09:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "09:00 AM",
+                  "calendar_stime": "2026-10-21 09:00:00",
+                  "sessions": [
+                    {
+                      "id": 5566374,
+                      "name": "Controlled Autonomy: How AI is Rewriting Both Sides of Cyber Defense — and What that Means for MDR",
+                      "calendar_stime": "2026-10-21 09:00:00",
+                      "calendar_etime": "2026-10-21 09:40:00",
+                      "place": "Room 204, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Brent Feller"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Security"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "09:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "09:00 AM",
+                  "calendar_stime": "2026-10-21 09:00:00",
+                  "sessions": [
+                    {
+                      "id": 5551126,
+                      "name": "How to Reduce Your Attack Surface Before Attackers Find It",
+                      "calendar_stime": "2026-10-21 09:00:00",
+                      "calendar_etime": "2026-10-21 09:40:00",
+                      "place": "Room 203, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Michael Pinto"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Security"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "09:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "09:00 AM",
+                  "calendar_stime": "2026-10-21 09:00:00",
+                  "sessions": [
+                    {
+                      "id": 5480584,
+                      "name": "Own vs. Rent: How AI Changed the Software Buying Decision",
+                      "calendar_stime": "2026-10-21 09:00:00",
+                      "calendar_etime": "2026-10-21 09:40:00",
+                      "place": "Room 201, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Shane Kempton"
+                          },
+                          {
+                            "name": "Misty Isaacs"
+                          },
+                          {
+                            "name": "Scott Davenport"
+                          },
+                          {
+                            "name": "Jeff Story"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "IT Leadership Track"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "09:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "09:00 AM",
+                  "calendar_stime": "2026-10-21 09:00:00",
+                  "sessions": [
+                    {
+                      "id": 5485409,
+                      "name": "One Source of Truth: Why Unified Data Matters (Now More Than Ever)",
+                      "calendar_stime": "2026-10-21 09:00:00",
+                      "calendar_etime": "2026-10-21 09:40:00",
+                      "place": "Room 202, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Amy Finley"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "AI & Data"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "09:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "09:00 AM",
+                  "calendar_stime": "2026-10-21 09:00:00",
+                  "sessions": [
+                    {
+                      "id": 5584649,
+                      "name": "Securing What’s Next: Technology and Modernization in Oklahoma",
+                      "calendar_stime": "2026-10-21 09:00:00",
+                      "calendar_etime": "2026-10-21 09:40:00",
+                      "place": "Room 206AB, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Amber Mangham"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "OK-ISAC Symposium hosted by OMES"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "09:40 AM"
+                }
+              ]
+            ]
+          ],
+          [
+            "09:40",
+            [
+              [
+                {
+                  "start_time": "09:40 AM",
+                  "calendar_stime": "2026-10-21 09:40:00",
+                  "sessions": [
+                    {
+                      "id": 5479403,
+                      "name": "Expo Break - Coffee, Exhibits and Networking",
+                      "calendar_stime": "2026-10-21 09:40:00",
+                      "calendar_etime": "2026-10-21 10:10:00",
+                      "place": "Exhibit Hall A, First Floor",
+                      "speaker": {},
+                      "tracks": [
+                        {
+                          "name": "Networking and Open to All"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "10:10 AM"
+                }
+              ]
+            ]
+          ],
+          [
+            "09:45",
+            [
+              [
+                {
+                  "start_time": "09:45 AM",
+                  "calendar_stime": "2026-10-21 09:45:00",
+                  "sessions": [
+                    {
+                      "id": 5626168,
+                      "name": "Regaining Meeting Equity – Neat Demo",
+                      "calendar_stime": "2026-10-21 09:45:00",
+                      "calendar_etime": "2026-10-21 10:15:00",
+                      "place": "Interworks Partner Theater, Exhibit Hall A, First Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Vince Johnson"
+                          }
+                        ]
+                      },
+                      "tracks": []
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "10:15 AM"
+                }
+              ]
+            ]
+          ],
+          [
+            "10:10",
+            [
+              [
+                {
+                  "start_time": "10:10 AM",
+                  "calendar_stime": "2026-10-21 10:10:00",
+                  "sessions": [
+                    {
+                      "id": 5483768,
+                      "name": "Your AI Model Isn’t the System: Governing Agents, Data, Processes and Outcomes",
+                      "calendar_stime": "2026-10-21 10:10:00",
+                      "calendar_etime": "2026-10-21 10:50:00",
+                      "place": "Room 207AB, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "George Trujillo"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "AI & Data"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "10:50 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "10:10 AM",
+                  "calendar_stime": "2026-10-21 10:10:00",
+                  "sessions": [
+                    {
+                      "id": 5482573,
+                      "name": "Hacked by Your Own AI: Harden Microsoft 365 Before AI Finds the Gaps",
+                      "calendar_stime": "2026-10-21 10:10:00",
+                      "calendar_etime": "2026-10-21 10:50:00",
+                      "place": "Room 203, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Geoff Wilson"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Security"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "10:50 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "10:10 AM",
+                  "calendar_stime": "2026-10-21 10:10:00",
+                  "sessions": [
+                    {
+                      "id": 5345072,
+                      "name": "Detecting and Controlling Shadow IT in an AI-First Enterprise",
+                      "calendar_stime": "2026-10-21 10:10:00",
+                      "calendar_etime": "2026-10-21 10:50:00",
+                      "place": "Room 204, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Russell Parker"
+                          },
+                          {
+                            "name": "Mike Anderson"
+                          },
+                          {
+                            "name": "Nathan Sweaney"
+                          },
+                          {
+                            "name": "Scott Banks"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Security"
+                        },
+                        {
+                          "name": "AI & Data"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "10:50 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "10:10 AM",
+                  "calendar_stime": "2026-10-21 10:10:00",
+                  "sessions": [
+                    {
+                      "id": 5480671,
+                      "name": "Becoming the “Buffalo” Running into Challenges and Uncertainty Instead of Away",
+                      "calendar_stime": "2026-10-21 10:10:00",
+                      "calendar_etime": "2026-10-21 10:50:00",
+                      "place": "Room 201, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Travis Ferrell"
+                          },
+                          {
+                            "name": "Mike Wood"
+                          },
+                          {
+                            "name": "Kenneth Miles"
+                          },
+                          {
+                            "name": "Victor Carneiro"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "IT Leadership Track"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "10:50 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "10:10 AM",
+                  "calendar_stime": "2026-10-21 10:10:00",
+                  "sessions": [
+                    {
+                      "id": 5584655,
+                      "name": "Ransomware in the Real World: Lessons from the Front Lines",
+                      "calendar_stime": "2026-10-21 10:10:00",
+                      "calendar_etime": "2026-10-21 10:50:00",
+                      "place": "Room 206AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Camron Borders"
+                          },
+                          {
+                            "name": "Will El Assili"
+                          },
+                          {
+                            "name": "Amber Mangham"
+                          },
+                          {
+                            "name": "Daisha Darnaby"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "OK-ISAC Symposium hosted by OMES"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "10:50 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "10:10 AM",
+                  "calendar_stime": "2026-10-21 10:10:00",
+                  "sessions": [
+                    {
+                      "id": 5539037,
+                      "name": "The Happiness Formula: The Blueprint for Strong Women Who Are Tired",
+                      "calendar_stime": "2026-10-21 10:10:00",
+                      "calendar_etime": "2026-10-21 10:50:00",
+                      "place": "Room 208AB, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Nikki Parker"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Women in Tech Summit"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "10:50 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "10:10 AM",
+                  "calendar_stime": "2026-10-21 10:10:00",
+                  "sessions": [
+                    {
+                      "id": 5570137,
+                      "name": "Stuck or Moving? Leading Through Change Fatigue",
+                      "calendar_stime": "2026-10-21 10:10:00",
+                      "calendar_etime": "2026-10-21 10:50:00",
+                      "place": "Room 202, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Blake Holman"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "IT Leadership Track"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "10:50 AM"
+                }
+              ]
+            ]
+          ],
+          [
+            "11:00",
+            [
+              [
+                {
+                  "start_time": "11:00 AM",
+                  "calendar_stime": "2026-10-21 11:00:00",
+                  "sessions": [
+                    {
+                      "id": 5345076,
+                      "name": "Your Career 3.0 & Upskilling, Reskilling, and Workforce Readiness",
+                      "calendar_stime": "2026-10-21 11:00:00",
+                      "calendar_etime": "2026-10-21 11:40:00",
+                      "place": "Room 208AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Jenae Thompson"
+                          },
+                          {
+                            "name": "Samantha Werner"
+                          },
+                          {
+                            "name": "Dajah Brooks"
+                          },
+                          {
+                            "name": "Melissa Aarskaug"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Women in Tech Summit"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "11:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "11:00 AM",
+                  "calendar_stime": "2026-10-21 11:00:00",
+                  "sessions": [
+                    {
+                      "id": 5345066,
+                      "name": "Trailblazing IT Leadership for This Era of Innovation",
+                      "calendar_stime": "2026-10-21 11:00:00",
+                      "calendar_etime": "2026-10-21 11:40:00",
+                      "place": "Room 201, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Hursh Juneja"
+                          },
+                          {
+                            "name": "Lauren Fassio"
+                          },
+                          {
+                            "name": "Cory Carson"
+                          },
+                          {
+                            "name": "Michael Mathews"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "IT Leadership Track"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "11:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "11:00 AM",
+                  "calendar_stime": "2026-10-21 11:00:00",
+                  "sessions": [
+                    {
+                      "id": 5556948,
+                      "name": "Deep Fakin’ in 2026",
+                      "calendar_stime": "2026-10-21 11:00:00",
+                      "calendar_etime": "2026-10-21 11:40:00",
+                      "place": "Room 204, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Donovan Farrow"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Security"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "11:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "11:00 AM",
+                  "calendar_stime": "2026-10-21 11:00:00",
+                  "sessions": [
+                    {
+                      "id": 5542957,
+                      "name": "Security Tool Sprawl",
+                      "calendar_stime": "2026-10-21 11:00:00",
+                      "calendar_etime": "2026-10-21 11:40:00",
+                      "place": "Room 203, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Andy Adams"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Security"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "11:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "11:00 AM",
+                  "calendar_stime": "2026-10-21 11:00:00",
+                  "sessions": [
+                    {
+                      "id": 5551125,
+                      "name": "Data Readiness for AI-Enabled Value Creation",
+                      "calendar_stime": "2026-10-21 11:00:00",
+                      "calendar_etime": "2026-10-21 11:40:00",
+                      "place": "Room 202, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Robert Nettles"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "AI & Data"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "11:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "11:00 AM",
+                  "calendar_stime": "2026-10-21 11:00:00",
+                  "sessions": [
+                    {
+                      "id": 5584660,
+                      "name": "Beyond the Hype: Measuring the Real ROI of AI",
+                      "calendar_stime": "2026-10-21 11:00:00",
+                      "calendar_etime": "2026-10-21 11:40:00",
+                      "place": "Room 206AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Tab Pierce"
+                          },
+                          {
+                            "name": "Nick Travis"
+                          },
+                          {
+                            "name": "Kabutey Ebeheakey"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "OK-ISAC Symposium hosted by OMES"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "11:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "11:00 AM",
+                  "calendar_stime": "2026-10-21 11:00:00",
+                  "sessions": [
+                    {
+                      "id": 5578525,
+                      "name": "Building Agent Memory with Open Knowledge Format",
+                      "calendar_stime": "2026-10-21 11:00:00",
+                      "calendar_etime": "2026-10-21 11:40:00",
+                      "place": "Room 207AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Matthew Harrison"
+                          },
+                          {
+                            "name": "Zachary Miller"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "AI & Data"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "11:40 AM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "11:00 AM",
+                  "calendar_stime": "2026-10-21 11:00:00",
+                  "sessions": [
+                    {
+                      "id": 5627033,
+                      "name": "Island: Agentic Control Plane",
+                      "calendar_stime": "2026-10-21 11:00:00",
+                      "calendar_etime": "2026-10-21 11:30:00",
+                      "place": "Interworks Partner Demo Theater, Exhibit Hall A, First Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Garrett Pillasch"
+                          }
+                        ]
+                      },
+                      "tracks": []
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "11:30 AM"
+                }
+              ]
+            ]
+          ],
+          [
+            "11:50",
+            [
+              [
+                {
+                  "start_time": "11:50 AM",
+                  "calendar_stime": "2026-10-21 11:50:00",
+                  "sessions": [
+                    {
+                      "id": 5479384,
+                      "name": "Women in Tech Summit Luncheon",
+                      "calendar_stime": "2026-10-21 11:50:00",
+                      "calendar_etime": "2026-10-21 13:20:00",
+                      "place": "Room 208AB, Second Floor",
+                      "speaker": {},
+                      "tracks": [
+                        {
+                          "name": "Women in Tech Summit"
+                        },
+                        {
+                          "name": "Paid Luncheon & Special Event"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "01:20 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "11:50 AM",
+                  "calendar_stime": "2026-10-21 11:50:00",
+                  "sessions": [
+                    {
+                      "id": 5479389,
+                      "name": "IT Executive Luncheon - AI Isn't Just Changing IT. It's Rewriting the Leadership Playbook",
+                      "calendar_stime": "2026-10-21 11:50:00",
+                      "calendar_etime": "2026-10-21 13:20:00",
+                      "place": "Room 209AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Blake Holman"
+                          },
+                          {
+                            "name": "Anh Selissen"
+                          },
+                          {
+                            "name": "Kevin Johnson"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "IT Leadership Track"
+                        },
+                        {
+                          "name": "AI & Data"
+                        },
+                        {
+                          "name": "Paid Luncheon & Special Event"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "01:20 PM"
+                }
+              ]
+            ]
+          ],
+          [
+            "13:00",
+            [
+              [
+                {
+                  "start_time": "01:00 PM",
+                  "calendar_stime": "2026-10-21 13:00:00",
+                  "sessions": [
+                    {
+                      "id": 5599918,
+                      "name": "A New Way to SIEM: Designing a Distributed Security Data Platform",
+                      "calendar_stime": "2026-10-21 13:00:00",
+                      "calendar_etime": "2026-10-21 13:40:00",
+                      "place": "Room 204, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Perry Correll"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "AI & Data"
+                        },
+                        {
+                          "name": "Security"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "01:40 PM"
+                }
+              ]
+            ]
+          ],
+          [
+            "13:30",
+            [
+              [
+                {
+                  "start_time": "01:30 PM",
+                  "calendar_stime": "2026-10-21 13:30:00",
+                  "sessions": [
+                    {
+                      "id": 5505347,
+                      "name": "Hacker Hardware Tools Show and Tell 3.0",
+                      "calendar_stime": "2026-10-21 13:30:00",
+                      "calendar_etime": "2026-10-21 14:10:00",
+                      "place": "Room 206AB, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Jonathan Kimmitt"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Security"
+                        },
+                        {
+                          "name": "OK-ISAC Symposium hosted by OMES"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "02:10 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "01:30 PM",
+                  "calendar_stime": "2026-10-21 13:30:00",
+                  "sessions": [
+                    {
+                      "id": 5485410,
+                      "name": "Leading the AI Transformation: Practical Lessons for Organizations",
+                      "calendar_stime": "2026-10-21 13:30:00",
+                      "calendar_etime": "2026-10-21 14:10:00",
+                      "place": "Room 207AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Trevor Wiseman"
+                          },
+                          {
+                            "name": "Chris Scully"
+                          },
+                          {
+                            "name": "Ben Bausili"
+                          },
+                          {
+                            "name": "Joe Bowersox"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "AI & Data"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "02:10 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "01:30 PM",
+                  "calendar_stime": "2026-10-21 13:30:00",
+                  "sessions": [
+                    {
+                      "id": 5585660,
+                      "name": "Spec-Driven Development: Building Smarter with AI",
+                      "calendar_stime": "2026-10-21 13:30:00",
+                      "calendar_etime": "2026-10-21 14:10:00",
+                      "place": "Room 202, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Aaron Krauss"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Software and Development"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "02:10 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "01:30 PM",
+                  "calendar_stime": "2026-10-21 13:30:00",
+                  "sessions": [
+                    {
+                      "id": 5505953,
+                      "name": "Closing the AI Exposure Window",
+                      "calendar_stime": "2026-10-21 13:30:00",
+                      "calendar_etime": "2026-10-21 14:10:00",
+                      "place": "Room 203, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Andrew Garrett"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "AI & Data"
+                        },
+                        {
+                          "name": "Security"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "02:10 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "01:30 PM",
+                  "calendar_stime": "2026-10-21 13:30:00",
+                  "sessions": [
+                    {
+                      "id": 5519569,
+                      "name": "Beyond the Résumé – The Power of Networking & Community",
+                      "calendar_stime": "2026-10-21 13:30:00",
+                      "calendar_etime": "2026-10-21 14:10:00",
+                      "place": "Room 208AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Kate Curran"
+                          },
+                          {
+                            "name": "Hursh Juneja"
+                          },
+                          {
+                            "name": "Cindy Wilson"
+                          },
+                          {
+                            "name": "John Marcellus"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Women in Tech Summit"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "02:10 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "01:30 PM",
+                  "calendar_stime": "2026-10-21 13:30:00",
+                  "sessions": [
+                    {
+                      "id": 5628112,
+                      "name": "We Broke Some Things: Lessons from the IT Trenches",
+                      "calendar_stime": "2026-10-21 13:30:00",
+                      "calendar_etime": "2026-10-21 14:10:00",
+                      "place": "Room 201, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Jordan Capps"
+                          },
+                          {
+                            "name": "Lauren Fassio"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "IT Leadership Track"
+                        },
+                        {
+                          "name": "Cloud & Infrastructure"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "02:10 PM"
+                }
+              ]
+            ]
+          ],
+          [
+            "14:10",
+            [
+              [
+                {
+                  "start_time": "02:10 PM",
+                  "calendar_stime": "2026-10-21 14:10:00",
+                  "sessions": [
+                    {
+                      "id": 5479405,
+                      "name": "Expo Break - Exhibits and Networking",
+                      "calendar_stime": "2026-10-21 14:10:00",
+                      "calendar_etime": "2026-10-21 14:35:00",
+                      "place": "Exhibit Hall A, First Floor",
+                      "speaker": {},
+                      "tracks": [
+                        {
+                          "name": "Networking and Open to All"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "02:35 PM"
+                }
+              ]
+            ]
+          ],
+          [
+            "14:15",
+            [
+              [
+                {
+                  "start_time": "02:15 PM",
+                  "calendar_stime": "2026-10-21 14:15:00",
+                  "sessions": [
+                    {
+                      "id": 5626172,
+                      "name": "Better Together: Closing Security Gaps with InterWorks and ArmorPoint",
+                      "calendar_stime": "2026-10-21 14:15:00",
+                      "calendar_etime": "2026-10-21 14:45:00",
+                      "place": "Interworks Partner Theater, Exhibit Hall A, First Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "John Crowley"
+                          }
+                        ]
+                      },
+                      "tracks": []
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "02:45 PM"
+                }
+              ]
+            ]
+          ],
+          [
+            "14:35",
+            [
+              [
+                {
+                  "start_time": "02:35 PM",
+                  "calendar_stime": "2026-10-21 14:35:00",
+                  "sessions": [
+                    {
+                      "id": 5539119,
+                      "name": "Owning Your Personal Brand in an AI-Driven World",
+                      "calendar_stime": "2026-10-21 14:35:00",
+                      "calendar_etime": "2026-10-21 15:15:00",
+                      "place": "Room 208AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Alan White"
+                          },
+                          {
+                            "name": "Angee Noel"
+                          },
+                          {
+                            "name": "Brigette Zorn"
+                          },
+                          {
+                            "name": "Chef LaToya Larkin, MBA"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Women in Tech Summit"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "03:15 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "02:35 PM",
+                  "calendar_stime": "2026-10-21 14:35:00",
+                  "sessions": [
+                    {
+                      "id": 5567109,
+                      "name": "Modernizing Infrastructure for Tomorrow’s Enterprise Network",
+                      "calendar_stime": "2026-10-21 14:35:00",
+                      "calendar_etime": "2026-10-21 15:15:00",
+                      "place": "Room 201, Second Floor",
+                      "speaker": {},
+                      "tracks": [
+                        {
+                          "name": "IT Leadership Track"
+                        },
+                        {
+                          "name": "AI & Data"
+                        },
+                        {
+                          "name": "Cloud & Infrastructure"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "03:15 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "02:35 PM",
+                  "calendar_stime": "2026-10-21 14:35:00",
+                  "sessions": [
+                    {
+                      "id": 5560230,
+                      "name": "Identity: The Master Key to Your Data",
+                      "calendar_stime": "2026-10-21 14:35:00",
+                      "calendar_etime": "2026-10-21 15:15:00",
+                      "place": "Room 203, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Zach Draper"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Security"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "03:15 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "02:35 PM",
+                  "calendar_stime": "2026-10-21 14:35:00",
+                  "sessions": [
+                    {
+                      "id": 5559248,
+                      "name": "Six People and an IIS Server: When a Small Infrastructure Team Should Just Build it.",
+                      "calendar_stime": "2026-10-21 14:35:00",
+                      "calendar_etime": "2026-10-21 15:15:00",
+                      "place": "Room 202, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Phillip Vargyas"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Cloud & Infrastructure"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "03:15 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "02:35 PM",
+                  "calendar_stime": "2026-10-21 14:35:00",
+                  "sessions": [
+                    {
+                      "id": 5505997,
+                      "name": "The Executive Playbook for Enterprise AI Guardrails",
+                      "calendar_stime": "2026-10-21 14:35:00",
+                      "calendar_etime": "2026-10-21 15:15:00",
+                      "place": "Room 207AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Ian Anderson"
+                          },
+                          {
+                            "name": "Charlie Ray"
+                          },
+                          {
+                            "name": "Mary Sumner"
+                          },
+                          {
+                            "name": "Taylor Rhoades"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "AI & Data"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "03:15 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "02:35 PM",
+                  "calendar_stime": "2026-10-21 14:35:00",
+                  "sessions": [
+                    {
+                      "id": 5584661,
+                      "name": "From Root to Ring 3: Surviving a Full-Spectrum PAM Rollout Without Starting a Riot",
+                      "calendar_stime": "2026-10-21 14:35:00",
+                      "calendar_etime": "2026-10-21 15:15:00",
+                      "place": "Room 206AB, Second Floor",
+                      "speaker": {
+                        "Speakers": [
+                          {
+                            "name": "Gavin McMahan"
+                          },
+                          {
+                            "name": "Randall Munsinger"
+                          },
+                          {
+                            "name": "Elbert Myles"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "OK-ISAC Symposium hosted by OMES"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "03:15 PM"
+                }
+              ],
+              [],
+              [
+                {
+                  "start_time": "02:35 PM",
+                  "calendar_stime": "2026-10-21 14:35:00",
+                  "sessions": [
+                    {
+                      "id": 5568869,
+                      "name": "Critical AI Security Components Leaders Must Consider",
+                      "calendar_stime": "2026-10-21 14:35:00",
+                      "calendar_etime": "2026-10-21 15:15:00",
+                      "place": "Room 204, Second Floor",
+                      "speaker": {
+                        "Speaker": [
+                          {
+                            "name": "Walter Hirsekorn"
+                          }
+                        ]
+                      },
+                      "tracks": [
+                        {
+                          "name": "Security"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "03:15 PM"
+                }
+              ]
+            ]
+          ],
+          [
+            "15:15",
+            [
+              [
+                {
+                  "start_time": "03:15 PM",
+                  "calendar_stime": "2026-10-21 15:15:00",
+                  "sessions": [
+                    {
+                      "id": 5479357,
+                      "name": "Happy 45-Minute Reception & Passport Prize Drawings",
+                      "calendar_stime": "2026-10-21 15:15:00",
+                      "calendar_etime": "2026-10-21 16:00:00",
+                      "place": "Exhibit Hall A, First Floor",
+                      "speaker": {},
+                      "tracks": [
+                        {
+                          "name": "Networking and Open to All"
+                        }
+                      ]
+                    }
+                  ],
+                  "nonparallel": false,
+                  "end_time": "04:00 PM"
+                }
+              ]
+            ]
+          ]
+        ],
+        "type": "Normal",
+        "formatted_date": "Wednesday, October 21, 2026"
+      }
+    ]
+  }
+}

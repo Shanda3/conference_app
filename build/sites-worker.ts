@@ -1,3 +1,4 @@
+import{deliverPendingPush}from'../lib/push-delivery';
 import {discussionModerators} from '../lib/talk-discussion.ts';
 import{generalHomeResponse}from'../lib/general-home.ts';
 import{publicPlanPath,publicPlanResponse}from'../lib/public-plan.ts';
@@ -48,13 +49,14 @@ export default {async fetch(incoming:Request,env:Cloudflare.Env,ctx:ExecutionCon
   if(request.method!=='GET')response=Response.json({error:'This program endpoint is read-only.'},{status:405,headers:programHeaders});
   else try{if(!env.DB)throw new Error('Missing database');response=Response.json(await readProgram(env.DB,seed),{headers:programHeaders})}
   catch{response=Response.json({error:'The last program could not be loaded. Your planner has not changed.'},{status:503,headers:programHeaders})}
- }else response=await runWithAuth(auth.context,()=>handler.fetch(request,env,ctx));const headers=new Headers(response.headers);
+ }else response=await runWithAuth(auth.context,()=>handler.fetch(request,env,ctx));if(incoming.method==='POST'&&response.ok&&['/api/chat','/api/community','/api/talk-discussion'].includes(pathname)&&env.DEVYO_PUSH_ENABLED==='true')ctx.waitUntil(deliverPendingPush(env).catch(()=>undefined));const headers=new Headers(response.headers);
  for(const cookie of auth.headers.getSetCookie())headers.append("Set-Cookie",cookie);
  if(pathname==='/sign-in'&&auth.context.accountDeletedNotice){headers.append('Set-Cookie',`devyo-account-deleted=; Path=/sign-in; Domain=devyo.app; HttpOnly; Secure; SameSite=Lax; Max-Age=0`)}
  headers.set("Cache-Control","private, no-store");headers.set("X-Robots-Tag","noindex, nofollow");headers.set("Referrer-Policy","no-referrer");
  return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
 },async scheduled(event:ScheduledController,env:Cloudflare.Env,ctx:ExecutionContext){
  if((!event.cron||event.cron==='0 14 * * *')&&env.DEVYO_PROGRAM_SYNC_ENABLED==='true'&&env.DB)ctx.waitUntil(runProgramCheck(env.DB,seed));
+ if(env.DEVYO_PUSH_ENABLED==='true'&&env.DB)ctx.waitUntil(deliverPendingPush(env).catch(()=>undefined));
  if(env.DB&&(env.OPENAI_API_KEY||env.OPEN_API_KEY))ctx.waitUntil(env.DB.prepare('DELETE FROM devyo_ai_cache WHERE expires_at<=?').bind(Date.now()).run().catch(()=>undefined));
  if(env.DEVYO_ACCOUNT_DELETION_SCHEMA_READY==='true'&&env.DB){const config=readAuthConfig(env);if(config)ctx.waitUntil(recoverAccountDeletions(env.DB,owner=>deleteClerkIdentity(config,owner)).catch(()=>undefined))}
 }};

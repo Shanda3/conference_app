@@ -66,6 +66,8 @@ export function parseWhova(raw:string,previous:PublishedSession[],references:Pub
   // Existing all-day exhibit hours remain a flexible reference, never an attendance commitment.
   if(references.some(s=>s.id===id)||/exhibits.*all day/i.test(session.title))refs.push(session);else sessions.push(session);
  }
+ // Previously reviewed unlisted entries keep stable IDs and notes; new missing active entries still fail completeness.
+ for(const old of previous)if(old.status==='cancelled'&&!sessions.some(s=>s.sourceId===old.sourceId))sessions.push({...old});
  return{sessions:deduplicate(sessions),references:deduplicate(refs)};
 }
 
@@ -120,5 +122,7 @@ export async function readProgram(db:D1Database,seed:ProgramSeed,now=new Date())
  const statuses:SourceStatus[]=PROGRAM_SOURCES.map(s=>{const row=sources.find(r=>r.conference_id===s.conferenceId);return{conferenceId:s.conferenceId,name:s.name,sourceUrl:s.sourceUrl,status:row?.status??'not-checked',checkedAt:row?.checked_at??null,lastSuccessAt:row?.last_success_at??null,message:row?.message??'Daily verification has not completed. The bundled organizer snapshot is shown.',sessionCount:sessions.filter(q=>q.conferenceId===s.conferenceId).length,changeCount:row?JSON.parse(row.changes_json).length:0}});
  const tp=sources.find(r=>r.conference_id==='thunderplains-2026'),moved:ProgramChange[]=tp?JSON.parse(tp.changes_json).filter((c:ProgramChange)=>c.before&&c.after.status==='scheduled'&&(c.before.start!==c.after.start||c.before.end!==c.after.end)):[];
  const thunderPlainsUpdate=tp?.hash&&moved.length?{version:tp.hash,previousSessions:moved.map(c=>confirmedSessionRoom(toPlannerSession(c.before!))),movedSessionIds:moved.map(c=>c.id)}:undefined;
- return{...(thunderPlainsUpdate?{thunderPlainsUpdate}:{}),sessions:mergeAfterParty(sessions,ORGANIZER_AFTER_PARTY).map(confirmedSessionRoom),knownSessions:[...knownSessions,...knownSessions.map(confirmedSessionRoom),ORGANIZER_AFTER_PARTY],sources:statuses,stopped:now.getTime()>=Date.parse(PROGRAM_END),stopAt:PROGRAM_END,cadence:'Daily at 9 AM America/Chicago through October 21, 2026'};
+ const movedSources=sources.map(row=>({row,moves:JSON.parse(row.changes_json).filter((c:ProgramChange)=>c.before&&c.after.status==='scheduled'&&(c.before.start!==c.after.start||c.before.end!==c.after.end)) as ProgramChange[]})).filter(s=>s.row.hash&&s.moves.length).sort((a,b)=>a.row.conference_id.localeCompare(b.row.conference_id));
+ const programUpdate=movedSources.length?{version:movedSources.length===1?String(movedSources[0].row.hash):await hash(movedSources.map(s=>[s.row.conference_id,s.row.hash])),previousSessions:movedSources.flatMap(s=>s.moves.map(c=>confirmedSessionRoom(toPlannerSession(c.before!)))),movedSessionIds:movedSources.flatMap(s=>s.moves.map(c=>c.id))}:undefined;
+ return{...(programUpdate?{programUpdate}:{}),...(thunderPlainsUpdate?{thunderPlainsUpdate}:{}),sessions:mergeAfterParty(sessions,ORGANIZER_AFTER_PARTY).map(confirmedSessionRoom),knownSessions:[...knownSessions,...knownSessions.map(confirmedSessionRoom),ORGANIZER_AFTER_PARTY],sources:statuses,stopped:now.getTime()>=Date.parse(PROGRAM_END),stopAt:PROGRAM_END,cadence:'Daily at 9 AM America/Chicago through October 21, 2026'};
 }

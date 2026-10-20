@@ -1,9 +1,11 @@
 import {env} from 'cloudflare:workers';
+import{messagingReady,MessagingD1,assertMessagingSchema}from'./messaging-d1';
+import{queueMessagePush}from'./push-delivery';
 import {getAuthContext} from './auth-context.ts';
 import {plannerIdentityMatches} from './talk-preferences.ts';
 import {PRIVATE_RESPONSE_HEADERS,readSharingBody,SharingError} from './sharing.ts';
 import {chatId} from './chat.ts';
-import {DISCUSSION_EVENT,DiscussionError,discussionTalk,discussionText,isDiscussionModerator,discussionModerators} from './talk-discussion.ts';
+import {DISCUSSION_EVENT,DiscussionError,discussionTalk,discussionText,isDiscussionModerator,discussionModerators,discussionRoom} from './talk-discussion.ts';
 import {assertDiscussionSchema,DiscussionD1} from './talk-discussion-d1.ts';
 const json=(data:unknown,status=200,extra:Record<string,string>={})=>Response.json(data,{status,headers:{...PRIVATE_RESPONSE_HEADERS,...extra}});
 const failure=(error:unknown)=>json({error:error instanceof DiscussionError||error instanceof SharingError?error.message:'Discussion could not be updated. Reload before trying again.'},error instanceof DiscussionError||error instanceof SharingError?error.status:503);
@@ -30,8 +32,9 @@ export async function discussionGET(request:Request){
   }
   if(q.size!==2||!q.has('sessionId')||!q.has('conferenceId'))throw new DiscussionError('Choose a verified talk and conference.');
   const talk=discussionTalk(q.get('sessionId'),q.get('conferenceId'));
-  const result=await store.read(talk,request.headers.get('If-None-Match'),moderator);
+  const result=await store.read(talk,messagingReady(env)?null:request.headers.get('If-None-Match'),moderator);
   if(!result.data)return new Response(null,{status:304,headers:{...PRIVATE_RESPONSE_HEADERS,ETag:result.etag!}});
+  if(messagingReady(env)&&result.data?.joined){await assertMessagingSchema(env.DB!);return json({...result.data,messagingEnabled:true,messages:await new MessagingD1(env.DB!,getAuthContext().user!.userId).decorate("talk",discussionRoom(talk),result.data.messages)})}
   return json(result.data,200,result.etag?{ETag:result.etag}:{});
  }catch(error){return failure(error)}
 }
@@ -54,7 +57,7 @@ export async function discussionPOST(request:Request){
    await store.moderate(talk,chatId(body.messageId),action==='moderate-remove'?'remove':'resolve',discussionText(body.reason,300));
    return json({reviewed:true,removed:action==='moderate-remove'});
   }
-  if(action==='send'){const result=await store.send(talk,discussionText(body.message),body.requestId);return json(result,result.replayed?200:201)}
+  if(action==='send'){const result=await store.send(talk,discussionText(body.message),body.requestId);if(!result.replayed)try{await queueMessagePush(env,'talk',discussionRoom(talk),result.message.id)}catch{/* Optional push is independent of message persistence. */}return json(result,result.replayed?200:201)}
   if(action==='delete'){await store.ownRemove(talk,chatId(body.messageId));return json({deleted:true})}
   return json(await store.flag(talk,chatId(body.messageId),action as 'hide'|'report',discussionText(body.reason??'',300,false)));
  }catch(error){if(error instanceof Error&&error.message.startsWith('Invalid message'))return json({error:error.message},400);return failure(error)}

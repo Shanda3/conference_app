@@ -1,14 +1,14 @@
 import type {Conference, PlannerState, Session} from './planner.ts';
 
 export const PROGRAM_EVENT_DATE='2026-10-21';
-export const PROGRAM_END='2026-10-22T00:30:00.000Z';
+export const PROGRAM_END='2026-10-22T01:00:00.000Z';
 export const PROGRAM_CRON='0 14 * * *'; // 9 AM America/Chicago through the October 21 event; fetching stops at event end.
 export const PROGRAM_FIELDS=['title','start','end','room','speaker','track'] as const;
 export type ProgramField=typeof PROGRAM_FIELDS[number];
 export type PublishedSession=Session & {sourceId:string;status:'scheduled'|'cancelled';prepAbstract?:{status:'ok'|'failed';hash:string;checkedAt:string}};
 export type SourceStatus={conferenceId:string;name:string;sourceUrl:string;status:'ok'|'failed'|'not-checked';checkedAt:string|null;lastSuccessAt:string|null;message:string;sessionCount:number;changeCount:number};
 export type ThunderPlainsUpdate={version:string;previousSessions:Session[];movedSessionIds:string[]};
-export type ProgramPayload={thunderPlainsUpdate?:ThunderPlainsUpdate;sessions:PublishedSession[];knownSessions:Session[];sources:SourceStatus[];stopped:boolean;stopAt:string;cadence:string};
+export type ProgramPayload={programUpdate?:ThunderPlainsUpdate;thunderPlainsUpdate?:ThunderPlainsUpdate;sessions:PublishedSession[];knownSessions:Session[];sources:SourceStatus[];stopped:boolean;stopAt:string;cadence:string};
 export type ProgramReview={added:Session[];updates:Array<{session:Session;fields:ProgramField[];before:Session}>;keptPrivateFields:number};
 
 /** Only organizer-owned fields are candidates. Applying this review never changes choices, notes, connections, or private edits. */

@@ -11,6 +11,14 @@ export function isNonTalk(session:Pick<Session,'title'|'id'>):boolean {
   return /(?:^|\b)(registration|check.in|lunch(?:eon)?|breakfast|after.party|break|reception)(?:\b|$)/i.test(session.title)||session.id==='thunderplains-2026-organizer-after-party';
 }
 export function hasReviewedTalk(session:Session):boolean{return!isNonTalk(session)&&TALK_GUIDES.some(g=>g.id===session.id&&g.conferenceId===session.conferenceId)}
+/** Missing guides are described from the matching published entry, never a private edit or another guide. */
+export function prepUnavailableFor(session:Session,published:readonly PublishedSession[],status:'unreviewed'|'changed'|'stale'){
+  const current=published.find(s=>s.id===session.id&&s.conferenceId===session.conferenceId&&s.status==='scheduled');
+  const canonical=current?.conferenceId==='thunderplains-2026'&&current.id==='thunderplains-2026-'+current.sourceId;
+  const kind=canonical&&/^Lightning Talks? \(Round \d+\)$/i.test(current.title)?'lightning':canonical&&/^Panel(?:\s+Discussion)?\s*:/i.test(current.title)?'panel':'session';
+  const message=status==='changed'?'This session or its source changed, so the older guide is hidden until reviewed.':status==='stale'?'The abstract check is out of date, so the guide is hidden until it can be verified again.':kind==='lightning'?'A reviewed guide is not available for this lightning round yet. Check the official program for details.':kind==='panel'?'A reviewed preparation guide is not available for this panel yet. Check the official program for panel details and speaker updates.':'A reviewed preparation guide is not available for this session yet. Check the official program for details.';
+  return{kind,message,entry:current?{id:current.id,title:current.title,description:current.description.trim()}:null};
+}
 /** Only a pinned public talk can supply context. A private edit never replaces it. */
 export function talkPrepFor(session:Session,published:readonly PublishedSession[],now=Date.now()):PrepResult {
   if(isNonTalk(session))return{status:'excluded'};

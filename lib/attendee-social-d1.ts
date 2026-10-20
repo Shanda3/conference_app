@@ -1,4 +1,4 @@
-import{reconcileThunderPlains}from'./program-reconcile.ts';
+import{reconcileOfficialProgram}from'./program-reconcile.ts';
 import type{PublishedSession}from'./program-model.ts';
 import {validateState} from './planner.ts';
 import {publicLinkedIn} from './profile-visibility.ts';
@@ -50,7 +50,7 @@ export class AttendeeSocialD1{
  async saveConnection(draft:unknown,revision:number,now=Date.now(),official?:PublishedSession[]){
   await this.active();const prior=await this.db.prepare('SELECT state_json,revision FROM planner_states WHERE owner_id=?').bind(this.owner).first<{state_json:string;revision:number}>();if(!prior||prior.revision!==revision)throw new AttendeeSocialError('Your planner changed. Reload before saving.',409);
   if(!await this.db.prepare('SELECT 1 FROM profiles WHERE owner_id=?').bind(this.owner).first())throw new AttendeeSocialError('Choose your display name in Account settings before saving an attendee connection.',409);
-  const stored=validateState(JSON.parse(prior.state_json)),state=official?reconcileThunderPlains(stored,official):stored,connection=connectionDraft(draft,state),memberId=connectionMember(connection),publicMember=await this.member(memberId);
+  const stored=validateState(JSON.parse(prior.state_json)),state=official?reconcileOfficialProgram(stored,official):stored,connection=connectionDraft(draft,state),memberId=connectionMember(connection),publicMember=await this.member(memberId);
   if(publicMember.me||!SOCIAL_CONFERENCES.includes(connection.conferenceId as typeof SOCIAL_CONFERENCES[number]))throw new AttendeeSocialError('Choose another attendee and a conference from this event.');
   const recipient=await this.db.prepare('SELECT m.owner_id FROM community_members m JOIN profiles p ON p.owner_id=m.owner_id WHERE m.id=?').bind(memberId).first<{owner_id:string}>();if(!recipient)throw new AttendeeSocialError('Attendee unavailable.',404);
   if(state.connections.some(c=>c.id===connection.id))return{state,revision,alreadySaved:true,notified:false};

@@ -1,3 +1,5 @@
+import{messagingReady,MessagingD1,assertMessagingSchema}from'@/lib/messaging-d1';
+import{queueMessagePush}from'@/lib/push-delivery';
 import{env}from'cloudflare:workers';
 import {getAuthContext} from '@/lib/auth-context';
 import {AttendeeSocialD1,assertSocialSchema} from '@/lib/attendee-social-d1';
@@ -61,21 +63,29 @@ export async function GET(request: Request): Promise<Response> {
     if(q.has("group")) {
       const group=id(q.get("group")), selected=await membership(group,owner);
       const messages=await db.all(sql`SELECT id, (SELECT m.id FROM community_members m WHERE m.owner_id=private_group_messages.owner_id) AS memberId, display_name AS displayName, body, created_at AS createdAt, owner_id=${owner} AS mine FROM private_group_messages WHERE group_id=${group} AND deleted_at IS NULL ORDER BY created_at DESC,id DESC LIMIT 100`);
-      const members=await db.all(sql`SELECT m.id,COALESCE(p.display_name,'Attendee') AS displayName FROM community_members m LEFT JOIN profiles p ON p.owner_id=m.owner_id WHERE m.owner_id IN (SELECT owner_id FROM private_group_members WHERE group_id=${group}) OR m.owner_id IN (SELECT owner_id FROM private_groups WHERE id=${group}) ORDER BY displayName,m.id`);
+      const memberPrivacy=messagingReady(env)?sql`NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.owner_id=m.owner_id) AND NOT EXISTS(SELECT 1 FROM attendee_blocks b WHERE b.event_id=${SOCIAL_EVENT} AND((b.owner_id=${owner} AND b.blocked_owner_id=m.owner_id) OR(b.owner_id=m.owner_id AND b.blocked_owner_id=${owner})))`:sql`1`;
+      const members=await db.all(sql`SELECT m.id,COALESCE(p.display_name,'Attendee') AS displayName FROM community_members m LEFT JOIN profiles p ON p.owner_id=m.owner_id WHERE (m.owner_id IN (SELECT owner_id FROM private_group_members WHERE group_id=${group}) OR m.owner_id IN (SELECT owner_id FROM private_groups WHERE id=${group})) AND ${memberPrivacy} ORDER BY displayName,m.id`);
       const invites=selected.isOwner?await db.all(sql`SELECT id,expires_at AS expiresAt,revoked_at IS NOT NULL AS revoked FROM private_group_invites WHERE group_id=${group} ORDER BY expires_at DESC LIMIT 100`):[];
       await membership(group,owner); // Recheck after reads if removal raced this request.
-      return json({group:selected,messages:messages.reverse(),members,invites});
+      const messagingEnabled=messagingReady(env);if(messagingEnabled)await assertMessagingSchema(env.DB!);return json({group:selected,messagingEnabled,messages:messagingEnabled?await new MessagingD1(env.DB!,owner).decorate("group",group,messages.reverse() as{id:string}[]):messages.reverse(),members,invites});
+    }
+    if(q.get('joined')==='1'&&q.size===1){
+      const groups=await db.all(sql`SELECT g.id,g.name,g.owner_id=${owner} AS isOwner,${archivedGroup()} AS archived FROM private_groups g WHERE g.owner_id=${owner} OR EXISTS(SELECT 1 FROM private_group_members m WHERE m.group_id=g.id AND m.owner_id=${owner}) ORDER BY g.created_at DESC`);
+      return json({members:[],groups,hasMore:false,sharing:false});
     }
     if(social&&getAuthContext().eventId!==SOCIAL_EVENT)throw new SharingError('Open attendees on the ThunderPlains site.',404);
     const community=q.get('community'),relationship=q.get('relationship')??'all';
-    if([...q.keys()].some(k=>!['offset','community','relationship'].includes(k))||[...new Set(q.keys())].some(k=>q.getAll(k).length!==1))throw new SharingError('Use valid directory filters.');
+    if([...q.keys()].some(k=>!['offset','community','relationship','search'].includes(k))||[...new Set(q.keys())].some(k=>q.getAll(k).length!==1))throw new SharingError('Use valid directory filters.');
     if(community&&!communityDefinition(community)||!['all','member','interested'].includes(relationship)||q.has('relationship')&&!community)throw new SharingError('Choose a listed community and relationship.');
     if(community&&(!social||env.DEVYO_COMMUNITIES_ENABLED!=='true'))throw new SharingError('Community filters are being prepared.',503);
+    const search=q.get('search')??'';
+    if(search.length>80||/[\u0000-\u001f\u007f]/.test(search))throw new SharingError('Search display names using up to 80 characters.');
+    const nameFilter=search.trim()?sql`instr(lower(COALESCE(p.display_name,'Attendee')),lower(${search.trim()}))>0`:sql`1`;
     const offset=Math.max(0,Math.min(100000,Number(q.get("offset"))||0));
     const privacy=social?sql`NOT EXISTS(SELECT 1 FROM account_deletions WHERE owner_id IN(${owner},m.owner_id)) AND NOT EXISTS(SELECT 1 FROM attendee_blocks WHERE event_id=${SOCIAL_EVENT} AND ((owner_id=${owner} AND blocked_owner_id=m.owner_id) OR(owner_id=m.owner_id AND blocked_owner_id=${owner})))`:sql`1`;
     const filter=community?sql`EXISTS(SELECT 1 FROM attendee_communities c WHERE c.owner_id=m.owner_id AND c.event_id=${SOCIAL_EVENT} AND c.community_id=${community} AND (${relationship}='all' OR c.relationship=${relationship}))`:sql`1`;
     const badges=social&&env.DEVYO_COMMUNITIES_ENABLED==='true'?sql`COALESCE((SELECT json_group_array(json_object('id',community_id,'relationship',relationship)) FROM attendee_communities WHERE owner_id=m.owner_id AND event_id=${SOCIAL_EVENT}),'[]')`:sql`'[]'`;
-    const members=await db.all<{id:string;displayName:string;me:number;shared:number;publicLinkedIn:string|null;communities:string}>(sql`SELECT m.id,COALESCE(p.display_name,'Attendee') AS displayName,m.owner_id=${owner} AS me,EXISTS(SELECT 1 FROM member_plans s WHERE s.owner_id=m.owner_id) AS shared,CASE WHEN p.linkedin_visible=1 THEN p.linkedin_url ELSE NULL END AS publicLinkedIn,${badges} communities FROM community_members m LEFT JOIN profiles p ON p.owner_id=m.owner_id WHERE ${privacy} AND ${filter} ORDER BY displayName,m.id LIMIT 101 OFFSET ${Math.floor(offset)}`);
+    const members=await db.all<{id:string;displayName:string;me:number;shared:number;publicLinkedIn:string|null;communities:string}>(sql`SELECT m.id,COALESCE(p.display_name,'Attendee') AS displayName,m.owner_id=${owner} AS me,EXISTS(SELECT 1 FROM member_plans s WHERE s.owner_id=m.owner_id) AS shared,CASE WHEN p.linkedin_visible=1 THEN p.linkedin_url ELSE NULL END AS publicLinkedIn,${badges} communities FROM community_members m LEFT JOIN profiles p ON p.owner_id=m.owner_id WHERE ${privacy} AND ${filter} AND ${nameFilter} ORDER BY displayName,m.id LIMIT 101 OFFSET ${Math.floor(offset)}`);
     const groups=await db.all(sql`SELECT g.id,g.name,g.owner_id=${owner} AS isOwner,${archivedGroup()} AS archived FROM private_groups g WHERE g.owner_id=${owner} OR EXISTS(SELECT 1 FROM private_group_members m WHERE m.group_id=g.id AND m.owner_id=${owner}) ORDER BY g.created_at DESC`);
     const [self]=await db.all<{shared:number}>(sql`SELECT EXISTS(SELECT 1 FROM member_plans WHERE owner_id=${owner}) AS shared`);
     return json({members:members.slice(0,100).map(({publicLinkedIn:link,communities,...member})=>{const linkedInUrl=publicLinkedIn(link);return{...member,communities:publicCommunities(communities),...(linkedInUrl?{linkedInUrl}:{})}}),hasMore:members.length>100,groups,sharing:!!self.shared});
@@ -146,7 +156,7 @@ export async function POST(request: Request): Promise<Response> {
       const existing=await replay();if(existing)return existing;
       const rows=await db.all(sql`INSERT INTO private_group_messages(id,group_id,owner_id,display_name,body,created_at) SELECT ${messageId},${group},${owner},${validateDisplayName(profile.display_name)},${body},${now} WHERE EXISTS(SELECT 1 FROM private_groups g WHERE g.id=${group} AND (g.owner_id=${owner} OR EXISTS(SELECT 1 FROM private_group_members m WHERE m.group_id=g.id AND m.owner_id=${owner}))) AND (SELECT COUNT(*) FROM private_group_messages WHERE owner_id=${owner} AND created_at>${now-60000})<12 AND (SELECT COUNT(*) FROM private_group_messages WHERE owner_id=${owner} AND created_at>${now-86400000})<300 ON CONFLICT(id) DO NOTHING RETURNING id`);
       if(!rows.length){const retried=await replay();if(retried)return retried;throw new SharingError("Posting unavailable. Check your membership or try later: 12 messages per minute and 300 per 24 hours across your private groups.",429);}
-      return json({sent:true},201);
+      try{await queueMessagePush(env,"group",group,messageId)}catch{/* Saving a message never depends on optional push. */}return json({sent:true,id:messageId},201);
     }
     if(action==="delete-message") {
       const b=objectWithKeys(raw,["action","group","message"]),group=id(b.group),message=id(b.message),m=await membership(group,owner);
