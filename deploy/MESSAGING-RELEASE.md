@@ -1,6 +1,6 @@
 # Phone installation and messaging operations
 
-Devyo supports an installable web app, member-only chat navigation, unread tracking, optional Web Push and emoji reactions. Installing the app does not subscribe a device to notifications. The planner's prominent installation banner remains until the browser supplies installation evidence; Safari tabs cannot universally detect an installed iPhone app.
+Devyo supports an installable web app, member-only chat navigation, unread tracking, optional Web Push and emoji reactions. Installing the app does not subscribe a device to notifications. The planner's installation banner scrolls naturally with the page and remains until the browser supplies installation evidence; Safari tabs cannot universally detect an installed iPhone app.
 
 ## Configuration
 
@@ -41,6 +41,6 @@ On iPhone/iPad, add Devyo to the Home Screen, open its icon and then enable noti
 
 Android launchers may show a notification dot rather than an exact unread number. In-app unread counts do not depend on OS badges. [Chrome badge guidance](https://developer.chrome.com/docs/capabilities/web-apis/badging-api).
 
-Installation detection uses standalone mode, browser installation events and the same-origin related-app API where supported. An accepted prompt alone is not treated as successful installation, and no permanent guessed installation flag is stored. [Related-app detection](https://developer.chrome.com/docs/capabilities/get-installed-related-apps).
+Installation detection uses standalone mode, browser installation events and the same-origin related-app API where supported. A captured browser prompt opens only after an explicit Install Devyo click; otherwise the banner shows steps for the current platform. An accepted prompt alone is not treated as successful installation, and no permanent guessed installation flag is stored. [Related-app detection](https://developer.chrome.com/docs/capabilities/get-installed-related-apps).
 
 The server uses [RFC 8292 VAPID](https://www.rfc-editor.org/rfc/rfc8292.html). This feature requires no notification-vendor account or app-store enrollment; existing hosting usage limits still apply.
