@@ -1,5 +1,6 @@
 "use client";
 import{InstallBanner}from"./install-banner";
+import{EventCleanupNotice}from"./event-cleanup-notice";
 import{NotificationOnboarding}from"./notification-onboarding";
 import{SavedConnectionsList}from"./connection-directory";
 import{ChatWorkspace}from"./chat-workspace";
@@ -66,7 +67,7 @@ function makeStarter(published?:PublishedSession[]):PlannerState {
 function Field({label,children,hint}:{label:string;children:React.ReactNode;hint?:string}) {return <label className="field"><span>{label}</span>{children}{hint&&<small>{hint}</small>}</label>;}
 function Empty({icon:Icon,title,children,action}:{icon:typeof Compass;title:string;children:React.ReactNode;action?:React.ReactNode}) {return <div className="empty"><div className="empty-icon"><Icon size={25}/></div><h3>{title}</h3><p>{children}</p>{action}</div>;}
 
-export default function Planner({user,signInPath,eventId,accountDeletionEnabled=false,accountDeletionSchemaReady=accountDeletionEnabled,profilePhotosEnabled=false,talkDiscussionsEnabled=false,attendeeSocialSchemaReady=false,connectionNotificationsEnabled=false,communitiesEnabled=false,initialSection="sessions"}:{user:{displayName:string;userId?:string}|null;signInPath:string;eventId?:string;accountDeletionEnabled?:boolean;accountDeletionSchemaReady?:boolean;profilePhotosEnabled?:boolean;talkDiscussionsEnabled?:boolean;attendeeSocialSchemaReady?:boolean;connectionNotificationsEnabled?:boolean;communitiesEnabled?:boolean;initialSection?:"sessions"|"profile"}) {
+export default function Planner({user,signInPath,eventId,accountDeletionEnabled=false,accountDeletionSchemaReady=accountDeletionEnabled,profilePhotosEnabled=false,talkDiscussionsEnabled=false,attendeeSocialSchemaReady=false,connectionNotificationsEnabled=false,communitiesEnabled=false,initialSection="sessions"}:{user:{displayName:string;userId?:string}|null;signInPath:string;eventId?:string;accountDeletionEnabled?:boolean;accountDeletionSchemaReady?:boolean;profilePhotosEnabled?:boolean;talkDiscussionsEnabled?:boolean;attendeeSocialSchemaReady?:boolean;connectionNotificationsEnabled?:boolean;communitiesEnabled?:boolean;initialSection?:"sessions"|"profile"|"notes"}) {
   const auth=useAuth(),clerk=useClerk();
   const expectedOwner=user?.userId?.slice(user.userId.lastIndexOf(":")+1)??"";
   const socialRequest=useAttendeeSocialRequest(expectedOwner);
@@ -205,6 +206,7 @@ export default function Planner({user,signInPath,eventId,accountDeletionEnabled=
     </aside>
     {menu&&<button className="sidebar-scrim" onClick={()=>setMenu(false)} aria-label="Close menu"/>}
     <main className="main" inert={menu}><header className="topbar"><div className="breadcrumb"><button className="icon-btn mobile-menu" aria-label="Open menu" aria-controls="planner-navigation" aria-expanded={menu} onClick={openNavigation}><Menu size={21}/><span>Menu</span></button><span>My workspace</span><ChevronRight size={14}/><b>{navItems.find(n=>n.id===tab)?.label}</b></div><div className="topbar-right">{connectionNotificationsEnabled&&<button className="icon-btn notification-bell" aria-label={`Notifications, ${notices.unreadCount} unread`} onClick={()=>selectSection("notifications")}><Bell size={20}/>{notices.unreadCount>0&&<b aria-hidden="true">{notices.unreadCount>99?"99+":notices.unreadCount}</b>}</button>}<Logout/><span className="sync"><span className={busy?"pulse":""}/>{busy?"Saving…":error?"Not synced":state.initialized?"Private & synced":"Private planner"}</span><button className="icon-btn" title="Sources and help" aria-label="Sources and help" data-tour-return onClick={()=>setModal({kind:"sources"})}><CircleHelp size={19}/></button></div></header>
+      <EventCleanupNotice onOpenNotes={()=>selectSection("notes")}/>
       <InstallBanner/>
       <NotificationOnboarding onOpenSettings={()=>selectSection("profile")}/>
       <ScheduleChangeAlert count={scheduleChangeConflicts.length} version={(programPayload?.programUpdate??programPayload?.thunderPlainsUpdate)?.version??""} owner={expectedOwner} onReview={()=>{viewSavedAgenda();setScheduleConflictOnly(true)}}/>
