@@ -1,6 +1,6 @@
 # ThunderPlains cleanup preparation
 
-This change publishes no deletion job, provider calls, email delivery or recipient list. `lib/event-cleanup-review.ts` is a review-only helper and is not imported by the Worker scheduler or an API. The notice says the requested deadline is not yet scheduled; it must be revised if a later approved operation changes that status.
+This change activates no deletion job, provider calls, email delivery or recipient list. `lib/event-cleanup-review.ts` is a review-only helper. The prepared operator workflow in `lib/event-cleanup-confirmations.ts` is not imported by the Worker, an API, a CLI or a scheduler. Its schema is a manually prepared SQL file, not a migration. The notice says the requested deadline is not yet scheduled; it must be revised if a later approved operation changes that status.
 
 The conference ended October 21, 2026 at 5:30 p.m. America/Chicago. The requested 48-hour deadline is October 23 at 5:30 p.m. CDT, or October 23 at 22:30 UTC. The old unused seven-day planning stub is not a cleanup scheduler.
 
@@ -20,7 +20,7 @@ Clerk identity removal must succeed (or an authoritative not-found result must b
 
 ## Success-only confirmation delivery
 
-The requested sender is a verified `devyo.app` address; personal Gmail is not selected. A proposed address is `privacy@devyo.app`, but it is not currently verified or configured. Existing Clerk authentication emails do not establish arbitrary transactional sending capability.
+The requested sender is a verified `devyo.app` address; personal Gmail is not selected. The prepared workflow restricts its sender to `privacy@devyo.app`; it does not configure or prove the readiness of that sender. Domain activation and any later binding changes are separate account operations, not effects of this code. Existing Clerk authentication emails do not establish arbitrary transactional sending capability.
 
 Cloudflare Email Sending can use an existing Worker's native binding without a new API key. Before enabling it, approve and verify:
 
@@ -33,17 +33,43 @@ Published Workers Paid pricing includes 3,000 outbound emails/month, then $0.35/
 
 Prefer the verified primary email, then another verified email. A phone-only account needs a separately approved SMS route; count such production accounts before proposing a service. Do not reuse an authentication OTP as a deletion notice, guess an address or use an unverified phone number.
 
-Proposed temporary-contact policy, requiring approval: capture only one verified destination immediately before an approved removal; retain it in access-controlled server-side storage until provider acceptance or at most 24 hours from capture, whichever comes first. This is an explicit, temporary exception to account-data removal, not implicit additional retention. Do not capture recipients before that policy is approved. Remove contact fields on expiry even if delivery failed, then report an undelivered notice without indefinite retries. Provider mail logs/queues may retain a destination under their policies separately.
+Proposed temporary-contact policy, requiring approval: capture only one verified destination immediately before an approved removal; retain it in access-controlled server-side storage until provider acceptance or at most 24 hours from capture, whichever comes first. The prepared implementation erases the stored destination even earlier, immediately before the one permitted provider attempt. This is an explicit, temporary exception to account-data removal, not implicit additional retention. Do not capture recipients before that policy is approved. Remove contact fields on expiry even if delivery failed, then report an undelivered notice without indefinite retries. Provider mail logs/queues may retain a destination under their policies separately. D1 point-in-time backups can also retain a captured destination beyond active-table expiry; the 24-hour limit is not a promise to erase provider backups. This retained boundary needs explicit acknowledgement before capture.
 
 A future private recipient/result manifest needs a schema version, reviewed scope hash, canonical target ID, contact channel/destination, capture/expiry times, identity-deletion and app-cleanup results, and a unique confirmation receipt. It must stay outside Git and public outputs. No actual contacts have been captured for this work.
 
-Confirmation eligibility requires both verified identity deletion and completed transactional cleanup, zero remaining active owner data under the approved scope, a non-exempt target and an unexpired verified destination. A durable outbox must deduplicate by deletion receipt. Provider acceptance is not proof of inbox delivery. An uncertain send must be reconciled before any retry; the currently inspected Worker API does not establish a documented idempotency guarantee. No delivery adapter or outbox is activated here.
+Confirmation eligibility requires both verified identity deletion and completed transactional cleanup, zero remaining active owner data under the approved scope, a non-exempt target and an unexpired verified destination. The prepared outbox deduplicates by canonical owner and has a unique confirmation receipt. Provider acceptance is not proof of inbox delivery. The currently inspected Worker API does not establish a documented idempotency guarantee. No delivery adapter or outbox is activated here.
 
 Confirmation should describe the actual active-data scope and retained boundaries, provide the organizer's contact, contain no marketing or tracking, and never promise to prevent unrelated spam. Tests must use synthetic identities and mocked transports without sending notices.
+
+## Prepared manual workflow and its limits
+
+`runManualCleanupTarget` is a dependency-injected, single-target operator core. It has no production inventory, identity-removal, residual-data or credential adapter, and no network entry point. A caller cannot use it to authorize itself: approval/proof objects must be created from trusted operator verification after the human's exact action-time confirmation. Never accept these objects from a browser or HTTP request. Preparing or pushing this code is not that confirmation.
+
+The guard requires the requested deadline to have arrived, a fresh action-time approval lasting at most 15 minutes, matching account and data-scope hashes, identity-level reconciliation, a verified production instance, and a scope check no older than one minute. It rejects every protected account and any target absent from the approved inventory. The data-scope hash must bind the actual private-data counts, group and relationship decisions, retained receipts/backups, and contact policy; a generic placeholder hash is insufficient for production. The live read adapter must recalculate these facts, rather than copying the approved hash. Changed scope stops the operation for a new review.
+
+Before contact capture or any removal callback, the guard also requires a native email binding, verified domain and numeric quota, disabled provider message previews, approved contact retention/confirmation/retained boundaries, and working expiry maintenance. Readiness booleans are operator attestations to independently verified facts, not self-testing claims. The code does not enable any of these prerequisites. A freshly fetched verified identity must match the canonical target ID. A phone-only target returns `sms-route-unavailable` before storing its number or invoking removal. Four phone-only accounts have been reported operationally; no actual identities, counts or contacts are embedded in the code.
+
+The durable row is staged before the removal callback. Resume never refreshes its capture/expiry time or replaces its recipient. Only after a fresh removal proof confirms provider absence, a completed D1 receipt and zero active owner references (including group metadata) may a transaction claim the email. The claim returns the one verified destination to short-lived memory, sets `dispatching`, and clears the persistent destination before calling the provider. Only one concurrent caller can claim it. No CC/BCC, HTML, tracking pixels, attachments or attendee names/IDs are sent. The opaque confirmation receipt header is an investigation aid, not a provider idempotency key.
+
+Any provider exception, missing acceptance ID, process crash, or failure to persist acceptance blocks automatic resend. The stored state remains `dispatching` or becomes `uncertain`, with no destination. A crash between claim and provider invocation can therefore produce no message at all; an ambiguous attempt may have been accepted. This provides at-most-one provider attempt, not guaranteed exactly-once delivery. There is deliberately no reset/retry function. Investigate provider records before any separately reviewed recovery; do not infer that an exception means no email was sent.
+
+`purgeExpiredCleanupContacts` clears active destinations at 24 hours regardless of cleanup/delivery outcome. It is not scheduled. Reliable expiry maintenance and failure monitoring must be separately approved, implemented and activated before capture; merely invoking expiry opportunistically cannot guarantee the retention bound. Terminal receipts retain only canonical owner/scope IDs, opaque receipt, timestamps, state and provider message ID, separately from active account data. Their retention and provider backup/log boundaries require acknowledgement in the final approval.
+
+The safe activation sequence remains:
+
+1. Reconcile the complete pinned Clerk inventory against D1 IDs; freeze the organizer exemption, exact private-data scope and safe treatment of the empty other-owned group. Resolve the four phone-only confirmations or explicitly review a smaller supported scope; never silently drop those notices or targets.
+2. Verify the approved sender's restricted binding, disabled previews, numeric quota and labeled owner-only test outcome. None of these actions is performed by this PR.
+3. Finish and review the trusted operator inventory/removal/residual adapters. Reuse the existing guarded deletion engine and its identity-first transaction; do not impersonate attendee sessions or bypass its self-service API proof. Check all group and cross-owner references, preserve the organizer's group/history, and refuse success on residual metadata. A bulk coordinator must reconcile already-completed targets and new accounts before each invocation; it does not exist here.
+4. Obtain exact action-time deletion and bounded-contact/retained-boundary approval, then separately approve schema and reliable contact-expiry maintenance activation. Capture no recipients until every prerequisite is ready.
+5. Invoke only the approved reviewed targets manually, verify each actual removal, then permit its one confirmation attempt. Keep count-only operational results private, report blocked/uncertain/expired notices truthfully, and refresh the notice only from verified execution state.
+
+No production removal is possible from the shipped app through this prepared module. The existing self-service recovery scheduler is unchanged; no event targets or intents are inserted into it.
 
 ## Validation and publication
 
 Tests cover the exact deadline, missing/wrong-instance exemption, identity-only accounts, changing inventory hashes, verified contact preference, header-injection rejection, incomplete cleanup, residual data, expired contacts and truthful before/after-deadline notice rendering. `/notes` reuses the existing authenticated planner, session boundary and private notes download. No production schedule or data edits are needed for tests.
+
+The operator core additionally uses in-memory SQLite tests for approval/readiness guards, wrong-recipient rejection, phone-only blocking, post-success content, expiry without extension, concurrent dispatch, provider timeout, crash after claim, and receipt-write failure after acceptance. `node tests/event-cleanup-confirmations-d1.mjs` checks transactional claiming, duplicates, uncertainty, partial cleanup and expiry against isolated local D1, with synthetic adapters and external requests blocked. These checks do not establish production sender readiness, actual identity reconciliation or real delivery.
 
 Publishing the review branch does not activate cleanup or authorize deployment. Final counts and canonical exemption must be checked again at action time, followed by explicit approval of the permanent scope.
 
