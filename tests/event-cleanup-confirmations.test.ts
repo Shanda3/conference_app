@@ -6,7 +6,7 @@ import {DatabaseSync} from 'node:sqlite';
 import type {SQLInputValue} from 'node:sqlite';
 import {readFile} from 'node:fs/promises';
 import {prepareCleanupReview,THUNDERPLAINS_CLEANUP} from '../lib/event-cleanup-review.ts';
-import {assertManualCleanupApproval,CLEANUP_CONTACT_MAX_AGE,purgeExpiredCleanupContacts,runManualCleanupTarget} from '../lib/event-cleanup-confirmations.ts';
+import {assertManualCleanupApproval,CLEANUP_CONTACT_MAX_AGE,expireCleanupAttempts,runManualCleanupTarget} from '../lib/event-cleanup-confirmations.ts';
 import type {ManualCleanupApproval,ManualCleanupDependencies,FreshCleanupScope} from '../lib/event-cleanup-confirmations.ts';
 
 const schema=await readFile(new URL('../deploy/sql/event-cleanup-confirmations-prepared.sql',import.meta.url),'utf8');
@@ -26,9 +26,9 @@ async function fixture(t:TestContext){
  const review=await prepareCleanupReview({issuer,instanceId:'ins_Fixture',protectedOwners:[organizer],scope:'whole-devyo-accounts',owners:[{ownerId:organizer,conferenceIds:['thunderplains-2026']},{ownerId:attendee,conferenceIds:['thunderplains-2026','another-event']}]});
  const state={now:THUNDERPLAINS_CLEANUP.deadlineAt+1000,identityReads:0,removals:0,verifications:0,sends:0};
  const proof=():FreshCleanupScope=>({review,dataScopeHash,checkedAt:state.now,identityIdsReconciled:true,productionInstanceVerified:true});
- const approval:ManualCleanupApproval={action:'permanently-remove-reviewed-devyo-accounts',scopeHash:review.scopeHash,dataScopeHash,approvedAt:state.now,expiresAt:state.now+15*60*1000,contactRetentionMs:CLEANUP_CONTACT_MAX_AGE,successConfirmationsApproved:true,retainedBoundariesAcknowledged:true};
+ const approval:ManualCleanupApproval={action:'permanently-remove-reviewed-devyo-accounts',scopeHash:review.scopeHash,dataScopeHash,approvedAt:state.now,expiresAt:state.now+15*60*1000,contactRetentionMs:CLEANUP_CONTACT_MAX_AGE,successConfirmationsApproved:true,retainedBoundariesAcknowledged:true,recipientMemoryOnly:true};
  const identity={id:'user_Attendee',primaryEmailAddressId:'verified',emailAddresses:[{id:'verified',emailAddress:'attendee@example.com',verification:{status:'verified'}}],phoneNumbers:[]};
- const deps:ManualCleanupDependencies={db,clock:()=>state.now,delivery:{binding:{async send(){state.sends++;return{messageId:'fixture-message-id'};}},sender:'privacy@devyo.app',domainVerified:true,quotaVerified:true,previewsDisabled:true,contactExpiryMaintenanceReady:true},async readFreshScope(){return proof();},async readVerifiedIdentity(){state.identityReads++;return identity;},async removeApprovedAccount(){state.removals++;},async verifyRemoval(){state.verifications++;return{phase:'complete',identityDeletionConfirmed:true,remainingActiveOwnerRows:0,completedAt:state.now};}};
+ const deps:ManualCleanupDependencies={db,clock:()=>state.now,delivery:{binding:{async send(){state.sends++;return{messageId:'fixture-message-id'};}},sender:'privacy@devyo.app',domainVerified:true,quotaVerified:true,previewsDisabled:true,providerRecipientLogRetentionApproved:true},async readFreshScope(){return proof();},async readVerifiedIdentity(){state.identityReads++;return identity;},async removeApprovedAccount(){state.removals++;},async verifyRemoval(){state.verifications++;return{phase:'complete',identityDeletionConfirmed:true,remainingActiveOwnerRows:0,completedAt:state.now};}};
  const row=()=>sqlite.prepare('SELECT * FROM event_cleanup_confirmations').get();
  const count=()=>Number(sqlite.prepare('SELECT COUNT(*) n FROM event_cleanup_confirmations').get()!.n);
  return{sqlite,db,deps,approval,state,proof,row,count,identity};
@@ -58,7 +58,7 @@ test('manual gate rejects stale scope, unverified inventory, early time, protect
 
 test('delivery readiness blocks contact capture and removal, even if approval is otherwise current',async t=>{
  const f=await fixture(t);
- for(const patch of[{binding:undefined},{domainVerified:false},{quotaVerified:false},{previewsDisabled:false},{contactExpiryMaintenanceReady:false}]){
+ for(const patch of[{binding:undefined},{domainVerified:false},{quotaVerified:false},{previewsDisabled:false},{providerRecipientLogRetentionApproved:false}]){
   await assert.rejects(runManualCleanupTarget({...f.deps,delivery:{...f.deps.delivery,...patch}},attendee,f.approval),/delivery/);
  }
  assert.equal(f.count(),0);assert.equal(f.state.removals+f.state.sends+f.state.identityReads,0);
@@ -82,11 +82,12 @@ test('changed inventory after contact verification prevents staging and deletion
  assert.equal(f.count(),0);assert.equal(f.state.removals+f.state.sends,0);
 });
 
-test('verified removal sends one private plain-text confirmation and erases destination before provider invocation',async t=>{
+test('verified removal sends one private plain-text confirmation without ever storing its destination',async t=>{
  const f=await fixture(t);
  f.deps.delivery.binding={async send(message){
   f.state.sends++;assert.equal(f.state.removals,1);assert.equal(f.state.verifications,1);
-  assert.equal(f.row()!.destination,null);assert.equal(f.row()!.phase,'dispatching');
+  assert.equal('destination' in f.row()!,false);assert.equal(f.row()!.phase,'dispatching');
+  assert.doesNotMatch(JSON.stringify(f.sqlite.prepare('SELECT * FROM event_cleanup_confirmations').all()),/@|12025550123/);
   assert.equal(message.to,'attendee@example.com');assert.equal(message.from,'privacy@devyo.app');
   assert.deepEqual(Object.keys(message).sort(),['from','headers','subject','text','to']);
   assert.match(message.text,/across Devyo conferences/);assert.match(message.text,/receipts/);assert.match(message.text,/backups/);assert.match(message.text,/independently saved/);
@@ -94,7 +95,7 @@ test('verified removal sends one private plain-text confirmation and erases dest
   return{messageId:'fixture-accepted'};
  }};
  assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'accepted');
- assert.equal(f.row()!.destination,null);assert.equal(f.row()!.provider_message_id,'fixture-accepted');
+ assert.equal('destination' in f.row()!,false);assert.equal(f.row()!.provider_message_id,'fixture-accepted');
  assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'accepted');
  assert.equal(f.state.sends,1);assert.equal(f.state.removals,1);assert.equal(f.state.identityReads,1);
 });
@@ -107,9 +108,9 @@ test('partial identity/app cleanup or residual group metadata never sends; expir
   f.state.now+=1000;
  }
  const capturedAt=f.row()!.captured_at,expiresAt=f.row()!.expires_at;
- assert.equal(Number(expiresAt)-Number(capturedAt),CLEANUP_CONTACT_MAX_AGE);assert.equal(f.state.identityReads,1);assert.equal(f.state.sends,0);
- f.state.now=Number(expiresAt);assert.equal(await purgeExpiredCleanupContacts(f.db,f.state.now),1);
- assert.equal(f.row()!.destination,null);assert.equal(f.row()!.phase,'expired');
+ assert.equal(Number(expiresAt)-Number(capturedAt),CLEANUP_CONTACT_MAX_AGE);assert.equal(f.state.identityReads,4);assert.equal(f.state.sends,0);
+ f.state.now=Number(expiresAt);assert.equal(await expireCleanupAttempts(f.db,f.state.now),1);
+ assert.equal('destination' in f.row()!,false);assert.equal(f.row()!.phase,'expired');
  const renewed={...f.approval,approvedAt:f.state.now,expiresAt:f.state.now+60000};
  assert.equal((await runManualCleanupTarget(f.deps,attendee,renewed)).status,'expired');assert.equal(f.row()!.captured_at,capturedAt);
 });
@@ -119,7 +120,7 @@ test('provider timeout is uncertain, retains no contact and is never automatical
  f.deps.delivery.binding={async send(){f.state.sends++;throw Error('Synthetic timeout containing attendee@example.com');}};
  const result=await runManualCleanupTarget(f.deps,attendee,f.approval);
  assert.equal(result.status,'send-outcome-uncertain');assert.doesNotMatch(JSON.stringify(result),/@/);
- assert.equal(f.row()!.phase,'uncertain');assert.equal(f.row()!.destination,null);
+ assert.equal(f.row()!.phase,'uncertain');assert.equal('destination' in f.row()!,false);
  assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'uncertain');assert.equal(f.state.sends,1);
 });
 
@@ -127,14 +128,14 @@ test('cleanup finishing after the contact deadline erases the address and does n
  const f=await fixture(t);
  f.deps.removeApprovedAccount=async()=>{f.state.removals++;f.state.now+=CLEANUP_CONTACT_MAX_AGE;};
  assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'contact-expired');
- assert.equal(f.state.removals,1);assert.equal(f.state.sends,0);assert.equal(f.row()!.destination,null);assert.equal(f.row()!.phase,'expired');
+ assert.equal(f.state.removals,1);assert.equal(f.state.sends,0);assert.equal('destination' in f.row()!,false);assert.equal(f.row()!.phase,'expired');
 });
 
 test('crash after durable dispatch claim cannot trigger a later send',async t=>{
- const f=await fixture(t),realBatch=f.db.batch.bind(f.db);
- f.deps.db=new Proxy(f.db,{get(target,key){if(key==='batch')return async(statements:D1PreparedStatement[])=>{await realBatch(statements);throw Error('Synthetic process disconnect after commit');};return Reflect.get(target,key);}});
+ const f=await fixture(t),realPrepare=f.db.prepare.bind(f.db);
+ f.deps.db=new Proxy(f.db,{get(target,key){if(key==='prepare')return(sql:string)=>sql.startsWith("UPDATE event_cleanup_confirmations SET phase='dispatching'")?{bind:(...values:SQLInputValue[])=>({async first(){await realPrepare(sql).bind(...values).first();throw Error('Synthetic process disconnect after commit');}})}:realPrepare(sql);return Reflect.get(target,key);}});
  await assert.rejects(runManualCleanupTarget(f.deps,attendee,f.approval),/disconnect/);
- assert.equal(f.row()!.phase,'dispatching');assert.equal(f.row()!.destination,null);assert.equal(f.state.sends,0);
+ assert.equal(f.row()!.phase,'dispatching');assert.equal('destination' in f.row()!,false);assert.equal(f.state.sends,0);
  f.deps.db=f.db;assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'dispatching');assert.equal(f.state.sends,0);
 });
 
@@ -142,20 +143,37 @@ test('provider acceptance followed by receipt-write failure never duplicates the
  const f=await fixture(t),realPrepare=f.db.prepare.bind(f.db);
  f.deps.db=new Proxy(f.db,{get(target,key){if(key==='prepare')return(sql:string)=>{if(sql.startsWith("UPDATE event_cleanup_confirmations SET phase='accepted'"))throw Error('Synthetic database outage');return realPrepare(sql);};return Reflect.get(target,key);}});
  assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'send-outcome-uncertain');
- assert.equal(f.state.sends,1);assert.equal(f.row()!.destination,null);
+ assert.equal(f.state.sends,1);assert.equal('destination' in f.row()!,false);
  assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'uncertain');assert.equal(f.state.sends,1);
 });
 
 test('concurrent invocations share a single durable confirmation receipt and make at most one provider call',async t=>{
  const f=await fixture(t);
  const results=await Promise.all([runManualCleanupTarget(f.deps,attendee,f.approval),runManualCleanupTarget(f.deps,attendee,f.approval)]);
- assert.equal(f.state.sends,1);assert.equal(f.count(),1);assert.equal(f.row()!.destination,null);
+ assert.equal(f.state.sends,1);assert.equal(f.count(),1);assert.equal('destination' in f.row()!,false);
  assert.equal(new Set(results.map(result=>'receiptId' in result?result.receiptId:null)).size,1);
 });
 
-test('prepared schema enforces the maximum contact lifetime and erasure in terminal states',async t=>{
- const f=await fixture(t),sql='INSERT INTO event_cleanup_confirmations(owner_id,scope_hash,receipt_id,phase,destination,captured_at,expires_at) VALUES(?,?,?,?,?,?,?)';
- assert.throws(()=>f.sqlite.prepare(sql).run(attendee,f.approval.scopeHash,'fixture','prepared','attendee@example.com',0,CLEANUP_CONTACT_MAX_AGE+1),/CHECK/);
- assert.throws(()=>f.sqlite.prepare(sql).run(attendee,f.approval.scopeHash,'fixture','accepted','attendee@example.com',0,1),/CHECK/);
+test('prepared schema cannot store destinations and enforces the maximum attempt lifetime',async t=>{
+ const f=await fixture(t),sql='INSERT INTO event_cleanup_confirmations(owner_id,scope_hash,receipt_id,phase,captured_at,expires_at) VALUES(?,?,?,?,?,?)';
+ assert.throws(()=>f.sqlite.prepare(sql).run(attendee,f.approval.scopeHash,'fixture','prepared',0,CLEANUP_CONTACT_MAX_AGE+1),/CHECK/);
+ assert.throws(()=>f.sqlite.prepare('INSERT INTO event_cleanup_confirmations(destination) VALUES(?)').run('attendee@example.com'),/no column/);
  assert.equal(f.count(),0);
+});
+
+test('later restart after identity removal reports the lost notice instead of recovering contacts from durable storage',async t=>{
+ const f=await fixture(t);
+ f.deps.removeApprovedAccount=async()=>{f.state.removals++;throw Error('Synthetic interruption after identity removal');};
+ assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'cleanup-unconfirmed');
+ f.deps.readVerifiedIdentity=async()=>null;
+ assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'contact-lost-after-interruption');
+ assert.equal(f.state.removals,1);assert.equal(f.state.sends,0);assert.doesNotMatch(JSON.stringify(f.row()),/@/);
+});
+
+test('a hung provider attempt times out without retaining an address or enabling a resend',async t=>{
+ const f=await fixture(t);f.deps.stepTimeoutMs=10;
+ f.deps.delivery.binding={async send(){f.state.sends++;return new Promise<{messageId:string}>(()=>{});}};
+ assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'send-outcome-uncertain');
+ assert.equal(f.row()!.phase,'uncertain');assert.doesNotMatch(JSON.stringify(f.row()),/@/);
+ assert.equal((await runManualCleanupTarget(f.deps,attendee,f.approval)).status,'uncertain');assert.equal(f.state.sends,1);
 });
